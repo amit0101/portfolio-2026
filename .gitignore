@@ -14,7 +14,6 @@ video-presentation.html.backup
 !video-walkthrough-final-cut-compressed.mp4
 
 # Exclude original (non-minified) CSS and JS files
-styles.css
 project-page.css
 sidebar-loader.js
 typing-effect.js
@@ -25,3 +24,4 @@ video-modal.js
 .DS_Store
 *.pyc
 __pycache__/
+styles.css
