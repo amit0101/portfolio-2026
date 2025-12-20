@@ -13,6 +13,14 @@ video-presentation.html.backup
 # Keep only the compressed final cut video
 !video-walkthrough-final-cut-compressed.mp4
 
+# Exclude original (non-minified) CSS and JS files
+styles.css
+project-page.css
+sidebar-loader.js
+typing-effect.js
+contact-modal.js
+video-modal.js
+
 # System files
 .DS_Store
 *.pyc
