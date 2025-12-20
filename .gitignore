@@ -15,13 +15,25 @@ video-presentation.html.backup
 
 # Exclude original (non-minified) CSS and JS files
 project-page.css
-sidebar-loader.js
 typing-effect.js
 contact-modal.js
 video-modal.js
+mobile-menu.css
+mobile-menu.js
+
+# Flubber chat assistant files (not for production)
+flubber.css
+flubber.js
+flubber-chat.css
+flubber-chat.js
+flubber-navigator.js
+flubber-context.js
+flubber-actions.css
+FLUBBER_REVERT_GUIDE.md
 
 # System files
 .DS_Store
 *.pyc
 __pycache__/
 styles.css
+sidebar-loader.js
