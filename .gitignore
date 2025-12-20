@@ -1,0 +1,21 @@
+# Folders to exclude
+old/
+narration-scripts/
+project-clips/
+project-marketing-screenshots/
+
+# Files to exclude
+video-presentation.html
+video-presentation.html.backup
+*.mp4
+video-walkthrough.mov
+video-walkthrough-480.mov
+video-walkthrough-720.mov
+
+# Keep only the final cut video
+!video-walkthrough-final-cut.mov
+
+# System files
+.DS_Store
+*.pyc
+__pycache__/

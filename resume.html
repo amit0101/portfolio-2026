@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amit Kumar Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @page {
+            size: A4;
+            margin: 10mm;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter UI', 'Segoe UI', Arial, sans-serif;
+            font-size: 8.5pt;
+            line-height: 1.25;
+            color: #000000;
+            background: white;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media print {
+            body {
+                line-height: 1.2;
+            }
+        }
+
+        /* Print-friendly enhancements */
+        @media screen {
+            body {
+                background: linear-gradient(135deg, #f5f5f5 0%, #fafbfc 100%);
+                position: relative;
+            }
+
+            body::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background:
+                    radial-gradient(at 20% 30%, rgba(30, 144, 255, 0.08) 0px, transparent 50%),
+                    radial-gradient(at 80% 70%, rgba(30, 144, 255, 0.05) 0px, transparent 50%);
+                pointer-events: none;
+                z-index: 0;
+            }
+
+            .container {
+                box-shadow: 0 10px 40px rgba(30, 144, 255, 0.12),
+                    0 4px 20px rgba(0, 0, 0, 0.08),
+                    0 0 0 1px rgba(30, 144, 255, 0.05) inset;
+                margin: 30px auto;
+                border-radius: 8px;
+                position: relative;
+                z-index: 1;
+                transition: all 0.4s ease;
+            }
+
+            .container:hover {
+                box-shadow: 0 15px 60px rgba(30, 144, 255, 0.15),
+                    0 8px 30px rgba(0, 0, 0, 0.1),
+                    0 0 0 1px rgba(30, 144, 255, 0.08) inset;
+                transform: translateY(-2px);
+            }
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 10mm;
+            background: white;
+        }
+
+        @media screen {
+            .container {
+                animation: pageLoad 0.8s ease-out;
+                overflow: hidden;
+            }
+
+            @keyframes pageLoad {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px) scale(0.98);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0) scale(1);
+                }
+            }
+        }
+
+        /* Header Section */
+        .header {
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #1E90FF;
+            position: relative;
+        }
+
+        @media screen {
+            .header {
+                border-bottom: 3px solid transparent;
+                border-image: linear-gradient(90deg, #1E90FF 0%, #3b82f6 100%) 1;
+            }
+
+            .header::after {
+                content: '';
+                position: absolute;
+                bottom: -3px;
+                left: 0;
+                height: 3px;
+                width: 0;
+                background: linear-gradient(90deg, #1E90FF 0%, #3b82f6 100%);
+                animation: expandWidth 1.5s ease-out forwards;
+            }
+
+            @keyframes expandWidth {
+                to {
+                    width: 100%;
+                }
+            }
+        }
+
+        .header h1 {
+            font-family: 'Rubik', Arial, sans-serif;
+            font-size: 22pt;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            margin-bottom: 4px;
+            color: #000000;
+        }
+
+        @media screen {
+            .header h1 {
+                background: linear-gradient(135deg, #000000 0%, #1E90FF 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                background-size: 200% 200%;
+                animation: fadeIn 0.8s ease-out, gradientShift 6s ease-in-out infinite;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes gradientShift {
+
+                0%,
+                100% {
+                    background-position: 0% 50%;
+                }
+
+                50% {
+                    background-position: 100% 50%;
+                }
+            }
+        }
+
+        .header h2 {
+            font-size: 10pt;
+            font-weight: 500;
+            color: #1E90FF;
+            margin-bottom: 5px;
+        }
+
+        @media screen {
+            .header h2 {
+                animation: fadeIn 0.8s ease-out 0.2s backwards;
+            }
+        }
+
+        .contact-info {
+            font-size: 7.5pt;
+            line-height: 1.3;
+            color: #333;
+        }
+
+        .contact-info a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        /* Two Column Layout */
+        .content {
+            display: grid;
+            grid-template-columns: 66% 1fr;
+            gap: 18px;
+            margin-top: 10px;
+        }
+
+        .column-left {
+            grid-column: 1;
+        }
+
+        .column-right {
+            grid-column: 2;
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 9px;
+        }
+
+        .section.no-break {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        @media print {
+            .section {
+                margin-bottom: 8px;
+            }
+        }
+
+        .section-title {
+            font-family: 'Rubik', Arial, sans-serif;
+            font-size: 10pt;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 5px;
+            padding-bottom: 2px;
+            border-bottom: 1.5px solid #000000;
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+            position: relative;
+        }
+
+        @media screen {
+            .section-title {
+                background: linear-gradient(135deg, #000000 0%, #1E90FF 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                border-bottom: 2px solid transparent;
+                border-image: linear-gradient(90deg, #000000 0%, #1E90FF 100%) 1;
+                transition: all 0.3s ease;
+            }
+
+            .section:hover .section-title {
+                letter-spacing: 1px;
+            }
+        }
+
+        /* Job Entry Styling */
+        .job-entry {
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        @media print {
+            .job-entry {
+                margin-bottom: 7px;
+            }
+        }
+
+        /* Prevent orphaned job headers but allow content to break */
+        .job-entry .job-title,
+        .job-entry .job-header,
+        .job-entry .job-description {
+            page-break-after: avoid;
+            break-after: avoid;
+        }
+
+        /* Keep individual bullet points together but allow breaks between them */
+        .job-entry li {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        .job-entry ul {
+            page-break-before: avoid;
+        }
+
+        @media screen {
+            .job-entry {
+                padding: 8px;
+                margin-left: -8px;
+                margin-right: -8px;
+                border-radius: 6px;
+                transition: all 0.3s ease;
+            }
+
+            .job-entry:hover {
+                background: linear-gradient(135deg, rgba(30, 144, 255, 0.03) 0%, rgba(59, 130, 246, 0.03) 100%);
+                box-shadow: 0 2px 8px rgba(30, 144, 255, 0.08);
+                transform: translateX(4px);
+            }
+
+            .job-entry::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 3px;
+                height: 0;
+                background: linear-gradient(180deg, #1E90FF 0%, #3b82f6 100%);
+                border-radius: 0 3px 3px 0;
+                transition: height 0.3s ease;
+            }
+
+            .job-entry:hover::before {
+                height: 80%;
+            }
+        }
+
+        .job-title {
+            font-size: 9pt;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 1.5px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .job-company {
+            color: #1E90FF;
+            font-weight: 600;
+            font-size: 8.5pt;
+        }
+
+        .job-meta {
+            font-size: 7.5pt;
+            font-weight: 400;
+            color: #666;
+            text-align: right;
+        }
+
+        .job-meta .fa-calendar,
+        .education-meta .fa-calendar {
+            color: #666;
+            margin-right: 3px;
+        }
+
+        .job-meta .fa-location-dot,
+        .education-meta .fa-location-dot {
+            color: #666;
+            margin-left: 8px;
+            margin-right: 3px;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1.5px;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1.5px;
+        }
+
+        .contact-info .fa-solid {
+            color: #1E90FF;
+            margin-left: 8px;
+            margin-right: 3px;
+        }
+
+        .contact-info .fa-solid:first-child {
+            margin-left: 0;
+        }
+
+        @media screen {
+            .contact-info {
+                animation: fadeIn 0.8s ease-out 0.3s backwards;
+            }
+
+            .contact-info .fa-solid {
+                transition: all 0.3s ease;
+                display: inline-block;
+            }
+
+            .contact-info .fa-solid:hover {
+                color: #3b82f6;
+                transform: scale(1.2) rotate(5deg);
+            }
+
+            .contact-info a {
+                transition: all 0.3s ease;
+                padding: 1px 3px;
+                border-radius: 3px;
+            }
+
+            .contact-info a:hover {
+                background: linear-gradient(135deg, rgba(30, 144, 255, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+                color: #1E90FF;
+            }
+        }
+
+        .job-description {
+            font-size: 8pt;
+            font-style: italic;
+            color: #444;
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+
+        ul {
+            margin-left: 13px;
+            margin-top: 2px;
+        }
+
+        li {
+            font-size: 7.5pt;
+            line-height: 1.3;
+            margin-bottom: 2.5px;
+            color: #222;
+        }
+
+        @media print {
+            li {
+                line-height: 1.22;
+                margin-bottom: 1.5px;
+            }
+        }
+
+        /* Education Styling */
+        .education-entry {
+            margin-bottom: 6px;
+            position: relative;
+        }
+
+        @media screen {
+            .education-entry {
+                padding: 6px;
+                margin-left: -6px;
+                margin-right: -6px;
+                border-radius: 5px;
+                transition: all 0.3s ease;
+            }
+
+            .education-entry:hover {
+                background: linear-gradient(135deg, rgba(30, 144, 255, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+                box-shadow: 0 2px 8px rgba(30, 144, 255, 0.1);
+                transform: translateX(3px);
+            }
+        }
+
+        .education-degree {
+            font-size: 9pt;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 1.5px;
+        }
+
+        @media screen {
+            .education-degree {
+                background: linear-gradient(135deg, #000000 0%, #1E90FF 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+        }
+
+        .education-school {
+            font-size: 8.5pt;
+            color: #1E90FF;
+            font-weight: 600;
+            margin-bottom: 1.5px;
+            transition: all 0.3s ease;
+        }
+
+        @media screen {
+            .education-entry:hover .education-school {
+                color: #3b82f6;
+            }
+        }
+
+        .education-meta {
+            font-size: 7.5pt;
+            color: #666;
+        }
+
+
+        .education-note {
+            font-size: 7.5pt;
+            font-style: italic;
+            color: #666;
+            margin-top: 1.5px;
+        }
+
+        /* Skills Section */
+        .skills-category {
+            margin-bottom: 6px;
+            position: relative;
+        }
+
+        @media screen {
+            .skills-category {
+                padding: 5px;
+                margin-left: -5px;
+                margin-right: -5px;
+                border-radius: 4px;
+                transition: all 0.3s ease;
+            }
+
+            .skills-category:hover {
+                background: linear-gradient(135deg, rgba(30, 144, 255, 0.04) 0%, rgba(59, 130, 246, 0.04) 100%);
+                box-shadow: 0 1px 4px rgba(30, 144, 255, 0.1);
+                padding-left: 8px;
+            }
+        }
+
+        .skills-category-title {
+            font-size: 8pt;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 1.5px;
+            position: relative;
+        }
+
+        @media screen {
+            .skills-category-title {
+                display: inline-block;
+                background: linear-gradient(135deg, #000000 0%, #1E90FF 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+
+            .skills-category-title::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: linear-gradient(90deg, #1E90FF 0%, #3b82f6 100%);
+                transition: width 0.3s ease;
+            }
+
+            .skills-category:hover .skills-category-title::after {
+                width: 100%;
+            }
+        }
+
+        .skills-list {
+            font-size: 7pt;
+            line-height: 1.35;
+            color: #222;
+        }
+
+        /* Keep individual skill categories together but allow section to break */
+        .skills-category {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        /* Professional Summary */
+        .summary p {
+            font-size: 8pt;
+            line-height: 1.3;
+            color: #222;
+            margin-bottom: 4px;
+            text-align: left;
+        }
+
+        /* Achievements */
+        .achievements-list {
+            list-style-type: none;
+            margin-left: 0;
+        }
+
+        .achievements-list li {
+            font-size: 7.5pt;
+            line-height: 1.3;
+            margin-bottom: 3px;
+            padding-left: 11px;
+            position: relative;
+        }
+
+        .achievements-list li:before {
+            content: "▪";
+            position: absolute;
+            left: 0;
+            color: #333;
+            font-weight: bold;
+        }
+
+        @media screen {
+            .achievements-list li {
+                padding: 3px 3px 3px 11px;
+                margin-left: -3px;
+                margin-right: -3px;
+                border-radius: 3px;
+                transition: all 0.3s ease;
+            }
+
+            .achievements-list li:hover {
+                background: linear-gradient(135deg, rgba(30, 144, 255, 0.06) 0%, rgba(59, 130, 246, 0.06) 100%);
+                padding-left: 14px;
+                box-shadow: 0 1px 4px rgba(30, 144, 255, 0.1);
+            }
+
+            .achievements-list li:before {
+                color: #1E90FF;
+                transition: all 0.3s ease;
+            }
+
+            .achievements-list li:hover:before {
+                color: #3b82f6;
+                transform: scale(1.3);
+            }
+        }
+
+        /* Values Section */
+        .values {
+            font-size: 8pt;
+            font-weight: 400;
+            color: #222;
+            text-align: center;
+            padding: 5px 15px;
+        }
+
+        @media screen {
+            .values {
+                padding: 8px 15px;
+                border-radius: 6px;
+                background: linear-gradient(135deg, rgba(30, 144, 255, 0.03) 0%, rgba(59, 130, 246, 0.03) 100%);
+                transition: all 0.3s ease;
+            }
+
+            .values:hover {
+                background: linear-gradient(135deg, rgba(30, 144, 255, 0.06) 0%, rgba(59, 130, 246, 0.06) 100%);
+                box-shadow: 0 2px 8px rgba(30, 144, 255, 0.1);
+            }
+        }
+
+        .availability {
+            font-size: 7.5pt;
+            font-style: italic;
+            color: #666;
+            text-align: center;
+            margin-top: 6px;
+            padding-top: 5px;
+            border-top: 1px solid #ddd;
+        }
+
+        @media screen {
+            .availability {
+                border-top: 2px solid transparent;
+                border-image: linear-gradient(90deg, transparent 20%, #1E90FF 50%, transparent 80%) 1;
+                padding: 8px 10px;
+                border-radius: 5px;
+                transition: all 0.3s ease;
+            }
+
+            .availability:hover {
+                background: linear-gradient(135deg, rgba(30, 144, 255, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+                color: #1E90FF;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .container {
+                padding: 0;
+            }
+
+            .skills-category {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .education-entry {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .section.no-break {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            /* Allow Technical Skills section to break across pages */
+            .section h3.section-title {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>AMIT KUMAR</h1>
+            <h2>Full-Stack AI Engineer | ML-Powered Application Developer</h2>
+            <div class="contact-info">
+                <i class="fa-solid fa-phone"></i> +66 92 503 5043, +91 995 357 1101 <i class="fa-solid fa-envelope"></i>
+                amit.kr.py@gmail.com <i class="fa-solid fa-link"></i> <a
+                    href="https://linkedin.com/in/amitkrpy">https://linkedin/in/amitkrpy</a> <i
+                    class="fa-solid fa-location-dot"></i> Bangkok, Thailand
+            </div>
+        </div>
+
+        <!-- Two Column Content -->
+        <div class="content">
+            <!-- LEFT COLUMN -->
+            <div class="column-left">
+                <!-- Education -->
+                <div class="section">
+                    <h3 class="section-title">Education</h3>
+                    <div class="education-entry">
+                        <div class="education-degree">MSc and BSc in Mathematics and Computing</div>
+                        <div class="education-header">
+                            <div class="education-school">Indian Institute of Technology (IIT) Kharagpur</div>
+                            <div class="education-meta"><i class="fa-regular fa-calendar"></i> July 2006 - May 2011 <i
+                                    class="fa-solid fa-location-dot"></i> Kharagpur, India</div>
+                        </div>
+                        <div class="education-note">Five-year integrated program combining pure mathematics, applied
+                            mathematics, statistics, and computer science</div>
+                    </div>
+                </div>
+
+                <!-- Professional Experience -->
+                <div class="section">
+                    <h3 class="section-title">Professional Experience</h3>
+
+                    <div class="job-entry">
+                        <div class="job-title">Full-Stack AI Developer</div>
+                        <div class="job-header">
+                            <div class="job-company">Freelance Consultant</div>
+                            <div class="job-meta"><i class="fa-regular fa-calendar"></i> January 2024 - Present <i
+                                    class="fa-solid fa-location-dot"></i> Bangkok, Thailand</div>
+                        </div>
+                        <div class="job-description">Building AI-powered SAAS applications and agentic automation
+                            solutions for
+                            clients across logistics, finance, healthcare, marketing, and e-commerce sectors</div>
+                        <ul>
+                            <li>Architected and deployed <strong>8+ production AI applications</strong> including
+                                <strong>3 SAAS platforms</strong> (operations management, enterprise analytics,
+                                intelligent document extraction and data processing) using <strong>multi-agent
+                                    architectures</strong> with React/Next.js, FastAPI/Django, PostgreSQL, and LLM
+                                orchestration (OpenAI GPT-4, Anthropic Claude Sonnet)
+                            </li>
+                            <li>Developed <strong>agentic AI systems with tool-calling capabilities</strong> using
+                                LangChain/LangGraph
+                                and custom agent frameworks, implementing <strong>Model Context Protocol (MCP)
+                                    servers</strong> for
+                                standardized tool integration, RAG pipelines with vector databases (Pinecone, ChromaDB),
+                                and
+                                multi-step reasoning workflows that <strong>reduced customer support workload by
+                                    40%</strong> through
+                                autonomous problem-solving and intelligent task decomposition</li>
+                            <li>Built <strong>AI-native automation workflows</strong> with function calling, structured
+                                outputs (JSON mode),
+                                and prompt chaining across Python microservices, React frontends, and serverless
+                                functions,
+                                <strong>eliminating hundreds of hours monthly</strong> through intelligent CRM-marketing
+                                sync,
+                                document processing with semantic understanding, and autonomous decision-making agents
+                            </li>
+                            <li>Implemented <strong>production LLM inference pipelines</strong> with streaming
+                                responses, token
+                                optimization, and intelligent caching strategies using Redis and semantic caching,
+                                achieving
+                                <strong>sub-second first-token latency</strong> and <strong>60% cost reduction</strong>
+                                through
+                                prompt optimization, response caching, and efficient context window management for
+                                real-time
+                                applications with behavioral analytics and AI-powered recommendations
+                            </li>
+                            <li>Engineered <strong>multimodal AI extraction system</strong> combining vision-language
+                                models
+                                (GPT-4V, Google Gemini Vision) with structured extraction chains and validation layers,
+                                <strong>automating medical document processing with 99%+ accuracy</strong> across PDF,
+                                image,
+                                and unstructured text formats while maintaining HIPAA compliance and audit trails
+                            </li>
+                            <li>Established <strong>MLOps pipelines</strong> with Docker containerization, Kubernetes
+                                orchestration,
+                                GitHub Actions CI/CD, and <strong>LLM observability</strong> using LangSmith/Weights &
+                                Biases
+                                for prompt versioning, response quality monitoring, and A/B testing, enabling
+                                <strong>zero-downtime
+                                    deployments</strong> with automated testing, model performance tracking, and
+                                rollback capabilities
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="job-entry">
+                        <div class="job-title">Lead Data Scientist</div>
+                        <div class="job-header">
+                            <div class="job-company">Maqe</div>
+                            <div class="job-meta"><i class="fa-regular fa-calendar"></i> March 2022 - December 2023 <i
+                                    class="fa-solid fa-location-dot"></i> Bangkok, Thailand</div>
+                        </div>
+                        <div class="job-description">Led development of ML-powered features and AI applications for
+                            diverse clients while managing technical architecture and deployment infrastructure</div>
+                        <ul>
+                            <li>Engineered production-grade Text-to-SQL generative model using OpenAI LLMs and LangChain
+                                with FastAPI, implementing conversational chatbot interface to enable natural language
+                                database queries for sports analytics platform, delivering game statistics and insights
+                                to users</li>
+                            <li>Developed and deployed computer vision API achieving 98% accuracy using PyTorch and
+                                FastAPI, enabling real-time product detection for client mobile application on AWS
+                                infrastructure</li>
+                            <li>Led long-term engagement with Europe-based financial client building MLOps
+                                infrastructure using Docker, Kubernetes, and cloud platforms for machine learning
+                                models, implementing automated workflows and deployment pipelines to enable faster
+                                internal business decision-making processes</li>
+                            <li>Built multiple end-to-end POC applications with Python, React, and Streamlit from data
+                                collection through model development to interactive demo interfaces, demonstrating AI
+                                capabilities across diverse use cases and securing new client engagements</li>
+                        </ul>
+                    </div>
+
+                    <div class="job-entry">
+                        <div class="job-title">Senior Analyst, People Analytics</div>
+                        <div class="job-header">
+                            <div class="job-company">Agoda</div>
+                            <div class="job-meta"><i class="fa-regular fa-calendar"></i> July 2020 - February 2022 <i
+                                    class="fa-solid fa-location-dot"></i> Bangkok, Thailand</div>
+                        </div>
+                        <div class="job-description">Developed analytical tools and automation systems to support
+                            organizational decision-making and operational efficiency</div>
+                        <ul>
+                            <li>Built automated data pipelines using Python (Pandas, NumPy), SQL, Hadoop, and Hive on
+                                cloud infrastructure, replacing extensive manual reporting processes with real-time data
+                                flows</li>
+                            <li>Developed interactive Tableau dashboards tracking key organizational metrics including
+                                productivity, recruitment, and talent management for senior leadership decision-making
+                            </li>
+                            <li>Created Python-based workflows integrating multiple data sources (databases, APIs) with
+                                automated ETL processes, enabling consolidated analytics and reporting capabilities</li>
+                            <li>Coordinated and managed cross-functional projects with stakeholders and leaders across
+                                multiple teams, delivering proactive insights on productivity improvements,
+                                organizational changes, and talent strategies</li>
+                        </ul>
+                    </div>
+
+                    <div class="job-entry">
+                        <div class="job-title">AI/ML Developer</div>
+                        <div class="job-header">
+                            <div class="job-company">Contract Consulting</div>
+                            <div class="job-meta"><i class="fa-regular fa-calendar"></i> January 2018 - March 2019 <i
+                                    class="fa-solid fa-location-dot"></i> Gurgaon, India</div>
+                        </div>
+                        <div class="job-description">Developed machine learning applications and risk analytics systems
+                            for fintech and manufacturing clients</div>
+                        <ul>
+                            <li>Won competitive bid with manufacturing giant by developing time-series forecasting
+                                models using scikit-learn and XGBoost predicting annual sales with 90% accuracy,
+                                informing strategic inventory and production decisions; deployed as automated API
+                                service using Django REST Framework and Celery task queues</li>
+                            <li>Engineered fraud detection system using Python iGraph for network analysis and graph
+                                theory algorithms with real-time visualization dashboard, reducing fraud rate by 25%
+                            </li>
+                            <li>Built full-stack dashboards using Python, JavaScript, and PostgreSQL visualizing credit
+                                risk KPIs for underwriting and collections operations for app-based lending platform
+                            </li>
+                            <li>Designed and deployed machine learning decision trees (scikit-learn, XGBoost) for
+                                underwriting users without traditional credit history, adding 3% of new loans and
+                                generating 1% increase in revenue with model monitoring and validation processes</li>
+                        </ul>
+                    </div>
+
+                    <div class="job-entry">
+                        <div class="job-title">Senior Analyst, Healthcare Analytics</div>
+                        <div class="job-header">
+                            <div class="job-company">McKinsey & Company</div>
+                            <div class="job-meta"><i class="fa-regular fa-calendar"></i> April 2016 - May 2017 <i
+                                    class="fa-solid fa-location-dot"></i> Gurgaon, India</div>
+                        </div>
+                        <div class="job-description">Delivered advanced analytics and ML solutions for healthcare
+                            clients focused on operational efficiency and cost optimization</div>
+                        <ul>
+                            <li>Devised methodology using regression and time series models (R, Python) for timely
+                                procurement of pharmacy and medical supplies for top US hospital chain, predicting
+                                prices with 80% accuracy within 5% error range, resulting in 3% savings on spend base of
+                                $10M over six months</li>
+                            <li>Engaged with multiple major healthcare providers delivering analytics and machine
+                                learning solutions using R, Python, and SQL for ad-hoc business problems</li>
+                            <li>Developed scalable tools using R and Tableau with automated workflows providing
+                                plug-and-play reporting solutions on raw data, enabling client teams to generate
+                                insights independently and reducing turnaround time for analytical requests</li>
+                        </ul>
+                    </div>
+
+                    <div class="job-entry">
+                        <div class="job-title">Healthcare Data Analyst</div>
+                        <div class="job-header">
+                            <div class="job-company">SCIO Health Analytics</div>
+                            <div class="job-meta"><i class="fa-regular fa-calendar"></i> October 2013 - March 2015 <i
+                                    class="fa-solid fa-location-dot"></i> Hartford, USA & Chennai, India</div>
+                        </div>
+                        <div class="job-description">Built predictive models and analytics solutions for health
+                            insurance clients focused on risk stratification and fraud detection</div>
+                        <ul>
+                            <li>Developed regression models in SAS identifying impactable medical conditions and
+                                quantifying associated risk for top US health insurer, achieving 2% lift in accuracy
+                                over client's existing models; innovated joint probability-based technique for
+                                transforming sparse medical claims data into significant predictors</li>
+                            <li>Built predictive models using SAS and SQL on utilization and pharmacy claims data for
+                                clinical and financial risk prediction, condition identification (predicting major
+                                surgeries), and fraud detection (payment integrity) for multiple clients, creating
+                                analytical frameworks that became standard methodologies across client portfolio</li>
+                        </ul>
+                    </div>
+
+                    <div class="job-entry">
+                        <div class="job-title">Analyst, Credit Risk Analytics</div>
+                        <div class="job-header">
+                            <div class="job-company">Global Analytics</div>
+                            <div class="job-meta"><i class="fa-regular fa-calendar"></i> June 2011 - March 2013 <i
+                                    class="fa-solid fa-location-dot"></i> Chennai, India</div>
+                        </div>
+                        <div class="job-description">Built predictive models and designed experiments for consumer
+                            lending platform's risk management team</div>
+                        <ul>
+                            <li>Developed predictive models using R, Python, and SQL proposing new revenue segments to
+                                be opened up for lending platform; designed A/B tests and analyzed risk KPIs to manage
+                                portfolio of loans as part of risk monitoring team</li>
+                            <li>Conceptualized underwriting structure for newly launched consumer finance product,
+                                defining credit policies and risk framework; built automated decisioning systems
+                                integrating predictive models with business rules for real-time application processing
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="job-entry">
+                        <div class="job-title">Research Assistant</div>
+                        <div class="job-header">
+                            <div class="job-company">Aalto University, Department of Mathematics</div>
+                            <div class="job-meta"><i class="fa-regular fa-calendar"></i> Summer 2009 & 2010 <i
+                                    class="fa-solid fa-location-dot"></i> Helsinki, Finland</div>
+                        </div>
+                        <div class="job-description">Supported academic research in numerical analysis and computational
+                            mathematics</div>
+                        <ul>
+                            <li>Worked as student intern assisting Head of Department, Mathematics and research group on
+                                topics in numerical analysis; implemented computational algorithms in MATLAB for solving
+                                numerical analysis problems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="column-right">
+                <!-- Professional Summary -->
+                <div class="section no-break">
+                    <h3 class="section-title">Professional Summary</h3>
+                    <div class="summary">
+                        <p>Full-Stack AI Engineer with 12+ years of experience building production ML systems and
+                            AI-powered applications across fintech, healthcare, and e-commerce. Currently developing
+                            SAAS products, intelligent chatbots, and automated integrations for clients worldwide.</p>
+                        <p>Combines deep machine learning expertise with modern full-stack development capabilities to
+                            architect and ship scalable AI applications that drive measurable business impact. Proven
+                            track record delivering solutions including fraud detection systems, LLM-based interfaces,
+                            and automated workflows.</p>
+                        <p>Expertise spans the complete development lifecycle from system design and API development to
+                            cloud deployment and MLOps. Adaptive personality, being a mix of team player, mentor, or
+                            leader as a project demands.</p>
+                    </div>
+                </div>
+
+                <!-- Technical Skills -->
+                <div class="section">
+                    <h3 class="section-title">Technical Skills</h3>
+
+                    <div class="skills-category">
+                        <div class="skills-category-title">AI/ML & LLM Development</div>
+                        <div class="skills-list">LangChain • LlamaIndex • OpenAI API (GPT-4, GPT-3.5) • Anthropic Claude
+                            • Huggingface Transformers • BART • Text-to-SQL • RAG Systems • Prompt Engineering • PyTorch
+                            • TensorFlow • Keras • FastAI • Computer Vision • NLP • Vector Databases (Pinecone,
+                            Weaviate, Chroma) • Embedding Models • scikit-learn • XGBoost • LightGBM • Model Fine-tuning
+                            • Transfer Learning</div>
+                    </div>
+
+                    <div class="skills-category">
+                        <div class="skills-category-title">Full-Stack Development</div>
+                        <div class="skills-list">Python • JavaScript • TypeScript • React • Next.js • Node.js • FastAPI
+                            • Django • Flask • REST APIs • GraphQL • WebSockets • HTML/CSS • Responsive Design • State
+                            Management • API Integration • Authentication (OAuth 2.0, JWT) • Rate Limiting • CORS</div>
+                    </div>
+
+                    <div class="skills-category">
+                        <div class="skills-category-title">Cloud & Infrastructure</div>
+                        <div class="skills-list">AWS (EC2, Lambda, S3, RDS, SageMaker, CloudWatch) • GCP (Cloud Run,
+                            BigQuery, Vertex AI) • Docker • Kubernetes • CI/CD Pipelines • GitHub Actions • Jenkins •
+                            Nginx • Load Balancing • Auto-scaling • Serverless Architecture • Infrastructure as Code •
+                            Terraform • CloudFormation</div>
+                    </div>
+
+                    <div class="skills-category">
+                        <div class="skills-category-title">Data Engineering & Databases</div>
+                        <div class="skills-list">PostgreSQL • MySQL • MongoDB • Redis • Elasticsearch • DynamoDB •
+                            Apache Kafka • Apache Spark • Hadoop • Hive • Celery • Airflow • SQL • NoSQL • Data
+                            Pipelines • ETL/ELT • Real-time Streaming • Pandas • NumPy • Polars • Data Modeling • Query
+                            Optimization</div>
+                    </div>
+
+                    <div class="skills-category">
+                        <div class="skills-category-title">MLOps & Monitoring</div>
+                        <div class="skills-list">Model Deployment • Model Versioning • A/B Testing • Experiment Tracking
+                            • MLflow • Weights & Biases • Model Monitoring • Performance Metrics • Logging • Error
+                            Tracking • Alerting • Cost Optimization</div>
+                    </div>
+
+                    <div class="skills-category">
+                        <div class="skills-category-title">Development Practices & Tools</div>
+                        <div class="skills-list">Agile/Scrum • Git/GitHub • Code Review • API Documentation (Swagger,
+                            OpenAPI) • Test-Driven Development • Unit Testing • Integration Testing • Microservices
+                            Architecture • Event-Driven Architecture • Design Patterns • Tableau • Streamlit • Jupyter •
+                            VS Code • Performance Optimization</div>
+                    </div>
+
+                    <div class="skills-category">
+                        <div class="skills-category-title">Analytics & Specialized Tools</div>
+                        <div class="skills-list">R • SAS • MATLAB • Statistics • Predictive Modeling • Time Series
+                            Analysis • Network Analysis • Graph Theory • iGraph • Risk Analytics • matplotlib • Seaborn
+                            • Plotly • Data Visualization • Cloudera</div>
+                    </div>
+                </div>
+
+                <!-- Key Achievements -->
+                <div class="section no-break">
+                    <h3 class="section-title">Key Achievements & Impact</h3>
+                    <ul class="achievements-list">
+                        <li><strong>98% accuracy</strong> delivered on production computer vision API for product
+                            recognition</li>
+                        <li><strong>90% accuracy</strong> achieved on sales forecasting models for manufacturing client
+                        </li>
+                        <li><strong>80% accuracy within 5% error range</strong> on pharmacy supply price prediction
+                            models</li>
+                        <li><strong>25% reduction</strong> in fraud rate through network analysis and graph theory
+                            implementation</li>
+                        <li><strong>3% savings</strong> on $10M spend base through procurement optimization methodology
+                        </li>
+                        <li><strong>3% increase</strong> in new loans and <strong>1% revenue increase</strong> through
+                            innovative underwriting approach for customers without credit history</li>
+                        <li><strong>2% lift</strong> in model accuracy over existing client models for healthcare risk
+                            prediction</li>
+                    </ul>
+                </div>
+
+                <!-- Professional Values -->
+                <div class="section no-break">
+                    <h3 class="section-title">Professional Values</h3>
+                    <div class="values">
+                        Integrity • Collaboration • Technical Excellence • Continuous Learning • User-Centric Design •
+                        Inclusive Leadership • Professionalism • Mutual Respect
+                    </div>
+                </div>
+
+                <div class="availability">
+                    Available for full-time opportunities | Open to remote or hybrid roles
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

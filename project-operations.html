@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operations Management SaaS - Amit Kumar</title>
+    <meta name="description"
+        content="Full-stack operations management platform with real-time tracking and CRM integration">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="project-page.css">
+    <link rel="stylesheet" href="flubber.css">
+    <link rel="stylesheet" href="flubber-chat.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+
+<body>
+    <!-- Sidebar Placeholder (prevents flickering) -->
+    <aside class="sidebar" id="sidebar-placeholder"></aside>
+
+    <!-- Sidebar will be loaded dynamically by sidebar-loader.js -->
+    <script src="sidebar-loader.js"></script>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-wrapper">
+        <!-- Window Title Bar -->
+        <div class="window-titlebar">
+            <div class="window-buttons">
+                <span class="window-button window-close"></span>
+                <span class="window-button window-minimize"></span>
+                <span class="window-button window-maximize"></span>
+            </div>
+            <div class="window-title">operations-saas.project</div>
+        </div>
+
+        <!-- IDE Editor Area -->
+        <div class="ide-editor">
+            <!-- File Explorer Panel (inside IDE window) -->
+            <aside class="ide-file-explorer">
+                <div class="explorer-header">
+                    <i data-lucide="folder-open"></i>
+                    <span>EXPLORER</span>
+                </div>
+                <nav class="explorer-tree">
+                    <a href="#overview" class="explorer-file active" data-section="overview">
+                        <i data-lucide="file-text"></i>
+                        <span>overview.md</span>
+                    </a>
+                    <a href="#problem-solution" class="explorer-file" data-section="problem-solution">
+                        <i data-lucide="file-text"></i>
+                        <span>problem-solution.md</span>
+                    </a>
+                    <a href="#role" class="explorer-file" data-section="role">
+                        <i data-lucide="file-text"></i>
+                        <span>my-role.md</span>
+                    </a>
+                    <a href="#architecture" class="explorer-file" data-section="architecture">
+                        <i data-lucide="box"></i>
+                        <span>architecture.tsx</span>
+                    </a>
+                    <a href="#features" class="explorer-file" data-section="features">
+                        <i data-lucide="zap"></i>
+                        <span>features.json</span>
+                    </a>
+                    <a href="#tech-stack" class="explorer-file" data-section="tech-stack">
+                        <i data-lucide="settings"></i>
+                        <span>tech-stack.yml</span>
+                    </a>
+                    <a href="#highlights" class="explorer-file" data-section="highlights">
+                        <i data-lucide="star"></i>
+                        <span>highlights.ts</span>
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- Main Editor Content -->
+            <div class="ide-main-content">
+                <div class="ide-tabs">
+                    <div class="ide-tab active">
+                        <i data-lucide="truck" class="tab-icon"></i>
+                        <span>Operations Management SaaS</span>
+                    </div>
+                </div>
+
+                <div class="ide-content">
+                    <div class="project-header">
+                        <h1 class="project-title">Enterprise Operations Management Platform</h1>
+                        <div class="project-meta-tags">
+                            <span class="meta-tag">Real-time Operations Dashboard</span>
+                            <span class="meta-tag">Service Organizations</span>
+                            <span class="meta-tag">Full-Stack Developer (Solo)</span>
+                        </div>
+                    </div>
+
+                    <section id="overview" class="content-section">
+                        <h2 class="section-heading">
+                            <span class="line-number">01</span>
+                            <span class="section-title">Overview</span>
+                        </h2>
+                        <div class="section-content">
+                            <p>Built a full-stack platform to streamline operations for a 7-location service
+                                organization,
+                                replacing manual paper-based workflows with automated digital processes. The system
+                                provides
+                                real-time visibility, automated CRM integration, GPS tracking, and team communication.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section id="problem-solution" class="content-section">
+                        <h2 class="section-heading">
+                            <span class="line-number">02</span>
+                            <span class="section-title">Problem & Solution</span>
+                        </h2>
+                        <div class="section-content">
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">Challenge</span>
+                                </div>
+                                <p>Manual data entry, no cross-location visibility, poor lead tracking, and disconnected
+                                    teams across 90 miles.</p>
+                            </div>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">Solution</span>
+                                </div>
+                                <p>Mobile-first platform with real-time dashboard, automated CRM sync, live GPS
+                                    tracking,
+                                    and integrated communication - eliminating double entry and enabling instant
+                                    operational
+                                    coordination.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="role" class="content-section">
+                        <h2 class="section-heading">
+                            <span class="line-number">03</span>
+                            <span class="section-title">My Role</span>
+                        </h2>
+                        <div class="section-content">
+                            <p class="role-title"><strong>Full-Stack Developer</strong> (Solo)</p>
+                            <ul class="feature-list">
+                                <li>Architected and developed complete system: backend API, frontend app, and database
+                                </li>
+                                <li>Implemented CRM integration with retry logic and error handling</li>
+                                <li>Built real-time features using WebSockets for live updates</li>
+                                <li>Deployed production system with CI/CD pipelines</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="architecture" class="content-section">
+                        <h2 class="section-heading">
+                            <span class="line-number">04</span>
+                            <span class="section-title">Architecture</span>
+                        </h2>
+                        <div class="section-content">
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">System Architecture</span>
+                                </div>
+                                <pre class="architecture-diagram">┌─────────────────────────────────────────────────────┐
+│           Next.js 14 Frontend (Vercel)              │
+│   React + TypeScript + TailwindCSS + Radix UI       │
+│              Real-time Subscriptions                │
+└──────────────────┬──────────────────────────────────┘
+                   │ REST API + WebSocket
+┌──────────────────┴──────────────────────────────────┐
+│          FastAPI Backend (Render)                   │
+│   Python + JWT Auth + RBAC + Background Jobs        │
+└──────┬──────────────────┬──────────────┬──────────--┘
+       │                  │              │
+┌──────┴───────┐  ┌───────┴──────┐  ┌───┴──────┐
+│  PostgreSQL  │  │    Redis     │  │ External │
+│  (Supabase)  │  │ (Cache/Jobs) │  │  CRM API │
+└──────────────┘  └──────────────┘  └──────────┘
+
+Integrations: Google Maps • Firebase • SendGrid</pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="features" class="content-section">
+                        <h2 class="section-heading">
+                            <span class="line-number">05</span>
+                            <span class="section-title">Key Features</span>
+                        </h2>
+                        <div class="section-content">
+                            <div class="features-grid">
+                                <div class="feature-card">
+                                    <h3>Real-Time Dashboard</h3>
+                                    <ul>
+                                        <li>Live operational metrics with WebSocket updates</li>
+                                        <li>Multi-location filtering and date ranges</li>
+                                        <li>Mobile-responsive widget interface</li>
+                                    </ul>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>Lead Management</h3>
+                                    <ul>
+                                        <li>Digital intake forms with duplicate detection</li>
+                                        <li>Automated CRM sync with retry logic</li>
+                                        <li>Follow-up reminders and conversion tracking</li>
+                                    </ul>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>GPS Tracking</h3>
+                                    <ul>
+                                        <li>30-second location updates</li>
+                                        <li>Live ETA with Google Maps traffic data</li>
+                                        <li>Shareable tracking links for stakeholders</li>
+                                    </ul>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>Team Communication</h3>
+                                    <ul>
+                                        <li>Multi-channel chat with @mentions</li>
+                                        <li>Real-time notifications</li>
+                                        <li>Message search and pinning</li>
+                                    </ul>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>User Management</h3>
+                                    <ul>
+                                        <li>Role-based access control (5 levels)</li>
+                                        <li>Location-based permissions</li>
+                                        <li>Activity audit logging</li>
+                                    </ul>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>Mobile PWA</h3>
+                                    <ul>
+                                        <li>Installable on iOS/Android</li>
+                                        <li>Push notifications</li>
+                                        <li>Offline functionality</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="tech-stack" class="content-section">
+                        <h2 class="section-heading">
+                            <span class="line-number">06</span>
+                            <span class="section-title">Tech Stack</span>
+                        </h2>
+                        <div class="section-content">
+                            <div class="tech-categories">
+                                <div class="tech-category">
+                                    <h3>Frontend</h3>
+                                    <div class="tech-tags">
+                                        <span class="tech-tag">Next.js 14</span>
+                                        <span class="tech-tag">TypeScript</span>
+                                        <span class="tech-tag">React 18</span>
+                                        <span class="tech-tag">TailwindCSS</span>
+                                        <span class="tech-tag">Radix UI</span>
+                                        <span class="tech-tag">TanStack Query</span>
+                                        <span class="tech-tag">React Hook Form</span>
+                                        <span class="tech-tag">Zod</span>
+                                    </div>
+                                </div>
+                                <div class="tech-category">
+                                    <h3>Backend</h3>
+                                    <div class="tech-tags">
+                                        <span class="tech-tag">Python 3.11</span>
+                                        <span class="tech-tag">FastAPI</span>
+                                        <span class="tech-tag">SQLAlchemy</span>
+                                        <span class="tech-tag">Pydantic</span>
+                                        <span class="tech-tag">Celery</span>
+                                        <span class="tech-tag">Redis</span>
+                                        <span class="tech-tag">WebSockets</span>
+                                    </div>
+                                </div>
+                                <div class="tech-category">
+                                    <h3>Database & Infrastructure</h3>
+                                    <div class="tech-tags">
+                                        <span class="tech-tag">PostgreSQL</span>
+                                        <span class="tech-tag">Supabase</span>
+                                        <span class="tech-tag">Vercel</span>
+                                        <span class="tech-tag">Render</span>
+                                    </div>
+                                </div>
+                                <div class="tech-category">
+                                    <h3>Integrations</h3>
+                                    <div class="tech-tags">
+                                        <span class="tech-tag">Google Maps API</span>
+                                        <span class="tech-tag">Firebase Cloud Messaging</span>
+                                        <span class="tech-tag">SendGrid</span>
+                                        <span class="tech-tag">Enterprise CRM REST API</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="highlights" class="content-section">
+                        <h2 class="section-heading">
+                            <span class="line-number">07</span>
+                            <span class="section-title">Technical Highlights</span>
+                        </h2>
+                        <div class="section-content">
+                            <ul class="feature-list">
+                                <li>End-to-end type safety (TypeScript + Pydantic)</li>
+                                <li>Real-time WebSocket architecture</li>
+                                <li>JWT authentication with RBAC</li>
+                                <li>Background job processing with retry logic</li>
+                                <li>RESTful API with OpenAPI documentation</li>
+                                <li>Responsive PWA with offline support</li>
+                                <li>Strategic database indexing for performance</li>
+                                <li>CI/CD pipelines with automated deployment</li>
+                            </ul>
+                            <p class="disclaimer">Built with modern technologies and best practices for production-ready
+                                enterprise software. This is a private production application - detailed demonstrations
+                                available upon request.</p>
+                        </div>
+                    </section>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Initialize Lucide icons
+            lucide.createIcons();
+
+            // Scroll-based navigation highlighting
+            const sections = document.querySelectorAll('.content-section');
+            const navItems = document.querySelectorAll('.explorer-file');
+
+            function setActiveNav(sectionId) {
+                navItems.forEach(item => {
+                    if (item.getAttribute('data-section') === sectionId) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+            }
+
+            function handleScroll() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (window.pageYOffset >= sectionTop - 200) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                if (current) {
+                    setActiveNav(current);
+                }
+            }
+
+            // Handle navigation clicks
+            navItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    const sectionId = item.getAttribute('data-section');
+                    const targetSection = document.getElementById(sectionId);
+
+                    if (targetSection) {
+                        e.preventDefault();
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                        setActiveNav(sectionId);
+                    }
+                });
+            });
+
+            // Listen to scroll events
+            window.addEventListener('scroll', handleScroll);
+
+            // Initial check on page load
+            handleScroll();
+        </script>
+</body>
+
+</html>

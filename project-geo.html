@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generative Engine Optimization Platform - Amit Kumar</title>
+    <meta name="description" content="Generative Engine Optimization Platform">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="project-page.css">
+    <link rel="stylesheet" href="flubber.css">
+    <link rel="stylesheet" href="flubber-chat.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+
+<body>
+    <!-- Sidebar Placeholder (prevents flickering) -->
+    <aside class="sidebar" id="sidebar-placeholder"></aside>
+
+    <!-- Sidebar will be loaded dynamically by sidebar-loader.js -->
+    <script src="sidebar-loader.js"></script>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-wrapper">
+        <!-- Window Title Bar -->
+        <div class="window-titlebar">
+            <div class="window-buttons">
+                <span class="window-button window-close"></span>
+                <span class="window-button window-minimize"></span>
+                <span class="window-button window-maximize"></span>
+            </div>
+            <div class="window-title">geo-platform.jsx</div>
+        </div>
+
+        <!-- IDE Editor Area -->
+        <div class="ide-editor">
+            <!-- File Explorer Panel (inside IDE window) -->
+            <aside class="ide-file-explorer">
+                <div class="explorer-header">
+                    <i data-lucide="folder-open"></i>
+                    <span>EXPLORER</span>
+                </div>
+                <nav class="explorer-tree">
+                    <a href="#overview" class="explorer-file active" data-section="overview">
+                        <i data-lucide="file-text"></i>
+                        <span>overview.md</span>
+                    </a>
+                    <a href="#problem-solution" class="explorer-file" data-section="problem-solution">
+                        <i data-lucide="file-text"></i>
+                        <span>problem-solution.md</span>
+                    </a>
+                    <a href="#role" class="explorer-file" data-section="role">
+                        <i data-lucide="file-text"></i>
+                        <span>my-role.md</span>
+                    </a>
+                    <a href="#architecture" class="explorer-file" data-section="architecture">
+                        <i data-lucide="box"></i>
+                        <span>architecture.tsx</span>
+                    </a>
+                    <a href="#features" class="explorer-file" data-section="features">
+                        <i data-lucide="zap"></i>
+                        <span>features.json</span>
+                    </a>
+                    <a href="#tech-stack" class="explorer-file" data-section="tech-stack">
+                        <i data-lucide="settings"></i>
+                        <span>tech-stack.yml</span>
+                    </a>
+                    <a href="#highlights" class="explorer-file" data-section="highlights">
+                        <i data-lucide="star"></i>
+                        <span>highlights.ts</span>
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- Main Editor Content -->
+            <div class="ide-main-content">
+                <div class="ide-tabs">
+                    <div class="ide-tab active">
+                        <i data-lucide="search" class="tab-icon"></i>
+                        <span>Generative Engine Optimization Platform</span>
+                    </div>
+                </div>
+
+                <div class="ide-content">
+                    <div class="project-header">
+                        <h1 class="project-title">Generative Engine Optimization Platform</h1>
+                        <div class="project-meta-tags">
+                            <span class="meta-tag">AI-Powered Web Analyzer</span>
+                            <span class="meta-tag">SEO & Content Optimization</span>
+                            <span class="meta-tag">Full-Stack Developer (Solo)</span>
+                        </div>
+                    </div>
+
+                    <section id="overview" class="content-section">
+                        <h2 class="section-heading">
+                            <span class="line-number">01</span>
+                            <span class="section-title">Overview</span>
+                        </h2>
+                        <div class="section-content">
+                            <p>
+                                Built a full-stack platform that analyzes and optimizes web pages for visibility in
+                                generative AI search engines (ChatGPT, Perplexity, Google AI, Bing Chat). The system
+                                audits websites, identifies optimization opportunities, and generates improved versions
+                                with enhanced structured data and AI-readable content formatting.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section id="problem-solution" class="content-section">
+                        <h2 class="section-heading">
+                            <span class="line-number">02</span>
+                            <span class="section-title">Problem & Solution</span>
+                        </h2>
+                        <div class="section-content">
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">Challenge</span>
+                                </div>
+                                <p> Traditional SEO doesn't optimize for AI-powered search engines. Websites need
+                                    structured data, enhanced content formatting, and specific technical optimizations
+                                    to be properly understood and cited by generative AI systems.</p>
+                            </div>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">Solution</span>
+                                </div>
+                                <p> Automated platform that scrapes web pages, analyzes content structure, detects
+                                    optimization gaps, and generates comprehensive improvements including schema markup,
+                                    meta optimization, and AI-friendly content restructuring - all while preserving
+                                    backlinks to original content.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="role" class="content-section">
+                        <h2 class="section-heading">
+                            <span class="line-number">03</span>
+                            <span class="section-title">My Role</span>
+                        </h2>
+                        <div class="section-content">
+                            <p><strong>Full-Stack Developer</strong> (Solo)</p>
+                            <ul class="feature-list">
+                                <li>Architected and developed complete system: FastAPI backend, React frontend, and
+                                    multi-service analysis engine</li>
+                                <li>Implemented 12+ specialized analyzers for content, schema, technical SEO, and media
+                                    optimization</li>
+                                <li>Built AI-powered content optimization using GPT-4 for semantic analysis and
+                                    enhancement</li>
+                                <li>Deployed production system with database persistence and session replay
+                                    functionality</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="architecture" class="content-section">
+                        <h2 class="section-heading">
+                            <span class="line-number">04</span>
+                            <span class="section-title">Architecture</span>
+                        </h2>
+                        <div class="section-content">
+                            <div class="code-block">
+                                <pre class="architecture-diagram"
+                                    style="overflow-x: auto; font-size: 0.875rem; line-height: 1.5;">
+┌─────────────────────────────────────────────────────┐
+│           React Frontend (Vercel)                   │
+│         TailwindCSS + Modern UI Components          │
+└──────────────────┬──────────────────────────────────┘
+                   │ REST API
+┌──────────────────┴──────────────────────────────────┐
+│          FastAPI Backend (Render)                   │
+│   Python + Async Processing + LLM Integration       │
+└──────┬───────────────────────────────┬──────────────┘
+       │                               │
+┌──────┴───────┐              ┌────────┴──────────┐
+│  PostgreSQL  │              │  Analysis Engine  │
+│  (Supabase)  │              │   12+ Services    │
+└──────────────┘              └───────────────────┘
+                                      │
+                              ┌───────┴────────┐
+                              │                │
+                    ┌─────────┴──┐   ┌─────────┴─────-┐
+                    │  OpenAI    │   │  BeautifulSoup │
+                    │  GPT-4     │   │  Web Scraper   │
+                    └────────────┘   └────────────────┘
+
+Integrations: OpenAI API • Advanced Web Scraping • JSON-LD Schema Generation</pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="features" class="content-section">
+                        <h2 class="section-heading">
+                            <span class="line-number">05</span>
+                            <span class="section-title">Key Features</span>
+                        </h2>
+                        <div class="section-content">
+                            <div class="features-grid">
+                                <div class="feature-card">
+                                    <h3>Multi-Layer Web Scraping</h3>
+                                    <ul>
+                                        <li>Traditional HTML parsing with BeautifulSoup</li>
+                                        <li>Headless browser rendering for SPA/JavaScript apps</li>
+                                        <li>Intelligent content extraction from React/Angular/Vue applications</li>
+                                        <li>Media and metadata analysis</li>
+                                    </ul>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>Comprehensive Content Analysis</h3>
+                                    <ul>
+                                        <li>Content structure and readability scoring</li>
+                                        <li>FAQ detection and generation</li>
+                                        <li>Citation and authority signal analysis</li>
+                                        <li>E-E-A-T (Experience, Expertise, Authoritativeness, Trust) evaluation</li>
+                                        <li>Heading hierarchy and text density assessment</li>
+                                    </ul>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>Schema Markup Generation</h3>
+                                    <ul>
+                                        <li>Automated JSON-LD structured data generation</li>
+                                        <li>FAQ, Article, HowTo, Organization schema types</li>
+                                        <li>Validation and conflict detection</li>
+                                        <li>AI-optimized schema formatting</li>
+                                    </ul>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>Technical SEO Analysis</h3>
+                                    <ul>
+                                        <li>Meta tag optimization for AI consumption</li>
+                                        <li>Robots.txt and sitemap validation</li>
+                                        <li>Crawlability assessment</li>
+                                        <li>AI crawler compatibility checks</li>
+                                        <li>llms.txt generation (AI-specific sitemap)</li>
+                                    </ul>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>AI-Powered Optimization</h3>
+                                    <ul>
+                                        <li>GPT-4 semantic content analysis</li>
+                                        <li>Automated content enhancement suggestions</li>
+                                        <li>Question-focused title generation</li>
+                                        <li>AI-friendly content restructuring</li>
+                                    </ul>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>Contextual Intelligence</h3>
+                                    <ul>
+                                        <li>Internal link crawling for business context</li>
+                                        <li>Multi-page analysis for comprehensive optimization</li>
+                                        <li>Cross-service data consolidation</li>
+                                        <li>Real business information extraction</li>
+                                    </ul>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>Session Persistence</h3>
+                                    <ul>
+                                        <li>Database storage of all analyses</li>
+                                        <li>Session replay functionality</li>
+                                        <li>Historical optimization tracking</li>
+                                        <li>Export functionality for optimized pages</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="tech-stack" class="content-section">
+                        <h2 class="section-heading">
+                            <span class="line-number">06</span>
+                            <span class="section-title">Tech Stack</span>
+                        </h2>
+                        <div class="section-content">
+                            <div class="tech-categories">
+                                <div class="tech-category">
+                                    <h3>Frontend</h3>
+                                    <div class="tech-tags">
+                                        <span class="tech-tag">React 18, JavaScript ES6+</span>
+                                        <span class="tech-tag">TailwindCSS, Modern UI Components</span>
+                                        <span class="tech-tag">Axios for API communication</span>
+                                    </div>
+                                </div>
+                                <div class="tech-category">
+                                    <h3>Backend</h3>
+                                    <div class="tech-tags">
+                                        <span class="tech-tag">Python 3.11, FastAPI</span>
+                                        <span class="tech-tag">SQLAlchemy, PostgreSQL</span>
+                                        <span class="tech-tag">Pydantic schemas</span>
+                                        <span class="tech-tag">Async/await architecture</span>
+                                    </div>
+                                </div>
+                                <div class="tech-category">
+                                    <h3>Web Scraping & Analysis</h3>
+                                    <div class="tech-tags">
+                                        <span class="tech-tag">BeautifulSoup4 (HTML parsing)</span>
+                                        <span class="tech-tag">Headless browser rendering</span>
+                                        <span class="tech-tag">Custom content extractors</span>
+                                    </div>
+                                </div>
+                                <div class="tech-category">
+                                    <h3>AI & LLM Integration</h3>
+                                    <div class="tech-tags">
+                                        <span class="tech-tag">OpenAI GPT-4 API</span>
+                                        <span class="tech-tag">Custom prompt engineering</span>
+                                        <span class="tech-tag">Rate limiting and retry logic</span>
+                                        <span class="tech-tag">LLM input optimization</span>
+                                    </div>
+                                </div>
+                                <div class="tech-category">
+                                    <h3>Database & Infrastructure</h3>
+                                    <div class="tech-tags">
+                                        <span class="tech-tag">PostgreSQL (Supabase)</span>
+                                        <span class="tech-tag">Vercel (frontend hosting)</span>
+                                        <span class="tech-tag">Render (backend hosting)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="highlights" class="content-section">
+                        <h2 class="section-heading">
+                            <span class="line-number">07</span>
+                            <span class="section-title">Technical Highlights</span>
+                        </h2>
+                        <div class="section-content">
+                            <ul class="feature-list">
+                                <li>Microservices architecture with 12+ specialized analyzers</li>
+                                <li>Async request processing for optimal performance</li>
+                                <li>Comprehensive error handling and retry mechanisms</li>
+                                <li>Advanced SPA detection and optimization</li>
+                                <li>Multi-layer scraping fallback strategy</li>
+                                <li>Structured data validation and conflict resolution</li>
+                                <li>Session persistence with database integration</li>
+                                <li>RESTful API with comprehensive documentation</li>
+                                <li>Rate-limited LLM integration for cost optimization</li>
+                                <li>Debug logging and session replay for troubleshooting</li>
+                            </ul>
+                            <p style="margin-top: 2rem; font-style: italic; color: #999;">
+                                Built with modern AI technologies and best practices for next-generation search
+                                optimization.
+                                This is a private production application - detailed demonstrations available upon
+                                request.
+                            </p>
+                        </div>
+                    </section>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Initialize Lucide icons
+            lucide.createIcons();
+
+            // Scroll-based navigation highlighting
+            const sections = document.querySelectorAll('.content-section');
+            const navItems = document.querySelectorAll('.explorer-file');
+
+            function setActiveNav(sectionId) {
+                navItems.forEach(item => {
+                    if (item.getAttribute('data-section') === sectionId) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+            }
+
+            function handleScroll() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (window.pageYOffset >= sectionTop - 200) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                if (current) {
+                    setActiveNav(current);
+                }
+            }
+
+            // Handle navigation clicks
+            navItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    const sectionId = item.getAttribute('data-section');
+                    const targetSection = document.getElementById(sectionId);
+
+                    if (targetSection) {
+                        e.preventDefault();
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                        setActiveNav(sectionId);
+                    }
+                });
+            });
+
+            // Listen to scroll events
+            window.addEventListener('scroll', handleScroll);
+
+            // Initial check on page load
+            handleScroll();
+        </script>
+</body>
+
+</html>
+```

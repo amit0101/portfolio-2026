@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Audio Generation App - Amit Kumar</title>
+    <meta name="description" content="Personalized Audio Generation App">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="project-page.css">
+    <link rel="stylesheet" href="flubber.css">
+    <link rel="stylesheet" href="flubber-chat.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+
+<body>
+    <!-- Sidebar Placeholder (prevents flickering) -->
+    <aside class="sidebar" id="sidebar-placeholder"></aside>
+
+    <!-- Sidebar will be loaded dynamically by sidebar-loader.js -->
+    <script src="sidebar-loader.js"></script>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-wrapper">
+        <!-- Window Title Bar -->
+        <div class="window-titlebar">
+            <div class="window-buttons">
+                <span class="window-button window-close"></span>
+                <span class="window-button window-minimize"></span>
+                <span class="window-button window-maximize"></span>
+            </div>
+            <div class="window-title">audio-generation.jsx</div>
+        </div>
+
+        <!-- IDE Editor Area -->
+        <div class="ide-editor">
+            <!-- File Explorer Panel (inside IDE window) -->
+            <aside class="ide-file-explorer">
+                <div class="explorer-header">
+                    <i data-lucide="folder-open"></i>
+                    <span>EXPLORER</span>
+                </div>
+                <nav class="explorer-tree">
+                    <a href="#overview" class="explorer-file active" data-section="overview">
+                        <i data-lucide="file-text"></i>
+                        <span>overview.md</span>
+                    </a>
+                    <a href="#problem-solution" class="explorer-file" data-section="problem-solution">
+                        <i data-lucide="file-text"></i>
+                        <span>problem-solution.md</span>
+                    </a>
+                    <a href="#role" class="explorer-file" data-section="role">
+                        <i data-lucide="file-text"></i>
+                        <span>my-role.md</span>
+                    </a>
+                    <a href="#architecture" class="explorer-file" data-section="architecture">
+                        <i data-lucide="box"></i>
+                        <span>architecture.tsx</span>
+                    </a>
+                    <a href="#features" class="explorer-file" data-section="features">
+                        <i data-lucide="zap"></i>
+                        <span>features.json</span>
+                    </a>
+                    <a href="#tech-stack" class="explorer-file" data-section="tech-stack">
+                        <i data-lucide="settings"></i>
+                        <span>tech-stack.yml</span>
+                    </a>
+                    <a href="#highlights" class="explorer-file" data-section="highlights">
+                        <i data-lucide="star"></i>
+                        <span>highlights.ts</span>
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- Main Editor Content -->
+            <div class="ide-main-content">
+                <div class="ide-tabs">
+                    <div class="ide-tab active">
+                        <i data-lucide="audio-lines" class="tab-icon"></i>
+                        <span>Personalized Audio Generation App</span>
+                    </div>
+                </div>
+
+                <div class="ide-content">
+                    <div class="project-header">
+                        <h1 class="project-title">Personalized Audio Generation App</h1>
+                        <div class="project-meta-tags">
+                            <span class="meta-tag">Personalized Audio Generation</span>
+                            <span class="meta-tag">Content Creation</span>
+                            <span class="meta-tag">Full-Stack Developer (Solo)</span>
+                        </div>
+                    </div>
+
+                    <section id="overview" class="content-section">
+                        <h2 class="section-heading">
+                            <span class="line-number">01</span>
+                            <span class="section-title">Overview</span>
+                        </h2>
+                        <div class="section-content">
+                            <p>
+                                Built a full-stack platform that generates personalized audio content through AI-driven
+                                conversations. The system uses natural language processing to understand user goals,
+                                generates customized content, converts text to high-quality speech, applies audio
+                                effects, and delivers professional audio files - all through an intuitive conversational
+                                interface.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section id="problem-solution" class="content-section">
+                        <h2 class="section-heading">
+                            <span class="line-number">02</span>
+                            <span class="section-title">Problem & Solution</span>
+                        </h2>
+                        <div class="section-content">
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">Challenge</span>
+                                </div>
+                                <p> Users need personalized content creation but face barriers with traditional
+                                    text-based tools and lack audio production expertise.</p>
+                            </div>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">Solution</span>
+                                </div>
+                                <p> Conversational AI chatbot that guides users through content generation,
+                                    automatically produces professional audio with effects, and handles payment
+                                    processing - eliminating technical barriers and manual audio production work.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="role" class="content-section">
+                        <h2 class="section-heading">
+                            <span class="line-number">03</span>
+                            <span class="section-title">My Role</span>
+                        </h2>
+                        <div class="section-content">
+                            <p><strong>Full-Stack Developer</strong> (Solo)</p>
+                            <ul class="feature-list">
+                                <li>Architected and developed complete system: backend API, frontend app, and processing
+                                    pipeline</li>
+                                <li>Integrated multiple AI services (GPT-4, ElevenLabs TTS) with error handling</li>
+                                <li>Built asynchronous job processing for long-running audio generation tasks</li>
+                                <li>Implemented payment flow with Stripe and automated delivery system</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="architecture" class="content-section">
+                        <h2 class="section-heading">
+                            <span class="line-number">04</span>
+                            <span class="section-title">Architecture</span>
+                        </h2>
+                        <div class="section-content">
+                            <div class="code-block">
+                                <pre class="architecture-diagram"
+                                    style="overflow-x: auto; font-size: 0.875rem; line-height: 1.5;">
+┌─────────────────────────────────────────────────────┐
+│              React Frontend (Vercel)                │
+│    React 17 + React Router + Axios                  │
+│         Conversational UI + Audio Player            │
+└──────────────────┬──────────────────────────────────┘
+                   │ REST API
+┌──────────────────┴──────────────────────────────────┐
+│            Flask Backend (Render)                   │
+│    Python + Background Jobs + Audio Processing      │
+└──────┬────────────┬──────────────┬──────────────────┘
+       │            │              │
+┌──────┴─────┐  ┌───┴──────┐  ┌───┴────────────┐
+│   Redis    │  │ AWS S3   │  │ External APIs  │
+│ (Job Queue)│  │ (Storage)│  │ • OpenAI GPT-4 │
+│            │  │          │  │ • ElevenLabs   │
+└────────────┘  └──────────┘  │ • Stripe       │
+                              │ • SendGrid     │
+                              └────────────────┘
+
+Audio Pipeline: FFmpeg • Pydub • AudioStretchy</pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="features" class="content-section">
+                        <h2 class="section-heading">
+                            <span class="line-number">05</span>
+                            <span class="section-title">Key Features</span>
+                        </h2>
+                        <div class="section-content">
+                            <div class="features-grid">
+                                <div class="feature-card">
+                                    <h3>Conversational AI Interface</h3>
+                                    <ul>
+                                        <li>Multi-turn dialogue to understand user needs</li>
+                                        <li>Context-aware responses and follow-up questions</li>
+                                        <li>Dynamic content generation based on conversation</li>
+                                    </ul>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>Text-to-Speech Generation</h3>
+                                    <ul>
+                                        <li>High-quality neural voice synthesis</li>
+                                        <li>Configurable voice settings and styles</li>
+                                        <li>Preview and full-length audio generation</li>
+                                    </ul>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>Audio Post-Processing</h3>
+                                    <ul>
+                                        <li>Automated audio effects application</li>
+                                        <li>Background music integration</li>
+                                        <li>Professional mixing and mastering</li>
+                                        <li>FFmpeg-based audio manipulation</li>
+                                    </ul>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>Asynchronous Job Processing</h3>
+                                    <ul>
+                                        <li>Background task queue with Redis + RQ</li>
+                                        <li>Real-time job status tracking</li>
+                                        <li>Resilient error handling and retries</li>
+                                    </ul>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>Payment Integration</h3>
+                                    <ul>
+                                        <li>Stripe checkout flow</li>
+                                        <li>Webhook-based payment verification</li>
+                                        <li>Automated content delivery after purchase</li>
+                                    </ul>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>Cloud Storage &amp; Delivery</h3>
+                                    <ul>
+                                        <li>S3 bucket management with lifecycle policies</li>
+                                        <li>Secure file uploads and downloads</li>
+                                        <li>Pre-signed URLs for controlled access</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="tech-stack" class="content-section">
+                        <h2 class="section-heading">
+                            <span class="line-number">06</span>
+                            <span class="section-title">Tech Stack</span>
+                        </h2>
+                        <div class="section-content">
+                            <div class="tech-categories">
+                                <div class="tech-category">
+                                    <h3>Frontend</h3>
+                                    <div class="tech-tags">
+                                        <span class="tech-tag">React 17, JavaScript</span>
+                                        <span class="tech-tag">React Router, Axios</span>
+                                        <span class="tech-tag">Custom audio player component</span>
+                                    </div>
+                                </div>
+                                <div class="tech-category">
+                                    <h3>Backend</h3>
+                                    <div class="tech-tags">
+                                        <span class="tech-tag">Python 3.11, Flask 3.0</span>
+                                        <span class="tech-tag">Redis Queue (RQ) for background jobs</span>
+                                        <span class="tech-tag">Gunicorn with gevent workers</span>
+                                    </div>
+                                </div>
+                                <div class="tech-category">
+                                    <h3>Audio Processing</h3>
+                                    <div class="tech-tags">
+                                        <span class="tech-tag">FFmpeg, Pydub</span>
+                                        <span class="tech-tag">AudioStretchy</span>
+                                        <span class="tech-tag">ElevenLabs API</span>
+                                    </div>
+                                </div>
+                                <div class="tech-category">
+                                    <h3>AI & Integrations</h3>
+                                    <div class="tech-tags">
+                                        <span class="tech-tag">OpenAI GPT-4</span>
+                                        <span class="tech-tag">ElevenLabs Text-to-Speech</span>
+                                        <span class="tech-tag">Stripe Payments</span>
+                                        <span class="tech-tag">SendGrid Email</span>
+                                        <span class="tech-tag">AWS S3</span>
+                                    </div>
+                                </div>
+                                <div class="tech-category">
+                                    <h3>Infrastructure</h3>
+                                    <div class="tech-tags">
+                                        <span class="tech-tag">Vercel (frontend hosting)</span>
+                                        <span class="tech-tag">Render (backend + worker services)</span>
+                                        <span class="tech-tag">AWS S3 (file storage)</span>
+                                        <span class="tech-tag">Redis (job queue)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="highlights" class="content-section">
+                        <h2 class="section-heading">
+                            <span class="line-number">07</span>
+                            <span class="section-title">Technical Highlights</span>
+                        </h2>
+                        <div class="section-content">
+                            <ul class="feature-list">
+                                <li>Multi-turn conversational AI with context management</li>
+                                <li>Asynchronous background job processing for long-running tasks</li>
+                                <li>Audio processing pipeline with multiple effects and mixing</li>
+                                <li>RESTful API with CORS configuration</li>
+                                <li>Webhook handling for payment processing</li>
+                                <li>Scalable worker architecture for parallel job processing</li>
+                                <li>Cloud storage integration with secure file handling</li>
+                                <li>Error handling and retry logic for external API calls</li>
+                            </ul>
+                            <p style="margin-top: 2rem; font-style: italic; color: #999;">
+                                Built with modern AI technologies and production-ready architecture for scalable audio
+                                content generation.
+                                This is a private production application - detailed demonstrations available upon
+                                request.
+                            </p>
+                        </div>
+                    </section>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Initialize Lucide icons
+            lucide.createIcons();
+
+            // Scroll-based navigation highlighting
+            const sections = document.querySelectorAll('.content-section');
+            const navItems = document.querySelectorAll('.explorer-file');
+
+            function setActiveNav(sectionId) {
+                navItems.forEach(item => {
+                    if (item.getAttribute('data-section') === sectionId) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+            }
+
+            function handleScroll() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (window.pageYOffset >= sectionTop - 200) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                if (current) {
+                    setActiveNav(current);
+                }
+            }
+
+            // Handle navigation clicks
+            navItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    const sectionId = item.getAttribute('data-section');
+                    const targetSection = document.getElementById(sectionId);
+
+                    if (targetSection) {
+                        e.preventDefault();
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                        setActiveNav(sectionId);
+                    }
+                });
+            });
+
+            // Listen to scroll events
+            window.addEventListener('scroll', handleScroll);
+
+            // Initial check on page load
+            handleScroll();
+        </script>
+</body>
+
+</html>
