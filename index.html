@@ -268,14 +268,15 @@
         };
 
         function setActiveNav(sectionName) {
-            // Remove active from all nav items
-            navItems.forEach(item => item.classList.remove('active'));
+            // Remove active from ALL nav items (including sidebar items)
+            document.querySelectorAll('.nav-item, .nav-section-title, .nav-subitem').forEach(item => {
+                item.classList.remove('active');
+            });
 
-            // Add active to the matching nav item
-            const activeItem = document.querySelector(`[data-section="${sectionName}"]`);
-            if (activeItem) {
-                activeItem.classList.add('active');
-            }
+            // Add active to ALL matching nav items with this section
+            document.querySelectorAll(`[data-section="${sectionName}"]`).forEach(item => {
+                item.classList.add('active');
+            });
         }
 
         // Handle scroll events
@@ -298,8 +299,17 @@
 
                 if (targetSection) {
                     e.preventDefault();
-                    targetSection.scrollIntoView({ behavior: 'smooth' });
+
+                    // Immediately set active state
                     setActiveNav(sectionName);
+
+                    // Smooth scroll to section
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+
+                    // Update active state after scroll completes (smooth scroll takes ~500ms)
+                    setTimeout(() => {
+                        handleScroll();
+                    }, 600);
                 }
             });
         });
