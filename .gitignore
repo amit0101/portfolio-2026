@@ -8,12 +8,10 @@ project-marketing-screenshots/
 video-presentation.html
 video-presentation.html.backup
 *.mp4
-video-walkthrough.mov
-video-walkthrough-480.mov
-video-walkthrough-720.mov
+*.mov
 
-# Keep only the final cut video
-!video-walkthrough-final-cut.mov
+# Keep only the compressed final cut video
+!video-walkthrough-final-cut-compressed.mp4
 
 # System files
 .DS_Store

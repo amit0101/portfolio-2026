@@ -10,7 +10,7 @@ function createVideoModal() {
             <div class="video-modal-container">
                 <div class="video-player-wrapper">
                     <video id="videoPlayer" preload="metadata" controlsList="nodownload">
-                        <source src="video-walkthrough-final-cut.mov" type="video/quicktime">
+                        <source src="video-walkthrough-final-cut-compressed.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                     
