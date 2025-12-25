@@ -1,25 +1,29 @@
 # Folders to exclude
 old/
 narration-scripts/
-project-clips/
 project-marketing-screenshots/
+project-clips-backup/
+project-clips/
+video-presentation.html
 
 # Files to exclude
-video-presentation.html
 video-presentation.html.backup
+video-presentation-backup.html
 *.mp4
 *.mov
 
-# Keep only the compressed final cut video
-!video-walkthrough-final-cut-compressed.mp4
+# Keep the project showcase video
+!projects-showcase-720.mp4
 
-# Exclude original (non-minified) CSS and JS files
+# Exclude original (non-minified) CSS and JS files - use minified versions
 project-page.css
 typing-effect.js
 contact-modal.js
 video-modal.js
 mobile-menu.css
 mobile-menu.js
+sidebar-loader.js
+styles.css
 
 # Flubber chat assistant files (not for production)
 flubber.css
@@ -29,11 +33,13 @@ flubber-chat.js
 flubber-navigator.js
 flubber-context.js
 flubber-actions.css
+flubber-ai-browser.js
+flubber-ai/
 FLUBBER_REVERT_GUIDE.md
+HOMEPAGE-INTEGRATION.md
+IMPLEMENTATION-COMPLETE.md
 
 # System files
 .DS_Store
 *.pyc
 __pycache__/
-styles.css
-sidebar-loader.js
