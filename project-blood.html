@@ -5,385 +5,522 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medical Report Extraction System - Amit Kumar</title>
-    <meta name="description" content="Medical Report Extraction System">
+    <meta name="description"
+        content="AI-powered health assessment platform with blood test analysis and personalized supplement recommendations">
     <link rel="stylesheet" href="styles.min.css">
-    <link rel="stylesheet" href="project-page.min.css">
-    <!-- <link rel="stylesheet" href="flubber.css"> -->
-    <!-- <link rel="stylesheet" href="flubber-chat.css"> -->
+    <link rel="stylesheet" href="project-theme-zen.min.css">
     <link rel="stylesheet" href="mobile-menu.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Quicksand:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
-
 <body>
-    <!-- Sidebar Placeholder (prevents flickering) -->
     <aside class="sidebar" id="sidebar-placeholder"></aside>
-
-    <!-- Sidebar will be loaded dynamically by sidebar-loader.min.js -->
     <script src="sidebar-loader.min.js"></script>
 
-    <!-- Main Content Wrapper -->
     <div class="main-wrapper">
-        <!-- Window Title Bar -->
+        <!-- Title Bar -->
         <div class="window-titlebar">
             <div class="window-buttons">
                 <span class="window-button window-close"></span>
                 <span class="window-button window-minimize"></span>
                 <span class="window-button window-maximize"></span>
             </div>
-            <div class="window-title">medical-extraction.jsx</div>
+            <div class="window-title">Medical Report Extraction System</div>
         </div>
 
-        <!-- IDE Editor Area -->
-        <div class="ide-editor">
-            <!-- File Explorer Panel (inside IDE window) -->
-            <aside class="ide-file-explorer">
-                <div class="explorer-header">
-                    <i data-lucide="folder-open"></i>
-                    <span>EXPLORER</span>
-                </div>
-                <nav class="explorer-tree">
-                    <a href="#overview" class="explorer-file active" data-section="overview">
-                        <i data-lucide="file-text"></i>
-                        <span>overview.md</span>
-                    </a>
-                    <a href="#problem-solution" class="explorer-file" data-section="problem-solution">
-                        <i data-lucide="file-text"></i>
-                        <span>problem-solution.md</span>
-                    </a>
-                    <a href="#role" class="explorer-file" data-section="role">
-                        <i data-lucide="file-text"></i>
-                        <span>my-role.md</span>
-                    </a>
-                    <a href="#architecture" class="explorer-file" data-section="architecture">
-                        <i data-lucide="box"></i>
-                        <span>architecture.tsx</span>
-                    </a>
-                    <a href="#features" class="explorer-file" data-section="features">
-                        <i data-lucide="zap"></i>
-                        <span>features.json</span>
-                    </a>
-                    <a href="#tech-stack" class="explorer-file" data-section="tech-stack">
-                        <i data-lucide="settings"></i>
-                        <span>tech-stack.yml</span>
-                    </a>
-                    <a href="#highlights" class="explorer-file" data-section="highlights">
-                        <i data-lucide="star"></i>
-                        <span>highlights.ts</span>
-                    </a>
-                </nav>
-            </aside>
+        <!-- Zen Canvas -->
+        <div class="zen-page">
+            <!-- Navigation - Fixed at top, always visible -->
+            <nav class="zen-nav">
+                <svg class="zen-nav-path" viewBox="0 0 600 100" preserveAspectRatio="none">
+                    <!-- Simple irregular wavy thread - increased amplitude -->
+                    <path d="M60,50 
+                             Q100,75 150,35
+                             Q200,10 260,55
+                             Q320,90 380,30
+                             Q440,5 500,50
+                             Q530,65 560,40" stroke="#B0ACA2" stroke-width="2" stroke-dasharray="6,4" fill="none" />
+                </svg>
+                <button class="zen-stone-nav stone-1 active" data-section="home">Home</button>
+                <button class="zen-stone-nav stone-2" data-section="process">Process</button>
+                <button class="zen-stone-nav stone-3" data-section="solution">Solution</button>
+                <button class="zen-stone-nav stone-4" data-section="impact">Impact</button>
+            </nav>
 
-            <!-- Main Editor Content -->
-            <div class="ide-main-content">
-                <div class="ide-tabs">
-                    <div class="ide-tab active">
-                        <i data-lucide="file-heart" class="tab-icon"></i>
-                        <span>Medical Report Extraction System</span>
-                    </div>
-                </div>
+            <div class="zen-canvas" id="zen-scroll-container">
 
-                <div class="ide-content">
-                    <div class="project-header">
-                        <h1 class="project-title">Medical Report Extraction System</h1>
-                        <div class="project-meta-tags">
-                            <span class="meta-tag">Personalized Health Recommendations</span>
-                            <span class="meta-tag">Healthcare & Wellness</span>
-                            <span class="meta-tag">Full-Stack Developer (Solo)</span>
-                        </div>
+                <!-- ===== SECTION 1: HOME (Overview + Challenge/Solution) ===== -->
+                <section class="zen-section" id="home">
+
+                    <!-- Title -->
+                    <h1 class="zen-title">Medical Extraction</h1>
+
+                    <!-- Overview Text -->
+                    <div class="zen-overview-text">
+                        <p>Built a full-stack health assessment platform that analyzes questionnaire responses and blood
+                            test documents to generate personalized supplement recommendations. The system uses AI to
+                            extract and interpret medical data, providing tailored health protocols with automated CRM
+                            integration.</p>
                     </div>
 
-                    <section id="overview" class="content-section">
-                        <h2 class="section-heading">
-                            <span class="line-number">01</span>
-                            <span class="section-title">Overview</span>
-                        </h2>
-                        <div class="section-content">
-                            <p>
-                                Built a full-stack health assessment platform that analyzes questionnaire responses and
-                                blood test documents to generate personalized supplement recommendations. The system
-                                uses AI to extract and interpret medical data, providing tailored health protocols with
-                                automated CRM integration.
-                            </p>
-                        </div>
-                    </section>
-
-                    <section id="problem-solution" class="content-section">
-                        <h2 class="section-heading">
-                            <span class="line-number">02</span>
-                            <span class="section-title">Problem & Solution</span>
-                        </h2>
-                        <div class="section-content">
-                            <div class="code-block">
-                                <div class="code-header">
-                                    <span class="code-lang">Challenge</span>
-                                </div>
-                                <p> Manual blood test interpretation, no personalized supplement recommendations, and
-                                    disconnected customer journey from assessment to results delivery.</p>
-                            </div>
-                            <div class="code-block">
-                                <div class="code-header">
-                                    <span class="code-lang">Solution</span>
-                                </div>
-                                <p> AI-driven platform with OCR blood test processing, GPT-4 analysis for personalized
-                                    recommendations, automated report generation, and seamless CRM integration -
-                                    transforming health data into actionable insights.</p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section id="role" class="content-section">
-                        <h2 class="section-heading">
-                            <span class="line-number">03</span>
-                            <span class="section-title">My Role</span>
-                        </h2>
-                        <div class="section-content">
-                            <p><strong>Full-Stack Developer</strong> (Solo)</p>
-                            <ul class="feature-list">
-                                <li>Architected complete system: Next.js frontend, FastAPI backend, and PostgreSQL
-                                    database</li>
-                                <li>Implemented AI-powered blood test analysis using Google Vision API and GPT-4</li>
-                                <li>Built automated supplement recommendation engine with 300+ interventions database
-                                </li>
-                                <li>Integrated CRM webhooks and magic link authentication system</li>
-                            </ul>
-                        </div>
-                    </section>
-
-                    <section id="architecture" class="content-section">
-                        <h2 class="section-heading">
-                            <span class="line-number">04</span>
-                            <span class="section-title">Architecture</span>
-                        </h2>
-                        <div class="section-content">
-                            <div class="code-block">
-                                <pre class="architecture-diagram"
-                                    style="overflow-x: auto; font-size: 0.875rem; line-height: 1.5;">
-┌─────────────────────────────────────────────────────┐
-│            Next.js 15 Frontend (Vercel)             │
-│   React 19 + TypeScript + TailwindCSS + Radix UI    │
-│          Multi-step Forms + Real-time Results       │
-└──────────────────┬──────────────────────────────────┘
-                   │ REST API
-┌──────────────────┴───────────────────────────────────┐
-│          FastAPI Backend (Render)                    │
-│   Python + Google Vision API + GPT-4o + Webhooks     │
-└──────┬──────────────────┬──────────────┬─────────────┘
-       │                  │              │
-┌──────┴───────┐  ┌───────┴──────┐  ┌───┴────────┐
-│  PostgreSQL  │  │   OpenAI     │  │    CRM     │
-│  (Supabase)  │  │   GPT-4o     │  │ (Webhooks) │
-└──────────────┘  └──────────────┘  └────────────┘
-
-External APIs: Google Vision • OpenAI • GoHighLevel</pre>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section id="features" class="content-section">
-                        <h2 class="section-heading">
-                            <span class="line-number">05</span>
-                            <span class="section-title">Key Features</span>
-                        </h2>
-                        <div class="section-content">
-                            <div class="features-grid">
-                                <div class="feature-card">
-                                    <h3>Health Assessment Flow</h3>
-                                    <ul>
-                                        <li>Multi-step questionnaire with 50+ health markers</li>
-                                        <li>Dynamic form validation and progress tracking</li>
-                                        <li>Personalized supplement stack generation based on responses</li>
-                                    </ul>
-                                </div>
-                                <div class="feature-card">
-                                    <h3>AI Blood Test Analysis</h3>
-                                    <ul>
-                                        <li>OCR processing of PDF and image documents</li>
-                                        <li>GPT-4 powered marker extraction and standardization</li>
-                                        <li>Support for 100+ blood markers across multiple panels</li>
-                                        <li>Automated result validation and error handling</li>
-                                    </ul>
-                                </div>
-                                <div class="feature-card">
-                                    <h3>Supplement Recommendation Engine</h3>
-                                    <ul>
-                                        <li>Database of 300+ evidence-based interventions</li>
-                                        <li>Threshold-based prescription logic</li>
-                                        <li>Dosage calculations and contraindication checks</li>
-                                        <li>Printable PDF reports with detailed protocols</li>
-                                    </ul>
-                                </div>
-                                <div class="feature-card">
-                                    <h3>Admin Dashboard</h3>
-                                    <ul>
-                                        <li>Real-time submission tracking</li>
-                                        <li>Magic link generation for results access</li>
-                                        <li>User management and analytics</li>
-                                        <li>Blood test status monitoring</li>
-                                    </ul>
-                                </div>
-                                <div class="feature-card">
-                                    <h3>CRM Integration</h3>
-                                    <ul>
-                                        <li>Webhook-based data synchronization</li>
-                                        <li>Automated contact creation and updates</li>
-                                        <li>Magic link delivery via email</li>
-                                        <li>Custom field mapping</li>
-                                    </ul>
-                                </div>
-                                <div class="feature-card">
-                                    <h3>Authentication</h3>
-                                    <ul>
-                                        <li>Magic link passwordless authentication</li>
-                                        <li>Secure token-based sessions</li>
-                                        <li>Role-based access control</li>
-                                        <li>Admin route protection</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section id="tech-stack" class="content-section">
-                        <h2 class="section-heading">
-                            <span class="line-number">06</span>
-                            <span class="section-title">Tech Stack</span>
-                        </h2>
-                        <div class="section-content">
-                            <div class="tech-categories">
-                                <div class="tech-category">
-                                    <h3>Frontend</h3>
-                                    <div class="tech-tags">
-                                        <span class="tech-tag">Next.js 15, TypeScript, React 19</span>
-                                        <span class="tech-tag">TailwindCSS, Radix UI</span>
-                                        <span class="tech-tag">React Hook Form, Zod validation</span>
+                    <!-- Challenge & Yin-Yang Side by Side -->
+                    <div class="zen-home-row">
+                        <!-- Challenge Blob -->
+                        <div class="zen-challenge-container">
+                            <div class="zen-challenge-blob">
+                                <div class="zen-challenge-title-wrapper">
+                                    <div class="zen-leaf-decor left">
+                                        <svg viewBox="0 0 24 24" width="20" height="20">
+                                            <path d="M12 2C8 6 4 10 4 14c0 4 4 8 8 8s8-4 8-8c0-4-4-8-8-12z" fill="none"
+                                                stroke="currentColor" stroke-width="1.5" />
+                                        </svg>
+                                    </div>
+                                    <h2 class="zen-challenge-title">The<br>Challenge</h2>
+                                    <div class="zen-leaf-decor right">
+                                        <svg viewBox="0 0 24 24" width="20" height="20">
+                                            <path d="M12 2C8 6 4 10 4 14c0 4 4 8 8 8s8-4 8-8c0-4-4-8-8-12z" fill="none"
+                                                stroke="currentColor" stroke-width="1.5" />
+                                        </svg>
                                     </div>
                                 </div>
-                                <div class="tech-category">
-                                    <h3>Backend (Blood Test API)</h3>
-                                    <div class="tech-tags">
-                                        <span class="tech-tag">Python 3.11, FastAPI</span>
-                                        <span class="tech-tag">Google Vision API (OCR)</span>
-                                        <span class="tech-tag">OpenAI GPT-4o (AI analysis)</span>
-                                        <span class="tech-tag">Pydantic validation</span>
-                                    </div>
-                                </div>
-                                <div class="tech-category">
-                                    <h3>Database & Infrastructure</h3>
-                                    <div class="tech-tags">
-                                        <span class="tech-tag">PostgreSQL (Supabase)</span>
-                                        <span class="tech-tag">Vercel (frontend hosting)</span>
-                                        <span class="tech-tag">Render (backend hosting)</span>
-                                    </div>
-                                </div>
-                                <div class="tech-category">
-                                    <h3>Integrations</h3>
-                                    <div class="tech-tags">
-                                        <span class="tech-tag">Google Cloud Vision API</span>
-                                        <span class="tech-tag">OpenAI API</span>
-                                        <span class="tech-tag">GoHighLevel CRM</span>
-                                        <span class="tech-tag">SendGrid (email delivery)</span>
-                                    </div>
-                                </div>
+                                <p class="zen-challenge-text">
+                                    Manual blood test interpretation, no personalized supplement recommendations, and
+                                    disconnected customer journey from assessment to results delivery.
+                                </p>
+                            </div>
+                            <!-- Leaf callout -->
+                            <div class="zen-leaf-callout">
+                                <span>High Volume,</span>
+                                <span>Low Accuracy</span>
                             </div>
                         </div>
-                    </section>
 
-                    <section id="highlights" class="content-section">
-                        <h2 class="section-heading">
-                            <span class="line-number">07</span>
-                            <span class="section-title">Technical Highlights</span>
-                        </h2>
-                        <div class="section-content">
-                            <ul class="feature-list">
-                                <li>AI-powered document processing with OCR and LLM analysis</li>
-                                <li>End-to-end type safety (TypeScript + Pydantic)</li>
-                                <li>Async webhook architecture for blood test processing</li>
-                                <li>Database-driven recommendation engine with 300+ interventions</li>
-                                <li>RESTful API with comprehensive error handling</li>
-                                <li>Rate limiting and API key authentication</li>
-                                <li>Responsive mobile-first design</li>
-                                <li>Automated PDF report generation</li>
-                                <li>Magic link authentication system</li>
-                            </ul>
-                            <p style="margin-top: 2rem; font-style: italic; color: #999;">
-                                Built with modern AI technologies and best practices for healthcare data processing.
-                                This is a private production application - detailed demonstrations available upon
-                                request.
-                            </p>
+                        <!-- Yin-Yang Problem/Solution -->
+                        <div class="zen-yinyang-container">
+                            <div class="zen-yinyang">
+                                <!-- SVG Yin-Yang Shape with pebble texture gradients -->
+                                <svg class="zen-yinyang-svg" viewBox="0 0 200 200">
+                                    <!-- Define radial gradients for pebble texture - balanced -->
+                                    <defs>
+                                        <radialGradient id="greyPebbleGrad" cx="50%" cy="45%" r="65%" fx="50%" fy="40%">
+                                            <stop offset="0%" stop-color="#E0DCD6" />
+                                            <stop offset="60%" stop-color="#D5D3CD" />
+                                            <stop offset="100%" stop-color="#C0BEB8" />
+                                        </radialGradient>
+                                        <radialGradient id="sagePebbleGrad" cx="50%" cy="45%" r="65%" fx="50%" fy="40%">
+                                            <stop offset="0%" stop-color="#AABF98" />
+                                            <stop offset="60%" stop-color="#9AAE86" />
+                                            <stop offset="100%" stop-color="#85996E" />
+                                        </radialGradient>
+                                    </defs>
+
+                                    <!-- Background (light grey - full circle) with gradient -->
+                                    <circle cx="100" cy="100" r="100" fill="url(#greyPebbleGrad)" />
+
+                                    <!-- Right half (sage) with S-curve - with gradient -->
+                                    <path d="M100,0 A100,100 0 0,1 100,200 A50,50 0 0,1 100,100 A50,50 0 0,0 100,0"
+                                        fill="url(#sagePebbleGrad)" />
+
+                                    <!-- S-curve divider line (page background color) -->
+                                    <path d="M85,-2 L100,-2 A51,51 0 0,1 100,100 A51,51 0 0,0 100,202 L115,202"
+                                        fill="none" stroke="#F5F3EC" stroke-width="5" />
+                                </svg>
+
+                                <!-- Tech pebbles inside the yin-yang -->
+                                <!-- Python: down and slightly left -->
+                                <span class="zen-pebble-inside clay" style="top: 26%; left: 32%;">Python</span>
+                                <!-- FastAPI: down and right -->
+                                <span class="zen-pebble-inside sage" style="bottom: 16%; left: 16%;">FastAPI</span>
+                                <!-- PostgreSQL: up and right -->
+                                <span class="zen-pebble-inside beige" style="top: 12%; left: 18%;">PostgreSQL</span>
+                                <!-- GPT-4o: right and slightly up -->
+                                <span class="zen-pebble-inside clay" style="top: 12%; right: 19%;">GPT-4o</span>
+
+                                <span class="zen-pebble-inside beige" style="bottom: 13%; right: 20%;">Vision API</span>
+
+                                <!-- Content overlays -->
+                                <div class="zen-yinyang-content left">
+                                    <div class="zen-yinyang-icon">
+                                        <svg viewBox="0 0 40 40" width="28" height="28">
+                                            <circle cx="20" cy="20" r="8" fill="none" stroke="currentColor"
+                                                stroke-width="1.5" />
+                                            <circle cx="20" cy="20" r="12" fill="none" stroke="currentColor"
+                                                stroke-width="1" />
+                                            <circle cx="20" cy="20" r="16" fill="none" stroke="currentColor"
+                                                stroke-width="0.8" />
+                                        </svg>
+                                    </div>
+                                    <h3 class="zen-yinyang-title">Problem<br>Domain</h3>
+                                    <p class="zen-yinyang-text">
+                                        Unstructured Data,<br>
+                                        Manual Processing,<br>
+                                        Time-Intensive
+                                    </p>
+                                </div>
+
+                                <div class="zen-yinyang-content right">
+                                    <div class="zen-yinyang-icon">
+                                        <svg viewBox="0 0 40 40" width="28" height="28">
+                                            <path d="M20 8 L20 12 M20 28 L20 32 M8 20 L12 20 M28 20 L32 20"
+                                                stroke="currentColor" stroke-width="1.5" />
+                                            <circle cx="20" cy="20" r="6" fill="none" stroke="currentColor"
+                                                stroke-width="1.5" />
+                                        </svg>
+                                    </div>
+                                    <h3 class="zen-yinyang-title">Solution<br>Approach</h3>
+                                    <p class="zen-yinyang-text">
+                                        AI-Powered OCR,<br>
+                                        GPT-4 Analysis,<br>
+                                        Auto Recommendations
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Tech pebbles scattered around outside -->
                         </div>
-                    </section>
-                    </section>
-                </div>
+                    </div>
+
+                </section>
+
+                <!-- ===== SECTION 2: PROCESS (Architecture + Role) ===== -->
+                <section class="zen-section" id="process">
+
+                    <!-- Role summary -->
+                    <div class="zen-role-summary">
+                        <h3>Full-Stack Developer (Solo)</h3>
+                        <p>Architected complete system: Next.js frontend, FastAPI backend, and PostgreSQL database.
+                            Implemented AI-powered blood test analysis using Google Vision API and GPT-4. Built
+                            automated supplement recommendation engine with 300+ interventions database.</p>
+                    </div>
+
+                    <!-- Architecture blob with tree branch -->
+                    <div class="zen-architecture-blob">
+                        <h2 class="zen-arch-title">System<br>Architecture</h2>
+
+                        <!-- Realistic tree branch SVG - hand-drawn sketch style -->
+                        <svg class="zen-branch-svg" viewBox="-10 -30 500 340">
+                            <!-- Define reusable leaf shape with stem and veins -->
+                            <defs>
+                                <g id="leaf-sage">
+                                    <!-- Leaf shape - pointed oval -->
+                                    <path d="M0,-18 Q8,-12 10,0 Q8,12 0,18 Q-8,12 -10,0 Q-8,-12 0,-18" fill="#9AAE86"
+                                        opacity="0.85" />
+                                    <!-- Central vein -->
+                                    <path d="M0,-16 Q0,0 0,14" stroke="#7A8A6A" stroke-width="0.8" fill="none" />
+                                    <!-- Side veins - shorter, within leaf -->
+                                    <path d="M0,-6 Q3,-8 5,-10" stroke="#7A8A6A" stroke-width="0.4" fill="none" />
+                                    <path d="M0,-6 Q-3,-8 -5,-10" stroke="#7A8A6A" stroke-width="0.4" fill="none" />
+                                    <path d="M0,2 Q4,0 6,-2" stroke="#7A8A6A" stroke-width="0.4" fill="none" />
+                                    <path d="M0,2 Q-4,0 -6,-2" stroke="#7A8A6A" stroke-width="0.4" fill="none" />
+                                    <path d="M0,8 Q3,6 4,4" stroke="#7A8A6A" stroke-width="0.4" fill="none" />
+                                    <path d="M0,8 Q-3,6 -4,4" stroke="#7A8A6A" stroke-width="0.4" fill="none" />
+                                    <!-- Stem -->
+                                    <path d="M0,18 L0,26" stroke="#7A766C" stroke-width="1.2" fill="none" />
+                                </g>
+                                <g id="leaf-sage-sm">
+                                    <path d="M0,-14 Q6,-9 8,0 Q6,9 0,14 Q-6,9 -8,0 Q-6,-9 0,-14" fill="#9AAE86"
+                                        opacity="0.8" />
+                                    <path d="M0,-12 Q0,0 0,10" stroke="#7A8A6A" stroke-width="0.6" fill="none" />
+                                    <!-- Side veins - shorter -->
+                                    <path d="M0,-4 Q2,-6 4,-8" stroke="#7A8A6A" stroke-width="0.35" fill="none" />
+                                    <path d="M0,-4 Q-2,-6 -4,-8" stroke="#7A8A6A" stroke-width="0.35" fill="none" />
+                                    <path d="M0,3 Q3,1 4,-1" stroke="#7A8A6A" stroke-width="0.35" fill="none" />
+                                    <path d="M0,3 Q-3,1 -4,-1" stroke="#7A8A6A" stroke-width="0.35" fill="none" />
+                                    <path d="M0,14 L0,20" stroke="#7A766C" stroke-width="1" fill="none" />
+                                </g>
+                                <g id="leaf-clay">
+                                    <path d="M0,-20 Q10,-13 12,0 Q10,13 0,20 Q-10,13 -12,0 Q-10,-13 0,-20"
+                                        fill="#C4856E" opacity="0.85" />
+                                    <path d="M0,-17 Q0,0 0,16" stroke="#A06B58" stroke-width="0.8" fill="none" />
+                                    <!-- Side veins - shorter -->
+                                    <path d="M0,-7 Q4,-9 6,-12" stroke="#A06B58" stroke-width="0.4" fill="none" />
+                                    <path d="M0,-7 Q-4,-9 -6,-12" stroke="#A06B58" stroke-width="0.4" fill="none" />
+                                    <path d="M0,2 Q5,0 7,-3" stroke="#A06B58" stroke-width="0.4" fill="none" />
+                                    <path d="M0,2 Q-5,0 -7,-3" stroke="#A06B58" stroke-width="0.4" fill="none" />
+                                    <path d="M0,10 Q4,8 5,5" stroke="#A06B58" stroke-width="0.4" fill="none" />
+                                    <path d="M0,10 Q-4,8 -5,5" stroke="#A06B58" stroke-width="0.4" fill="none" />
+                                    <path d="M0,20 L0,28" stroke="#7A766C" stroke-width="1.2" fill="none" />
+                                </g>
+                                <g id="leaf-light">
+                                    <path d="M0,-15 Q7,-10 9,0 Q7,10 0,15 Q-7,10 -9,0 Q-7,-10 0,-15" fill="#B8C9A8"
+                                        opacity="0.85" />
+                                    <path d="M0,-13 Q0,0 0,11" stroke="#98A88A" stroke-width="0.6" fill="none" />
+                                    <!-- Side veins - shorter -->
+                                    <path d="M0,-4 Q3,-6 5,-9" stroke="#98A88A" stroke-width="0.35" fill="none" />
+                                    <path d="M0,-4 Q-3,-6 -5,-9" stroke="#98A88A" stroke-width="0.35" fill="none" />
+                                    <path d="M0,3 Q4,1 5,-2" stroke="#98A88A" stroke-width="0.35" fill="none" />
+                                    <path d="M0,3 Q-4,1 -5,-2" stroke="#98A88A" stroke-width="0.35" fill="none" />
+                                    <path d="M0,15 L0,22" stroke="#7A766C" stroke-width="1" fill="none" />
+                                </g>
+                                <g id="leaf-beige">
+                                    <path d="M0,-14 Q6,-9 8,0 Q6,9 0,14 Q-6,9 -8,0 Q-6,-9 0,-14" fill="#D4B8A8"
+                                        opacity="0.8" />
+                                    <path d="M0,-12 Q0,0 0,10" stroke="#B8A090" stroke-width="0.6" fill="none" />
+                                    <!-- Side veins - shorter -->
+                                    <path d="M0,-4 Q2,-6 4,-8" stroke="#B8A090" stroke-width="0.35" fill="none" />
+                                    <path d="M0,-4 Q-2,-6 -4,-8" stroke="#B8A090" stroke-width="0.35" fill="none" />
+                                    <path d="M0,3 Q3,1 4,-1" stroke="#B8A090" stroke-width="0.35" fill="none" />
+                                    <path d="M0,3 Q-3,1 -4,-1" stroke="#B8A090" stroke-width="0.35" fill="none" />
+                                    <path d="M0,14 L0,20" stroke="#7A766C" stroke-width="1" fill="none" />
+                                </g>
+                            </defs>
+
+                            <!-- ===== MAIN TRUNK ===== -->
+                            <!-- Thick main branch from bottom-left, organic curve -->
+                            <path d="M25,280 C55,265 85,250 115,235 C155,215 195,200 235,185 C275,170 315,155 355,140"
+                                stroke="#5A564E" stroke-width="6" fill="none" stroke-linecap="round" />
+
+                            <!-- ===== FIRST BRANCH CLUSTER (Data Ingestion + Preprocessing) ===== -->
+                            <!-- Main branch splitting upward-left -->
+                            <path d="M95,245 C80,220 75,195 85,165 C95,140 110,115 125,95" stroke="#6B675E"
+                                stroke-width="4" fill="none" stroke-linecap="round" />
+
+                            <!-- Sub-branch for Data Ingestion -->
+                            <path d="M79,185 C65,165 55,145 50,120" stroke="#7A766C" stroke-width="2.5" fill="none"
+                                stroke-linecap="round" />
+
+                            <!-- Another twig -->
+                            <path d="M88,155 C75,140 65,125 62,105" stroke="#8A867C" stroke-width="2" fill="none"
+                                stroke-linecap="round" />
+
+                            <!-- ===== SECOND BRANCH (NLP Extraction) ===== -->
+                            <path d="M185,200 C180,170 185,140 200,110 C215,85 235,60 255,40" stroke="#6B675E"
+                                stroke-width="3.5" fill="none" stroke-linecap="round" />
+
+                            <!-- NLP sub-twig -->
+                            <path d="M210,95 C230,80 250,70 275,62" stroke="#7A766C" stroke-width="2" fill="none"
+                                stroke-linecap="round" />
+
+                            <!-- ===== CONTINUATION OF MAIN TRUNK ===== -->
+                            <path d="M355,140 C390,125 420,105 440,80" stroke="#5A564E" stroke-width="5" fill="none"
+                                stroke-linecap="round" />
+
+                            <!-- ===== THIRD BRANCH (Validation) ===== -->
+                            <path d="M295,160 C290,125 300,95 320,70 C340,50 360,35 375,25" stroke="#6B675E"
+                                stroke-width="3" fill="none" stroke-linecap="round" />
+
+                            <!-- ===== FOURTH BRANCH (Structured Output) ===== -->
+                            <path d="M380,125 C395,100 410,80 425,65" stroke="#7A766C" stroke-width="2.5" fill="none"
+                                stroke-linecap="round" />
+
+                            <!-- ===== FIFTH BRANCH (Database Storage) ===== -->
+                            <path d="M420,98 C435,75 445,55 448,35" stroke="#7A766C" stroke-width="2" fill="none"
+                                stroke-linecap="round" />
+
+                            <!-- ===== LEAVES ===== -->
+                            <!-- Data Ingestion cluster -->
+                            <use href="#leaf-sage" transform="translate(47,102) rotate(-45)" />
+                            <use href="#leaf-sage-sm" transform="translate(57,85) rotate(-15)" />
+                            <use href="#leaf-sage-sm" transform="translate(71,100) rotate(15)" />
+
+                            <!-- Preprocessing cluster -->
+                            <use href="#leaf-sage" transform="translate(120,70) rotate(-5)" />
+                            <use href="#leaf-sage-sm" transform="translate(138,79) rotate(35)" />
+
+                            <!-- NLP Extraction cluster -->
+                            <use href="#leaf-clay" transform="translate(262,15) rotate(20)" />
+                            <use href="#leaf-light" transform="translate(282,46) rotate(35)" />
+
+                            <!-- Validation -->
+                            <use href="#leaf-sage" transform="translate(377,0) rotate(5)" />
+
+                            <!-- Structured Output -->
+                            <use href="#leaf-light" transform="translate(432,48) rotate(25)" />
+
+                            <!-- Database Storage -->
+                            <use href="#leaf-beige" transform="translate(460,20) rotate(35)" />
+
+                            <!-- ===== TECH LABELS ALONG MAIN TRUNK ===== -->
+                            <!-- Tech labels styled as small annotations on the branch -->
+                            <g class="tech-labels" font-family="Inter, sans-serif" font-size="9" font-weight="500">
+                                <!-- Frontend tech - bottom left of trunk -->
+                                <text x="45" y="288" fill="#9AAE86" opacity="0.9">Next.js</text>
+                                <text x="95" y="268" fill="#9AAE86" opacity="0.9">React</text>
+                                <text x="145" y="245" fill="#9AAE86" opacity="0.9">TypeScript</text>
+
+                                <!-- Backend tech - middle of trunk -->
+                                <text x="220" y="215" fill="#7A766C" opacity="0.9">Python</text>
+                                <text x="280" y="192" fill="#7A766C" opacity="0.9">FastAPI</text>
+
+                                <!-- AI tech - upper right of trunk -->
+                                <text x="360" y="165" fill="#C4856E" opacity="0.9">GPT-4o</text>
+                                <text x="410" y="135" fill="#C4856E" opacity="0.9">Vision API</text>
+                            </g>
+                        </svg>
+
+
+                        <!-- Process labels along the branches -->
+                        <div class="zen-process-labels">
+                            <div class="zen-process-label" style="left: 20%; bottom: 28%;">
+                                <strong>Data Ingestion</strong>
+                            </div>
+                            <div class="zen-process-label" style="left: 26%; bottom: 75%;">
+                                <strong>Preprocessing</strong>
+                                <span>(OCR/Cleaning)</span>
+                            </div>
+                            <div class="zen-process-label" style="left: 38%; bottom: 78%;">
+                                <strong>NLP Extraction</strong>
+                                <span>(Entity Recognition)</span>
+                            </div>
+                            <div class="zen-process-label" style="left: 54%; bottom: 70%;">
+                                <strong>Validation</strong>
+                            </div>
+                            <div class="zen-process-label" style="left: 72%; bottom: 68%;">
+                                <strong>Structured Output</strong>
+                                <span>(FHIR/JSON)</span>
+                            </div>
+                            <div class="zen-process-label" style="right: 6%; bottom: 62%;">
+                                <strong>Database Storage</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- ===== SECTION 3: SOLUTION (Features + Tech Stack) ===== -->
+                <section class="zen-section" id="solution">
+
+                    <h2 class="zen-section-heading">Key Features</h2>
+
+                    <div class="zen-features-organic">
+                        <div class="zen-feature-blob sage-light">
+                            <div class="zen-feature-icon"><i data-lucide="clipboard-check"></i></div>
+                            <h4>Health Assessment Flow</h4>
+                            <p>Multi-step questionnaire with 50+ health markers. Dynamic form validation and progress
+                                tracking. Personalized supplement stack generation.</p>
+                        </div>
+                        <div class="zen-feature-blob beige">
+                            <div class="zen-feature-icon"><i data-lucide="scan"></i></div>
+                            <h4>AI Blood Test Analysis</h4>
+                            <p>OCR processing of PDF and image documents. GPT-4 powered marker extraction. Support for
+                                100+ blood markers across multiple panels.</p>
+                        </div>
+                        <div class="zen-feature-blob clay-light">
+                            <div class="zen-feature-icon"><i data-lucide="pill"></i></div>
+                            <h4>Supplement Engine</h4>
+                            <p>Database of 300+ evidence-based interventions. Threshold-based prescription logic. Dosage
+                                calculations and contraindication checks.</p>
+                        </div>
+                        <div class="zen-feature-blob stone-light">
+                            <div class="zen-feature-icon"><i data-lucide="layout-dashboard"></i></div>
+                            <h4>Admin Dashboard</h4>
+                            <p>Real-time submission tracking. Magic link generation for results access. User management
+                                and analytics.</p>
+                        </div>
+                        <div class="zen-feature-blob sage-light">
+                            <div class="zen-feature-icon"><i data-lucide="webhook"></i></div>
+                            <h4>CRM Integration</h4>
+                            <p>Webhook-based data synchronization. Automated contact creation and updates. Magic link
+                                delivery via email.</p>
+                        </div>
+                        <div class="zen-feature-blob beige">
+                            <div class="zen-feature-icon"><i data-lucide="key"></i></div>
+                            <h4>Authentication</h4>
+                            <p>Magic link passwordless authentication. Secure token-based sessions. Role-based access
+                                control.</p>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- ===== SECTION 4: IMPACT (Outcomes + Highlights) ===== -->
+                <section class="zen-section" id="impact">
+
+                    <!-- Key Outcomes in grey blob container -->
+                    <div class="zen-outcomes-container">
+                        <h2 class="zen-outcomes-title">Key<br>Outcomes</h2>
+
+                        <div class="zen-outcomes-leaves">
+                            <div class="zen-leaf-card sage">
+                                <div class="zen-leaf-value">95%</div>
+                                <div class="zen-leaf-label">Accuracy Rate</div>
+                            </div>
+                            <div class="zen-leaf-card stone">
+                                <div class="zen-leaf-value">80%</div>
+                                <div class="zen-leaf-label">Faster Processing</div>
+                            </div>
+                            <div class="zen-leaf-card clay">
+                                <div class="zen-leaf-value">300+</div>
+                                <div class="zen-leaf-label">Interventions</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technical Highlights -->
+                    <div class="zen-highlights">
+                        <h3>Technical Highlights</h3>
+                        <ul>
+                            <li>AI-powered document processing with OCR and LLM analysis</li>
+                            <li>End-to-end type safety (TypeScript + Pydantic)</li>
+                            <li>Async webhook architecture for blood test processing</li>
+                            <li>Database-driven recommendation engine with 300+ interventions</li>
+                            <li>RESTful API with comprehensive error handling</li>
+                            <li>Magic link authentication system</li>
+                        </ul>
+                    </div>
+
+                    <!-- Disclaimer -->
+                    <p class="zen-disclaimer">
+                        Private production application — detailed demonstrations available upon request.
+                    </p>
+
+                </section>
+
             </div>
         </div>
+    </div>
 
-        <script>
-            // Initialize Lucide icons
-            lucide.createIcons();
+    <script>
+        lucide.createIcons();
 
-            // Scroll-based navigation highlighting
-            const sections = document.querySelectorAll('.content-section');
-            const navItems = document.querySelectorAll('.explorer-file');
+        // ===== SCROLL-LINKED NAVIGATION =====
+        const navItems = document.querySelectorAll('.zen-stone-nav');
+        const sections = document.querySelectorAll('.zen-section');
 
-            function setActiveNav(sectionId) {
-                navItems.forEach(item => {
-                    if (item.getAttribute('data-section') === sectionId) {
-                        item.classList.add('active');
-                    } else {
-                        item.classList.remove('active');
-                    }
-                });
-            }
+        // Click nav → scroll to section
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const sectionId = item.dataset.section;
+                const targetSection = document.getElementById(sectionId);
 
-            function handleScroll() {
-                let current = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    if (window.pageYOffset >= sectionTop - 200) {
-                        current = section.getAttribute('id');
-                    }
-                });
-
-                if (current) {
-                    setActiveNav(current);
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
-            }
-
-            // Handle navigation clicks
-            navItems.forEach(item => {
-                item.addEventListener('click', (e) => {
-                    const sectionId = item.getAttribute('data-section');
-                    const targetSection = document.getElementById(sectionId);
-
-                    if (targetSection) {
-                        e.preventDefault();
-                        targetSection.scrollIntoView({ behavior: 'smooth' });
-                        setActiveNav(sectionId);
-                    }
-                });
             });
+        });
 
-            // Listen to scroll events
-            window.addEventListener('scroll', handleScroll);
+        // Scroll → update active nav (Intersection Observer)
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -60% 0px',
+            threshold: 0
+        };
 
-            // Initial check on page load
-            handleScroll();
-        </script>
-        <script src="mobile-menu.min.js"></script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.id;
+                    navItems.forEach(item => {
+                        item.classList.remove('active');
+                        if (item.dataset.section === sectionId) {
+                            item.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
 
-        <!-- Flubber AI Integration -->
-        <!-- <script src="flubber-ai-browser.js"></script>
-        <script src="flubber.js"></script>
-        <script src="flubber-context.js"></script>
-        <script src="flubber-navigator.js"></script>
-        <script src="flubber-chat.js"></script> -->
+        sections.forEach(section => observer.observe(section));
+    </script>
+    <script src="mobile-menu.min.js"></script>
 </body>
 
 </html>

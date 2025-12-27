@@ -1,0 +1,1057 @@
+/* =============================================================================
+   ZEN ORGANIC THEME - Medical Report Extraction System
+   Design from mockup: stone nav, yin-yang, branch architecture, leaf cards
+   Content from projects-content.json
+   ============================================================================= */
+
+/* Comic Neue - clean handwritten-style font */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap');
+
+/* =============================================================================
+   CRITICAL OVERRIDES
+   ============================================================================= */
+body:has(.zen-page)::after {
+    background: #F5F3EC !important;
+}
+
+body:has(.zen-page) .main-wrapper {
+    background: #F5F3EC !important;
+}
+
+.zen-page {
+    min-height: 100vh;
+    background: #F5F3EC !important;
+    font-family: 'Comic Neue', cursive;
+    color: #3D3D3D;
+    -webkit-font-smoothing: antialiased;
+}
+
+.zen-page * {
+    box-sizing: border-box;
+}
+
+.zen-canvas {
+    background: linear-gradient(180deg, #F5F3EC 0%, #EDE9E0 100%) !important;
+    min-height: calc(100vh - 60px);
+    padding: 20px 40px 60px;
+    padding-top: 160px;
+    /* Space for fixed navbar with wavy thread */
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 100;
+    scroll-behavior: smooth;
+}
+
+/* =============================================================================
+   NAVIGATION - Fixed at top, floating buttons only (no background bar)
+   ============================================================================= */
+.zen-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    position: fixed;
+    top: 70px;
+    /* Below the window titlebar */
+    left: 260px;
+    /* Account for sidebar */
+    right: 0;
+    z-index: 200;
+    padding: 15px 40px;
+    /* Transparent - only buttons and path visible */
+    background: transparent;
+    pointer-events: none;
+    /* Allow clicking through the nav area */
+}
+
+/* Enable pointer events on the buttons themselves */
+.zen-stone-nav {
+    pointer-events: auto;
+}
+
+/* =============================================================================
+   TITLE - Large italic serif
+   ============================================================================= */
+.zen-title {
+    font-family: 'Comic Neue', cursive;
+    font-size: 40px;
+    font-weight: 700;
+    color: #6A6A66;
+    text-align: center;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+}
+
+/* Curved dotted path behind nav */
+.zen-nav-path {
+    position: absolute;
+    width: 750px;
+    height: 100px;
+    top: calc(50% + 10px);
+    left: calc(50% - 10px);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Stone-shaped navigation buttons */
+.zen-stone-nav {
+    padding: 20px 40px;
+    font-family: 'Comic Neue', cursive;
+    font-size: 14px;
+    font-weight: 500;
+    color: #5A5A5A;
+    background: #E5E1D6;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+    /* Pebble effect with drop shadow */
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.12),
+        0 8px 20px rgba(0, 0, 0, 0.08),
+        inset 0 -4px 8px rgba(0, 0, 0, 0.05),
+        inset 0 4px 8px rgba(255, 255, 255, 0.3);
+}
+
+/* Different organic shapes for each stone with radial gradient for flat center */
+.zen-stone-nav.stone-1 {
+    border-radius: 60% 40% 55% 45% / 55% 45% 55% 45%;
+    background: radial-gradient(ellipse 120% 100% at 50% 45%, #EBE8E0 0%, #E5E1D6 70%, #DCD8CD 100%);
+}
+
+.zen-stone-nav.stone-2 {
+    border-radius: 45% 55% 40% 60% / 50% 50% 50% 50%;
+    background: radial-gradient(ellipse 120% 100% at 50% 45%, #DBD7CC 0%, #D4D0C5 70%, #CAC6BB 100%);
+}
+
+.zen-stone-nav.stone-3 {
+    border-radius: 50% 50% 55% 45% / 45% 55% 45% 55%;
+    background: radial-gradient(ellipse 120% 100% at 50% 45%, #B0ACA2 0%, #A8A49A 70%, #9C9890 100%);
+    color: white;
+}
+
+.zen-stone-nav.stone-4 {
+    border-radius: 55% 45% 45% 55% / 50% 50% 55% 45%;
+    background: radial-gradient(ellipse 120% 100% at 50% 45%, #737069 0%, #6B6862 70%, #605D56 100%);
+    color: white;
+}
+
+.zen-stone-nav:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 10px 28px rgba(0, 0, 0, 0.15),
+        inset 0 -4px 8px rgba(0, 0, 0, 0.05),
+        inset 0 4px 8px rgba(255, 255, 255, 0.3);
+}
+
+.zen-stone-nav.active {
+    background: radial-gradient(ellipse 120% 100% at 50% 45%, #98A882 0%, #8FA07A 70%, #828F6E 100%);
+    color: white;
+    font-weight: 700;
+    box-shadow:
+        0 8px 28px rgba(143, 160, 122, 0.4),
+        inset 0 -4px 8px rgba(0, 0, 0, 0.08),
+        inset 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* =============================================================================
+   SECTIONS
+   ============================================================================= */
+.zen-section {
+    min-height: auto;
+    padding: 0 0 80px 0;
+    /* Scroll margin for navbar clearance when navigating */
+    scroll-margin-top: 170px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* First section doesn't need scroll-margin since canvas has padding-top */
+.zen-section:first-child {
+    scroll-margin-top: 180px;
+    padding-top: 0;
+    /* Extra breathing room below navbar */
+}
+
+/* Process section needs extra scroll-margin for role summary */
+#process {
+    scroll-margin-top: 160px;
+}
+
+/* Solution section (Key Features) - less scroll margin */
+#solution {
+    scroll-margin-top: 150px;
+}
+
+/* =============================================================================
+   HOME SECTION - Overview, Challenge, Yin-Yang
+   ============================================================================= */
+
+/* Overview text */
+.zen-overview-text {
+    max-width: 850px;
+    margin: 0 auto 20px;
+    text-align: center;
+}
+
+.zen-overview-text p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #5A5A5A;
+    letter-spacing: 0.2px;
+}
+
+/* Layout for Challenge and Yin-Yang - separated for now */
+.zen-home-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 80px;
+    /* Separated for now */
+    max-width: 900px;
+    margin: 40px auto 0;
+    position: relative;
+}
+
+/* Challenge Container */
+.zen-challenge-container {
+    position: relative;
+    flex-shrink: 0;
+    z-index: 10;
+}
+
+/* =========================================================================
+   CHALLENGE BLOB - Fat mango shape with dimple on right
+   ========================================================================= */
+.zen-challenge-blob {
+    background: radial-gradient(ellipse 110% 90% at 50% 45%, #AABF98 0%, #9AAE86 60%, #85996E 100%);
+    padding: 40px 50px 50px 45px;
+    /* Fat mango - rounded left, dimpled/concave on right */
+    border-radius: 70% 30% 40% 60% / 60% 40% 60% 40%;
+    text-align: center;
+    position: relative;
+    width: 280px;
+    min-height: 200px;
+    /* Pebble texture - more visible */
+    box-shadow:
+        0 12px 40px rgba(154, 174, 134, 0.35),
+        inset 0 -8px 18px rgba(0, 0, 0, 0.1),
+        inset 0 8px 18px rgba(255, 255, 255, 0.35);
+}
+
+/* Title wrapper - holds title and leaf decorations */
+.zen-challenge-title-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 16px;
+    margin-left: 40px;
+}
+
+/* Title "The Challenge" */
+.zen-challenge-title {
+    font-family: 'Comic Neue', cursive;
+    font-size: 30px;
+    font-weight: 600;
+    color: #2D2D2D;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Leaf/branch decorations on sides of title */
+.zen-leaf-decor {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #4A4A4A;
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+}
+
+.zen-leaf-decor.left {
+    right: 100%;
+    margin-right: 8px;
+}
+
+.zen-leaf-decor.right {
+    left: 100%;
+    margin-left: 8px;
+}
+
+.zen-leaf-decor svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Challenge description text */
+.zen-challenge-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #3A3A3A;
+    max-width: 220px;
+    margin: 0 auto;
+}
+
+/* =========================================================================
+   LEAF CALLOUT - Lemon shape with stretched tip at top-right
+   ========================================================================= */
+.zen-leaf-callout {
+    position: absolute;
+    bottom: -60px;
+    left: -10px;
+    background: radial-gradient(ellipse 110% 90% at 50% 45%, #D09580 0%, #C4856E 60%, #B67860 100%);
+    color: white;
+    padding: 22px 32px 26px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.35;
+    text-align: center;
+    /* Lemon with stretched pointed tip at top-right */
+    border-radius: 45% 10% 45% 45% / 50% 15% 50% 45%;
+    transform: rotate(-6deg);
+    z-index: 15;
+    min-width: 140px;
+    /* Pebble texture with drop shadow */
+    box-shadow:
+        0 6px 12px rgba(196, 133, 110, 0.3),
+        0 12px 24px rgba(0, 0, 0, 0.15),
+        inset 0 -5px 12px rgba(0, 0, 0, 0.08),
+        inset 0 5px 12px rgba(255, 255, 255, 0.25);
+}
+
+.zen-leaf-callout span {
+    display: block;
+}
+
+/* =============================================================================
+   YIN-YANG Problem/Solution - overlapping layout
+   ============================================================================= */
+.zen-yinyang-container {
+    position: relative;
+    flex-grow: 1;
+    max-width: 480px;
+    padding: 0 20px;
+    padding-left: 40px;
+    margin-top: 30px;
+}
+
+.zen-yinyang {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    transform: scale(1.25);
+    transform-origin: center center;
+}
+
+.zen-yinyang-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.15));
+    transform: rotate(-40deg);
+}
+
+/* Content overlays positioned on each half */
+.zen-yinyang-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    padding: 60px 15px 50px;
+    box-sizing: border-box;
+}
+
+.zen-yinyang-content.left {
+    left: 0;
+    padding-right: 35px;
+    padding-left: 15px;
+    padding-top: 40px;
+}
+
+.zen-yinyang-content.right {
+    right: 0;
+    padding-left: 20px;
+    padding-right: 35px;
+    padding-top: 50px;
+    color: #2D2D2D;
+}
+
+.zen-yinyang-icon {
+    margin-bottom: 4px;
+    margin-top: 2px;
+    opacity: 0.65;
+    font-weight: bold;
+}
+
+.zen-yinyang-title {
+    font-family: 'Comic Neue', cursive;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+.zen-yinyang-text {
+    font-size: 11px;
+    text-align: center;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+/* Floating tech pebbles - smaller with 3D texture */
+.zen-pebble-float {
+    position: absolute;
+    padding: 6px 12px;
+    font-size: 10px;
+    font-weight: 500;
+    /* Irregular organic shape */
+    border-radius: 55% 45% 50% 50% / 50% 50% 50% 50%;
+    z-index: 10;
+    /* Pebble texture with drop shadow */
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.15),
+        0 8px 16px rgba(0, 0, 0, 0.1),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.05),
+        inset 0 2px 4px rgba(255, 255, 255, 0.25);
+}
+
+.zen-pebble-float.clay {
+    background: radial-gradient(ellipse 120% 100% at 50% 45%, #CC9580 0%, #C4856E 70%, #B87860 100%);
+    color: white;
+}
+
+.zen-pebble-float.sage {
+    background: radial-gradient(ellipse 120% 100% at 50% 45%, #98A882 0%, #8FA07A 70%, #828F6E 100%);
+    color: white;
+}
+
+.zen-pebble-float.stone {
+    background: radial-gradient(ellipse 120% 100% at 50% 45%, #A29E94 0%, #9A968C 70%, #8E8A80 100%);
+    color: white;
+}
+
+.zen-pebble-float.beige {
+    background: radial-gradient(ellipse 100% 90% at 50% 45%, #F0EDE4 0%, #E5E1D6 55%, #CCC8BD 100%);
+    color: #5A5A5A;
+    /* Stronger shadows for light pebbles */
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.18),
+        0 8px 16px rgba(0, 0, 0, 0.12),
+        inset 0 -3px 6px rgba(0, 0, 0, 0.1),
+        inset 0 2px 4px rgba(255, 255, 255, 0.12);
+}
+
+/* Inside pebbles - positioned within the yin-yang with 3D texture */
+.zen-pebble-inside {
+    position: absolute;
+    padding: 8px 14px;
+    font-size: 11px;
+    font-weight: 500;
+    /* Irregular organic shape */
+    border-radius: 60% 40% 55% 45% / 55% 45% 55% 45%;
+    z-index: 15;
+    /* Pebble texture with drop shadow */
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.18),
+        0 8px 16px rgba(0, 0, 0, 0.12),
+        inset 0 -2px 5px rgba(0, 0, 0, 0.06),
+        inset 0 2px 5px rgba(255, 255, 255, 0.25);
+}
+
+/* Different shapes for each inside pebble */
+.zen-pebble-inside:nth-child(1) {
+    border-radius: 55% 45% 50% 50% / 45% 55% 50% 50%;
+}
+
+.zen-pebble-inside:nth-child(2) {
+    border-radius: 45% 55% 55% 45% / 50% 50% 55% 45%;
+}
+
+.zen-pebble-inside:nth-child(3) {
+    border-radius: 50% 50% 45% 55% / 55% 45% 50% 50%;
+}
+
+.zen-pebble-inside:nth-child(4) {
+    border-radius: 60% 40% 50% 50% / 50% 50% 45% 55%;
+}
+
+.zen-pebble-inside:nth-child(5) {
+    border-radius: 45% 55% 60% 40% / 45% 55% 50% 50%;
+}
+
+.zen-pebble-inside.clay {
+    background: radial-gradient(ellipse 120% 100% at 50% 45%, #CC9580 0%, #C4856E 70%, #B87860 100%);
+    color: white;
+}
+
+.zen-pebble-inside.sage {
+    background: radial-gradient(ellipse 120% 100% at 50% 45%, #98A882 0%, #8FA07A 70%, #828F6E 100%);
+    color: white;
+}
+
+.zen-pebble-inside.stone {
+    background: radial-gradient(ellipse 120% 100% at 50% 45%, #A29E94 0%, #9A968C 70%, #8E8A80 100%);
+    color: white;
+}
+
+.zen-pebble-inside.beige {
+    background: radial-gradient(ellipse 100% 90% at 50% 45%, #E5D9C5 0%, #D5C9B5 55%, #BAB0A0 100%);
+    color: #4A4A4A;
+    /* Stronger shadows for light pebbles */
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.2),
+        0 8px 16px rgba(0, 0, 0, 0.15),
+        inset 0 -3px 8px rgba(0, 0, 0, 0.12),
+        inset 0 2px 4px rgba(255, 255, 255, 0.15);
+}
+
+/* =============================================================================
+   PROCESS SECTION - Role + Architecture Blob
+   ============================================================================= */
+.zen-role-summary {
+    text-align: center;
+    max-width: 700px;
+    margin: 30px auto 40px;
+}
+
+.zen-role-summary h3 {
+    font-family: 'Comic Neue', cursive;
+    font-size: 26px;
+    font-weight: 600;
+    color: #5A5A5A;
+    margin-bottom: 8px;
+}
+
+.zen-role-summary p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #6A6A6A;
+}
+
+/* Architecture Blob - large organic beige shape matching mockup */
+.zen-architecture-blob {
+    background: radial-gradient(ellipse 120% 100% at 50% 45%, #E6E1D3 0%, #DED9CB 70%, #D2CDBF 100%);
+    border-radius: 42% 58% 55% 45% / 35% 32% 68% 65%;
+    padding: 60px 60px 100px;
+    position: relative;
+    min-height: 420px;
+    margin-top: -16px;
+    /* Pebble texture */
+    box-shadow:
+        0 12px 48px rgba(0, 0, 0, 0.1),
+        inset 0 -6px 15px rgba(0, 0, 0, 0.04),
+        inset 0 6px 15px rgba(255, 255, 255, 0.35);
+}
+
+.zen-arch-title {
+    font-family: 'Comic Neue', cursive;
+    font-size: 36px;
+    font-weight: 600;
+    color: #5A5A5A;
+    line-height: 1.2;
+    position: relative;
+    margin-top: 40px;
+    z-index: 2;
+}
+
+/* Branch SVG - realistic tree sketch */
+.zen-branch-svg {
+    position: absolute;
+    top: 40%;
+    left: 58%;
+    transform: translate(-50%, -30%) rotate(10deg);
+    width: 80%;
+    height: auto;
+    opacity: 1;
+}
+
+/* Process labels along the branch */
+.zen-process-labels {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.zen-process-label {
+    position: absolute;
+    font-size: 12px;
+    color: #5A5A5A;
+    text-align: center;
+    max-width: 95px;
+}
+
+.zen-process-label strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #3D3D3D;
+    margin-bottom: 3px;
+}
+
+.zen-process-label span {
+    font-size: 11px;
+    color: #7A7A7A;
+}
+
+/* Decorative leaves */
+.zen-decor-leaf {
+    position: absolute;
+    width: 50px;
+    height: 70px;
+    border-radius: 80% 20% 80% 20% / 80% 80% 20% 20%;
+    opacity: 0.5;
+    transform: rotate(-15deg);
+}
+
+.zen-decor-leaf.sage {
+    background: #8FA07A;
+}
+
+.zen-decor-leaf.clay {
+    background: #C4856E;
+}
+
+/* =============================================================================
+   SOLUTION SECTION - Features + Tech Stack
+   ============================================================================= */
+.zen-section-heading {
+    font-family: 'Comic Neue', cursive;
+    font-size: 42px;
+    font-weight: 700;
+    color: #5A5A5A;
+    text-align: center;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+
+/* Features grid - 3x2 organic blob cards */
+.zen-features-organic {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-bottom: 60px;
+}
+
+.zen-feature-blob {
+    padding: 32px 45px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Irregular organic blob shape */
+    border-radius: 62% 38% 55% 45% / 42% 58% 42% 58%;
+    /* Pebble texture */
+    box-shadow:
+        0 6px 24px rgba(0, 0, 0, 0.08),
+        inset 0 -4px 10px rgba(0, 0, 0, 0.05),
+        inset 0 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+.zen-feature-blob:nth-child(2) {
+    border-radius: 38% 62% 48% 52% / 55% 45% 58% 42%;
+}
+
+.zen-feature-blob:nth-child(3) {
+    border-radius: 45% 55% 52% 48% / 48% 52% 55% 45%;
+}
+
+.zen-feature-blob:nth-child(4) {
+    border-radius: 42% 58% 62% 38% / 58% 42% 52% 48%;
+}
+
+.zen-feature-blob:nth-child(5) {
+    border-radius: 58% 42% 42% 58% / 38% 62% 55% 45%;
+}
+
+.zen-feature-blob:nth-child(6) {
+    border-radius: 45% 55% 58% 42% / 52% 48% 38% 62%;
+}
+
+.zen-feature-blob:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow:
+        0 12px 36px rgba(0, 0, 0, 0.12),
+        inset 0 -4px 10px rgba(0, 0, 0, 0.05),
+        inset 0 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Feature blob colors matching mockup palette with gradients */
+.zen-feature-blob.sage-light {
+    background: radial-gradient(ellipse 120% 100% at 50% 45%, #C0D0AF 0%, #B5C5A4 70%, #A8B897 100%);
+}
+
+.zen-feature-blob.beige {
+    background: radial-gradient(ellipse 120% 100% at 50% 45%, #EDE7DA 0%, #E5DFD2 70%, #D9D3C6 100%);
+}
+
+.zen-feature-blob.clay-light {
+    background: radial-gradient(ellipse 120% 100% at 50% 45%, #DCAD9E 0%, #D4A393 70%, #C89585 100%);
+    color: white;
+}
+
+.zen-feature-blob.stone-light {
+    background: radial-gradient(ellipse 120% 100% at 50% 45%, #D0CBC0 0%, #C8C3B8 70%, #BCB7AC 100%);
+}
+
+.zen-feature-icon {
+    width: 46px;
+    height: 46px;
+    background: rgba(255, 255, 255, 0.45);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+}
+
+.zen-feature-icon i {
+    width: 26px;
+    height: 26px;
+}
+
+.zen-feature-blob h4 {
+    font-family: 'Comic Neue', cursive;
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.zen-feature-blob p {
+    font-size: 13px;
+    line-height: 1.55;
+    opacity: 0.85;
+}
+
+/* Tech Stack Bar - rounded pill container */
+.zen-tech-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    justify-content: center;
+    padding: 28px 36px;
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 100px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.zen-tech-category {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.zen-tech-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #7A7A7A;
+    margin-right: 6px;
+}
+
+.zen-tech-pill {
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 100px;
+    color: white;
+}
+
+.zen-tech-pill.sage {
+    background: #8FA07A;
+}
+
+.zen-tech-pill.stone {
+    background: #7A7A7A;
+}
+
+.zen-tech-pill.clay {
+    background: #C4856E;
+}
+
+/* =============================================================================
+   IMPACT SECTION - Outcomes + Highlights
+   ============================================================================= */
+
+/* Grey blob container for outcomes - matching mockup */
+.zen-outcomes-container {
+    background: radial-gradient(ellipse 120% 100% at 50% 45%, #B8B3A8 0%, #B0ABA0 70%, #A4A095 100%);
+    border-radius: 45% 55% 52% 48% / 38% 32% 68% 62%;
+    padding: 40px 50px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 35px;
+    position: relative;
+    /* Pebble texture */
+    box-shadow:
+        0 12px 44px rgba(0, 0, 0, 0.12),
+        inset 0 -6px 15px rgba(0, 0, 0, 0.05),
+        inset 0 6px 15px rgba(255, 255, 255, 0.25);
+}
+
+.zen-outcomes-title {
+    font-family: 'Comic Neue', cursive;
+    font-size: 36px;
+    font-weight: 600;
+    color: #3D3D3D;
+    line-height: 1.15;
+    position: absolute;
+    left: 70px;
+    top: 45%;
+    transform: translateY(-50%);
+}
+
+.zen-outcomes-leaves {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Leaf-shaped outcome cards - organic irregular blob shapes with 3D texture */
+.zen-leaf-card {
+    width: 140px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    /* Irregular organic blob shape */
+    border-radius: 65% 35% 55% 45% / 45% 60% 40% 55%;
+    transition: transform 0.3s ease;
+    padding: 25px 20px;
+    /* Pebble texture with drop shadow */
+    box-shadow:
+        0 6px 12px rgba(0, 0, 0, 0.18),
+        0 12px 24px rgba(0, 0, 0, 0.12),
+        inset 0 -3px 8px rgba(0, 0, 0, 0.08),
+        inset 0 3px 8px rgba(255, 255, 255, 0.2);
+}
+
+.zen-leaf-card:nth-child(2) {
+    border-radius: 40% 60% 45% 55% / 55% 45% 55% 45%;
+}
+
+.zen-leaf-card:nth-child(3) {
+    border-radius: 55% 45% 35% 65% / 50% 40% 60% 50%;
+}
+
+.zen-leaf-card:hover {
+    transform: scale(1.06);
+}
+
+.zen-leaf-card.sage {
+    background: radial-gradient(ellipse 120% 100% at 50% 45%, #98A882 0%, #8FA07A 70%, #828F6E 100%);
+}
+
+.zen-leaf-card.stone {
+    background: radial-gradient(ellipse 120% 100% at 50% 45%, #A29E94 0%, #9A968C 70%, #8E8A80 100%);
+}
+
+.zen-leaf-card.clay {
+    background: radial-gradient(ellipse 120% 100% at 50% 45%, #CC9580 0%, #C4856E 70%, #B87860 100%);
+}
+
+.zen-leaf-value {
+    font-family: 'Comic Neue', cursive;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.zen-leaf-label {
+    font-size: 12px;
+    opacity: 0.9;
+    max-width: 80px;
+}
+
+/* Technical Highlights */
+.zen-highlights {
+    max-width: 720px;
+    margin: 0 auto 25px;
+}
+
+.zen-highlights h3 {
+    font-family: 'Comic Neue', cursive;
+    font-size: 26px;
+    font-weight: 600;
+    color: #5A5A5A;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.zen-highlights ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+}
+
+.zen-highlights li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: #5A5A5A;
+    line-height: 1.5;
+}
+
+.zen-highlights li::before {
+    content: '';
+    width: 10px;
+    height: 14px;
+    background: #9AAE86;
+    /* Leaf-like shape */
+    border-radius: 50% 0 50% 50%;
+    flex-shrink: 0;
+    margin-top: 3px;
+    transform: rotate(-30deg);
+    opacity: 0.8;
+}
+
+.zen-highlights li:nth-child(even)::before {
+    background: #C4A47C;
+    border-radius: 0 50% 50% 50%;
+    transform: rotate(30deg);
+}
+
+.zen-highlights li i {
+    display: none;
+}
+
+/* Disclaimer */
+.zen-disclaimer {
+    font-size: 15px;
+    color: #8A8A84;
+    font-style: italic;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* =============================================================================
+   RESPONSIVE
+   ============================================================================= */
+@media (max-width: 900px) {
+    .zen-features-organic {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .zen-outcomes-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .zen-yinyang {
+        width: 320px;
+        height: 320px;
+    }
+
+    .zen-highlights ul {
+        grid-template-columns: 1fr;
+    }
+
+    .zen-title {
+        font-size: 48px;
+    }
+
+    .zen-nav {
+        left: 0;
+        /* No sidebar on tablet */
+    }
+
+    .zen-canvas {
+        padding-top: 100px;
+    }
+}
+
+@media (max-width: 600px) {
+    .zen-canvas {
+        padding: 100px 20px 60px;
+        /* More top padding for fixed nav on mobile */
+    }
+
+    .zen-title {
+        font-size: 38px;
+    }
+
+    .zen-nav {
+        left: 0;
+        /* Full width on mobile - no sidebar */
+        top: 0;
+        /* At very top on mobile */
+        gap: 12px;
+        flex-wrap: wrap;
+        padding: 15px 20px;
+    }
+
+    .zen-nav-path {
+        display: none;
+    }
+
+    .zen-stone-nav {
+        padding: 10px 18px;
+        font-size: 12px;
+    }
+
+    .zen-features-organic {
+        grid-template-columns: 1fr;
+    }
+
+    .zen-yinyang {
+        width: 280px;
+        height: 280px;
+    }
+
+    .zen-pebble-float {
+        display: none;
+    }
+
+    .zen-architecture-blob {
+        padding: 35px 25px 70px;
+        border-radius: 30px;
+    }
+
+    .zen-process-labels {
+        position: static;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        justify-content: center;
+        margin-top: 200px;
+    }
+
+    .zen-process-label {
+        position: static !important;
+    }
+
+    .zen-outcomes-leaves {
+        justify-content: center;
+    }
+
+    .zen-leaf-card {
+        width: 120px;
+        height: 140px;
+    }
+
+    .zen-section-heading {
+        font-size: 32px;
+    }
+
+    .zen-challenge-blob {
+        min-width: 280px;
+        padding: 35px 40px;
+    }
+}

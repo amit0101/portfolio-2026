@@ -17,7 +17,6 @@ video-presentation-backup.html
 !projects-showcase.mov
 
 # Exclude original (non-minified) CSS and JS files - use minified versions
-project-theme-ios.css
 
 # Flubber chat assistant files (not for production)
 flubber.css
