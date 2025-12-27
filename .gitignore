@@ -4,16 +4,17 @@ narration-scripts/
 project-marketing-screenshots/
 project-clips-backup/
 project-clips/
-video-presentation.html
 
 # Files to exclude
+video-presentation.html
 video-presentation.html.backup
 video-presentation-backup.html
 *.mp4
 *.mov
 
+!data/projects-content.json
 # Keep the project showcase video
-!projects-showcase-720.mp4
+!projects-showcase.mov
 
 # Exclude original (non-minified) CSS and JS files - use minified versions
 
