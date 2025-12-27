@@ -8,167 +8,214 @@
     <meta name="description"
         content="Full-stack operations management platform with real-time tracking and CRM integration">
     <link rel="stylesheet" href="styles.min.css">
-    <link rel="stylesheet" href="project-page.min.css">
-    <!-- <link rel="stylesheet" href="flubber.css"> -->
-    <!-- <link rel="stylesheet" href="flubber-chat.css"> -->
+    <link rel="stylesheet" href="project-theme-ios.min.css">
     <link rel="stylesheet" href="mobile-menu.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
-
-<body>
-    <!-- Sidebar Placeholder (prevents flickering) -->
+<body class="ios-theme">
     <aside class="sidebar" id="sidebar-placeholder"></aside>
-
-    <!-- Sidebar will be loaded dynamically by sidebar-loader.min.js -->
     <script src="sidebar-loader.min.js"></script>
 
-    <!-- Main Content Wrapper -->
     <div class="main-wrapper">
-        <!-- Window Title Bar -->
+        <!-- Title Bar -->
         <div class="window-titlebar">
             <div class="window-buttons">
                 <span class="window-button window-close"></span>
                 <span class="window-button window-minimize"></span>
                 <span class="window-button window-maximize"></span>
             </div>
-            <div class="window-title">operations-saas.project</div>
+            <div class="window-title">Operations Management Platform</div>
         </div>
 
-        <!-- IDE Editor Area -->
-        <div class="ide-editor">
-            <!-- File Explorer Panel (inside IDE window) -->
-            <aside class="ide-file-explorer">
-                <div class="explorer-header">
-                    <i data-lucide="folder-open"></i>
-                    <span>EXPLORER</span>
-                </div>
-                <nav class="explorer-tree">
-                    <a href="#overview" class="explorer-file active" data-section="overview">
-                        <i data-lucide="file-text"></i>
-                        <span>overview.md</span>
-                    </a>
-                    <a href="#problem-solution" class="explorer-file" data-section="problem-solution">
-                        <i data-lucide="file-text"></i>
-                        <span>problem-solution.md</span>
-                    </a>
-                    <a href="#role" class="explorer-file" data-section="role">
-                        <i data-lucide="file-text"></i>
-                        <span>my-role.md</span>
-                    </a>
-                    <a href="#architecture" class="explorer-file" data-section="architecture">
-                        <i data-lucide="box"></i>
-                        <span>architecture.tsx</span>
-                    </a>
-                    <a href="#features" class="explorer-file" data-section="features">
-                        <i data-lucide="zap"></i>
-                        <span>features.json</span>
-                    </a>
-                    <a href="#tech-stack" class="explorer-file" data-section="tech-stack">
-                        <i data-lucide="settings"></i>
-                        <span>tech-stack.yml</span>
-                    </a>
-                    <a href="#highlights" class="explorer-file" data-section="highlights">
-                        <i data-lucide="star"></i>
-                        <span>highlights.ts</span>
-                    </a>
-                </nav>
-            </aside>
+        <!-- Top Navigation Bar - Segmented Control -->
+        <nav class="ios-top-nav">
+            <div class="ios-segmented-control">
+                <button class="ios-segment active" data-section="overview">Overview</button>
+                <button class="ios-segment" data-section="features">Features</button>
+                <button class="ios-segment" data-section="architecture">Architecture</button>
+                <button class="ios-segment" data-section="tech-stack">Tech Stack</button>
+            </div>
+        </nav>
 
-            <!-- Main Editor Content -->
-            <div class="ide-main-content">
-                <div class="ide-tabs">
-                    <div class="ide-tab active">
-                        <i data-lucide="truck" class="tab-icon"></i>
-                        <span>Operations Management SaaS</span>
-                    </div>
-                </div>
+        <!-- Sections Container -->
+        <div class="ios-sections-container">
 
-                <div class="ide-content">
-                    <div class="project-header">
-                        <h1 class="project-title">Enterprise Operations Management Platform</h1>
-                        <div class="project-meta-tags">
-                            <span class="meta-tag">Real-time Operations Dashboard</span>
-                            <span class="meta-tag">Service Organizations</span>
-                            <span class="meta-tag">Full-Stack Developer (Solo)</span>
-                        </div>
-                    </div>
+            <!-- ==================== SECTION 1: OVERVIEW ==================== -->
+            <!-- Combines: Overview + Problem/Solution + My Role -->
+            <section class="ios-section active" id="overview">
+                <div class="ios-glass-container">
+                    <div class="ios-section-layout">
 
-                    <section id="overview" class="content-section">
-                        <h2 class="section-heading">
-                            <span class="line-number">01</span>
-                            <span class="section-title">Overview</span>
-                        </h2>
-                        <div class="section-content">
-                            <p>Built a full-stack platform to streamline operations for a 7-location service
-                                organization,
-                                replacing manual paper-based workflows with automated digital processes. The system
-                                provides
-                                real-time visibility, automated CRM integration, GPS tracking, and team communication.
+                        <!-- Main Card (Left) - Dashboard, Title, Stats, Description, and Role -->
+                        <div class="ios-main-card">
+                            <div class="ios-main-visual">
+                                <div class="ios-mockup-image dashboard">
+                                    <img src="assets/mockups/dashboard.png" alt="Dashboard" />
+                                </div>
+                            </div>
+
+                            <h1 class="ios-main-title">Enterprise Operations Management Platform</h1>
+                            <p class="ios-main-description">
+                                Built a full-stack platform to streamline operations for a 7-location service
+                                organization, replacing manual paper-based workflows with automated digital processes.
                             </p>
-                        </div>
-                    </section>
 
-                    <section id="problem-solution" class="content-section">
-                        <h2 class="section-heading">
-                            <span class="line-number">02</span>
-                            <span class="section-title">Problem & Solution</span>
-                        </h2>
-                        <div class="section-content">
-                            <div class="code-block">
-                                <div class="code-header">
-                                    <span class="code-lang">Challenge</span>
+                            <div class="ios-role-info">
+                                <div class="ios-role-header">
+                                    <i data-lucide="user" class="role-icon"></i>
+                                    <strong>Full-Stack Developer (Solo)</strong>
                                 </div>
-                                <p>Manual data entry, no cross-location visibility, poor lead tracking, and disconnected
-                                    teams across 90 miles.</p>
-                            </div>
-                            <div class="code-block">
-                                <div class="code-header">
-                                    <span class="code-lang">Solution</span>
-                                </div>
-                                <p>Mobile-first platform with real-time dashboard, automated CRM sync, live GPS
-                                    tracking,
-                                    and integrated communication - eliminating double entry and enabling instant
-                                    operational
-                                    coordination.</p>
+                                <ul class="ios-role-list">
+                                    <li><i data-lucide="layers" class="list-icon"></i>Architected complete system:
+                                        backend API, frontend app, and database</li>
+                                    <li><i data-lucide="refresh-cw" class="list-icon"></i>Implemented CRM integration
+                                        with retry logic and error handling</li>
+                                    <li><i data-lucide="radio" class="list-icon"></i>Built real-time features using
+                                        WebSockets for live updates</li>
+                                </ul>
                             </div>
                         </div>
-                    </section>
 
-                    <section id="role" class="content-section">
-                        <h2 class="section-heading">
-                            <span class="line-number">03</span>
-                            <span class="section-title">My Role</span>
-                        </h2>
-                        <div class="section-content">
-                            <p class="role-title"><strong>Full-Stack Developer</strong> (Solo)</p>
-                            <ul class="feature-list">
-                                <li>Architected and developed complete system: backend API, frontend app, and database
-                                </li>
-                                <li>Implemented CRM integration with retry logic and error handling</li>
-                                <li>Built real-time features using WebSockets for live updates</li>
-                                <li>Deployed production system with CI/CD pipelines</li>
-                            </ul>
-                        </div>
-                    </section>
-
-                    <section id="architecture" class="content-section">
-                        <h2 class="section-heading">
-                            <span class="line-number">04</span>
-                            <span class="section-title">Architecture</span>
-                        </h2>
-                        <div class="section-content">
-                            <div class="code-block">
-                                <div class="code-header">
-                                    <span class="code-lang">System Architecture</span>
+                        <!-- Widget Cards Grid (Right) - Staggered Feature Cards -->
+                        <div class="ios-widget-grid">
+                            <div class="ios-widget-card">
+                                <div class="ios-widget-icon blue">
+                                    <i data-lucide="activity"></i>
                                 </div>
-                                <pre class="architecture-diagram">┌─────────────────────────────────────────────────────┐
-│           Next.js 14 Frontend (Vercel)              │
+                                <span class="ios-widget-label">Real-time Dashboard</span>
+                                <p class="ios-widget-value">Live metrics with WebSocket updates</p>
+                            </div>
+                            <div class="ios-widget-card">
+                                <div class="ios-widget-icon green">
+                                    <i data-lucide="map-pin"></i>
+                                </div>
+                                <span class="ios-widget-label">GPS Tracking</span>
+                                <p class="ios-widget-value">30-second updates with live ETA</p>
+                            </div>
+                            <div class="ios-widget-card">
+                                <div class="ios-widget-icon orange">
+                                    <i data-lucide="refresh-cw"></i>
+                                </div>
+                                <span class="ios-widget-label">CRM Sync</span>
+                                <p class="ios-widget-value">Automated with retry logic</p>
+                            </div>
+                            <div class="ios-widget-card">
+                                <div class="ios-widget-icon purple">
+                                    <i data-lucide="smartphone"></i>
+                                </div>
+                                <span class="ios-widget-label">Mobile PWA</span>
+                                <p class="ios-widget-value">Installable with push notifications</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Tech Bar -->
+                    <div class="ios-tech-bar">
+                        <span class="ios-tech-label">Tech</span>
+                        <span class="ios-pill teal">Next.js</span>
+                        <span class="ios-pill teal">TypeScript</span>
+                        <span class="ios-pill dark">FastAPI</span>
+                        <span class="ios-pill dark">Python</span>
+                        <span class="ios-pill orange">PostgreSQL</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== SECTION 2: FEATURES ==================== -->
+            <!-- Original 6 feature cards -->
+            <section class="ios-section" id="features">
+                <div class="ios-glass-container">
+                    <div class="ios-section-layout">
+
+                        <!-- Main Card (Left) - Key Features -->
+                        <div class="ios-main-card">
+                            <div class="ios-main-visual">
+                                <div class="ios-mockup-image leads">
+                                    <img src="assets/mockups/leads.png" alt="Lead Management" />
+                                </div>
+                            </div>
+                            <h1 class="ios-main-title">Key Features</h1>
+                            <p class="ios-main-description">
+                                Comprehensive tools for operations management, from lead intake to field tracking.
+                            </p>
+                            <div class="ios-role-info">
+                                <div class="ios-role-header">
+                                    <i data-lucide="layout-dashboard" class="role-icon"></i>
+                                    <strong>Core Capabilities</strong>
+                                </div>
+                                <ul class="ios-role-list">
+                                    <li><i data-lucide="activity" class="list-icon"></i>Real-time dashboard with
+                                        WebSocket updates</li>
+                                    <li><i data-lucide="users" class="list-icon"></i>Lead management with duplicate
+                                        detection</li>
+                                    <li><i data-lucide="navigation" class="list-icon"></i>GPS tracking with live ETA
+                                        sharing</li>
+                                    <li><i data-lucide="message-circle" class="list-icon"></i>Team chat with @mentions
+                                        and notifications</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Widget Cards Grid (Right) - Staggered Feature Cards -->
+                        <div class="ios-widget-grid">
+                            <div class="ios-widget-card">
+                                <div class="ios-widget-icon blue">
+                                    <i data-lucide="navigation"></i>
+                                </div>
+                                <span class="ios-widget-label">GPS Tracking</span>
+                                <p class="ios-widget-value">30-sec updates, live ETA, shareable links</p>
+                            </div>
+                            <div class="ios-widget-card">
+                                <div class="ios-widget-icon pink">
+                                    <i data-lucide="message-circle"></i>
+                                </div>
+                                <span class="ios-widget-label">Team Chat</span>
+                                <p class="ios-widget-value">@mentions, real-time notifications</p>
+                            </div>
+                            <div class="ios-widget-card">
+                                <div class="ios-widget-icon purple">
+                                    <i data-lucide="shield"></i>
+                                </div>
+                                <span class="ios-widget-label">User Roles</span>
+                                <p class="ios-widget-value">RBAC with location permissions</p>
+                            </div>
+                            <div class="ios-widget-card">
+                                <div class="ios-widget-icon green">
+                                    <i data-lucide="smartphone"></i>
+                                </div>
+                                <span class="ios-widget-label">Mobile PWA</span>
+                                <p class="ios-widget-value">iOS/Android, push, offline support</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Tech Bar -->
+                    <div class="ios-tech-bar">
+                        <span class="ios-tech-label">Frontend</span>
+                        <span class="ios-pill blue">React</span>
+                        <span class="ios-pill blue">TailwindCSS</span>
+                        <span class="ios-pill blue">Radix UI</span>
+                        <span class="ios-pill blue">TanStack Query</span>
+                        <span class="ios-pill purple">Zod</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== SECTION 3: ARCHITECTURE ==================== -->
+            <!-- Original ASCII architecture diagram -->
+            <section class="ios-section" id="architecture">
+                <div class="ios-glass-container">
+                    <div class="ios-section-layout">
+
+                        <!-- Main Card (Left) - Architecture Diagram -->
+                        <div class="ios-main-card">
+                            <div class="ios-main-visual architecture">
+                                <pre class="ios-architecture-diagram">┌─────────────────────────────────────────────────────┐
+│               Next.js Frontend                      │
 │   React + TypeScript + TailwindCSS + Radix UI       │
 │              Real-time Subscriptions                │
 └──────────────────┬──────────────────────────────────┘
@@ -176,218 +223,215 @@
 ┌──────────────────┴──────────────────────────────────┐
 │          FastAPI Backend (Render)                   │
 │   Python + JWT Auth + RBAC + Background Jobs        │
-└──────┬──────────────────┬──────────────┬──────────--┘
+└──────┬──────────────────┬──────────────┬────────────┘
        │                  │              │
-┌──────┴───────┐  ┌───────┴──────┐  ┌───┴──────┐
+┌──────┴───────┐  ┌───────┴──────┐  ┌───-┴─────┐
 │  PostgreSQL  │  │    Redis     │  │ External │
 │  (Supabase)  │  │ (Cache/Jobs) │  │  CRM API │
 └──────────────┘  └──────────────┘  └──────────┘
 
 Integrations: Google Maps • Firebase • SendGrid</pre>
                             </div>
+                            <h1 class="ios-main-title">System Architecture</h1>
+                            <p class="ios-main-description">
+                                Modern microservices architecture with Next.js frontend deployed on Vercel,
+                                FastAPI backend on Render, and PostgreSQL database on Supabase. Real-time
+                                communication via WebSockets with Redis for caching and background jobs.
+                            </p>
                         </div>
-                    </section>
 
-                    <section id="features" class="content-section">
-                        <h2 class="section-heading">
-                            <span class="line-number">05</span>
-                            <span class="section-title">Key Features</span>
-                        </h2>
-                        <div class="section-content">
-                            <div class="features-grid">
-                                <div class="feature-card">
-                                    <h3>Real-Time Dashboard</h3>
-                                    <ul>
-                                        <li>Live operational metrics with WebSocket updates</li>
-                                        <li>Multi-location filtering and date ranges</li>
-                                        <li>Mobile-responsive widget interface</li>
-                                    </ul>
+                        <!-- Widget Cards Grid (Right) - Staggered Integration Cards -->
+                        <div class="ios-widget-grid">
+                            <div class="ios-widget-card">
+                                <div class="ios-widget-icon blue">
+                                    <i data-lucide="cloud"></i>
                                 </div>
-                                <div class="feature-card">
-                                    <h3>Lead Management</h3>
-                                    <ul>
-                                        <li>Digital intake forms with duplicate detection</li>
-                                        <li>Automated CRM sync with retry logic</li>
-                                        <li>Follow-up reminders and conversion tracking</li>
-                                    </ul>
+                                <span class="ios-widget-label">CRM API</span>
+                                <p class="ios-widget-value">REST API integration with retry logic</p>
+                            </div>
+                            <div class="ios-widget-card">
+                                <div class="ios-widget-icon green">
+                                    <i data-lucide="map"></i>
                                 </div>
-                                <div class="feature-card">
-                                    <h3>GPS Tracking</h3>
-                                    <ul>
-                                        <li>30-second location updates</li>
-                                        <li>Live ETA with Google Maps traffic data</li>
-                                        <li>Shareable tracking links for stakeholders</li>
-                                    </ul>
+                                <span class="ios-widget-label">Google Maps</span>
+                                <p class="ios-widget-value">GPS tracking & ETA</p>
+                            </div>
+                            <div class="ios-widget-card">
+                                <div class="ios-widget-icon orange">
+                                    <i data-lucide="bell"></i>
                                 </div>
-                                <div class="feature-card">
-                                    <h3>Team Communication</h3>
-                                    <ul>
-                                        <li>Multi-channel chat with @mentions</li>
-                                        <li>Real-time notifications</li>
-                                        <li>Message search and pinning</li>
-                                    </ul>
+                                <span class="ios-widget-label">Firebase</span>
+                                <p class="ios-widget-value">Cloud Messaging for push notifications</p>
+                            </div>
+                            <div class="ios-widget-card">
+                                <div class="ios-widget-icon pink">
+                                    <i data-lucide="mail"></i>
                                 </div>
-                                <div class="feature-card">
-                                    <h3>User Management</h3>
-                                    <ul>
-                                        <li>Role-based access control (5 levels)</li>
-                                        <li>Location-based permissions</li>
-                                        <li>Activity audit logging</li>
-                                    </ul>
-                                </div>
-                                <div class="feature-card">
-                                    <h3>Mobile PWA</h3>
-                                    <ul>
-                                        <li>Installable on iOS/Android</li>
-                                        <li>Push notifications</li>
-                                        <li>Offline functionality</li>
-                                    </ul>
-                                </div>
+                                <span class="ios-widget-label">SendGrid</span>
+                                <p class="ios-widget-value">Transactional email delivery</p>
                             </div>
                         </div>
-                    </section>
 
-                    <section id="tech-stack" class="content-section">
-                        <h2 class="section-heading">
-                            <span class="line-number">06</span>
-                            <span class="section-title">Tech Stack</span>
-                        </h2>
-                        <div class="section-content">
-                            <div class="tech-categories">
-                                <div class="tech-category">
-                                    <h3>Frontend</h3>
-                                    <div class="tech-tags">
-                                        <span class="tech-tag">Next.js 14</span>
-                                        <span class="tech-tag">TypeScript</span>
-                                        <span class="tech-tag">React 18</span>
-                                        <span class="tech-tag">TailwindCSS</span>
-                                        <span class="tech-tag">Radix UI</span>
-                                        <span class="tech-tag">TanStack Query</span>
-                                        <span class="tech-tag">React Hook Form</span>
-                                        <span class="tech-tag">Zod</span>
-                                    </div>
-                                </div>
-                                <div class="tech-category">
-                                    <h3>Backend</h3>
-                                    <div class="tech-tags">
-                                        <span class="tech-tag">Python 3.11</span>
-                                        <span class="tech-tag">FastAPI</span>
-                                        <span class="tech-tag">SQLAlchemy</span>
-                                        <span class="tech-tag">Pydantic</span>
-                                        <span class="tech-tag">Celery</span>
-                                        <span class="tech-tag">Redis</span>
-                                        <span class="tech-tag">WebSockets</span>
-                                    </div>
-                                </div>
-                                <div class="tech-category">
-                                    <h3>Database & Infrastructure</h3>
-                                    <div class="tech-tags">
-                                        <span class="tech-tag">PostgreSQL</span>
-                                        <span class="tech-tag">Supabase</span>
-                                        <span class="tech-tag">Vercel</span>
-                                        <span class="tech-tag">Render</span>
-                                    </div>
-                                </div>
-                                <div class="tech-category">
-                                    <h3>Integrations</h3>
-                                    <div class="tech-tags">
-                                        <span class="tech-tag">Google Maps API</span>
-                                        <span class="tech-tag">Firebase Cloud Messaging</span>
-                                        <span class="tech-tag">SendGrid</span>
-                                        <span class="tech-tag">Enterprise CRM REST API</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                    </div>
 
-                    <section id="highlights" class="content-section">
-                        <h2 class="section-heading">
-                            <span class="line-number">07</span>
-                            <span class="section-title">Technical Highlights</span>
-                        </h2>
-                        <div class="section-content">
-                            <ul class="feature-list">
-                                <li>End-to-end type safety (TypeScript + Pydantic)</li>
-                                <li>Real-time WebSocket architecture</li>
-                                <li>JWT authentication with RBAC</li>
-                                <li>Background job processing with retry logic</li>
-                                <li>RESTful API with OpenAPI documentation</li>
-                                <li>Responsive PWA with offline support</li>
-                                <li>Strategic database indexing for performance</li>
-                                <li>CI/CD pipelines with automated deployment</li>
-                            </ul>
-                            <p class="disclaimer">Built with modern technologies and best practices for production-ready
-                                enterprise software. This is a private production application - detailed demonstrations
-                                available upon request.</p>
-                        </div>
-                    </section>
-                    </section>
+                    <!-- Tech Bar -->
+                    <div class="ios-tech-bar">
+                        <span class="ios-tech-label">Backend</span>
+                        <span class="ios-pill green">Python</span>
+                        <span class="ios-pill green">SQLAlchemy</span>
+                        <span class="ios-pill green">Pydantic</span>
+                        <span class="ios-pill purple">Celery</span>
+                        <span class="ios-pill purple">Redis</span>
+                    </div>
                 </div>
-            </div>
+            </section>
+
+            <!-- ==================== SECTION 4: TECH STACK & HIGHLIGHTS ==================== -->
+            <section class="ios-section" id="tech-stack">
+                <div class="ios-glass-container">
+                    <div class="ios-section-layout">
+
+                        <!-- Main Card (Left) - Technical Highlights -->
+                        <div class="ios-main-card">
+                            <div class="ios-main-visual">
+                                <div class="ios-mockup-image">
+                                    <img src="assets/mockups/tech-flow.png" alt="Tech Architecture" />
+                                </div>
+                            </div>
+                            <h1 class="ios-main-title">Technical Highlights</h1>
+                            <p class="ios-main-description">
+                                Built with modern technologies and best practices for production-ready enterprise
+                                software.
+                            </p>
+                            <div class="ios-role-info">
+                                <div class="ios-role-header">
+                                    <i data-lucide="code-2" class="role-icon"></i>
+                                    <strong>Engineering Excellence</strong>
+                                </div>
+                                <ul class="ios-role-list">
+                                    <li><i data-lucide="shield" class="list-icon"></i>Type safety with TypeScript +
+                                        Pydantic</li>
+                                    <li><i data-lucide="radio" class="list-icon"></i>Real-time WebSocket architecture
+                                    </li>
+                                    <li><i data-lucide="database" class="list-icon"></i>Strategic database indexing for
+                                        performance</li>
+                                    <li><i data-lucide="smartphone" class="list-icon"></i>Responsive PWA with offline
+                                        support</li>
+                                </ul>
+                            </div>
+                            <p class="ios-disclaimer">
+                                Private production application - demos available upon request.
+                            </p>
+                        </div>
+
+                        <!-- Widget Cards Grid (Right) - Staggered Tech Cards -->
+                        <div class="ios-widget-grid">
+                            <div class="ios-widget-card">
+                                <div class="ios-widget-icon blue">
+                                    <i data-lucide="network"></i>
+                                </div>
+                                <span class="ios-widget-label">RESTful API</span>
+                                <p class="ios-widget-value">OpenAPI documentation with Pydantic</p>
+                            </div>
+                            <div class="ios-widget-card">
+                                <div class="ios-widget-icon green">
+                                    <i data-lucide="key"></i>
+                                </div>
+                                <span class="ios-widget-label">JWT Auth</span>
+                                <p class="ios-widget-value">Role-based access control (RBAC)</p>
+                            </div>
+                            <div class="ios-widget-card">
+                                <div class="ios-widget-icon orange">
+                                    <i data-lucide="timer"></i>
+                                </div>
+                                <span class="ios-widget-label">Background Jobs</span>
+                                <p class="ios-widget-value">Celery + Redis with retry logic</p>
+                            </div>
+                            <div class="ios-widget-card">
+                                <div class="ios-widget-icon purple">
+                                    <i data-lucide="git-branch"></i>
+                                </div>
+                                <span class="ios-widget-label">CI/CD</span>
+                                <p class="ios-widget-value">GitHub Actions automated deploy</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Tech Bar - Full Stack -->
+                    <div class="ios-tech-bar">
+                        <span class="ios-tech-label">Infrastructure</span>
+                        <span class="ios-pill teal">Vercel</span>
+                        <span class="ios-pill teal">Render</span>
+                        <span class="ios-pill orange">Supabase</span>
+                        <span class="ios-pill dark">Docker</span>
+                        <span class="ios-pill dark">GitHub Actions</span>
+                    </div>
+                </div>
+            </section>
+
         </div>
+    </div>
 
-        <script>
-            // Initialize Lucide icons
-            lucide.createIcons();
+    <script>
+        lucide.createIcons();
 
-            // Scroll-based navigation highlighting
-            const sections = document.querySelectorAll('.content-section');
-            const navItems = document.querySelectorAll('.explorer-file');
+        // Section navigation with smooth scroll
+        const segments = document.querySelectorAll('.ios-segment');
+        const sections = document.querySelectorAll('.ios-section');
 
-            function setActiveNav(sectionId) {
-                navItems.forEach(item => {
-                    if (item.getAttribute('data-section') === sectionId) {
-                        item.classList.add('active');
-                    } else {
-                        item.classList.remove('active');
-                    }
-                });
-            }
+        segments.forEach(segment => {
+            segment.addEventListener('click', () => {
+                const sectionId = segment.dataset.section;
+                const targetSection = document.getElementById(sectionId);
 
-            function handleScroll() {
-                let current = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    if (window.pageYOffset >= sectionTop - 200) {
-                        current = section.getAttribute('id');
-                    }
-                });
+                // Update active states
+                segments.forEach(s => s.classList.remove('active'));
+                segment.classList.add('active');
 
-                if (current) {
-                    setActiveNav(current);
-                }
-            }
-
-            // Handle navigation clicks
-            navItems.forEach(item => {
-                item.addEventListener('click', (e) => {
-                    const sectionId = item.getAttribute('data-section');
-                    const targetSection = document.getElementById(sectionId);
-
-                    if (targetSection) {
-                        e.preventDefault();
-                        targetSection.scrollIntoView({ behavior: 'smooth' });
-                        setActiveNav(sectionId);
-                    }
-                });
+                // Instant scroll to section (faster snap)
+                targetSection.scrollIntoView({ behavior: 'auto', block: 'start' });
             });
+        });
 
-            // Listen to scroll events
-            window.addEventListener('scroll', handleScroll);
+        // Scroll spy - update active nav on scroll and fade sections
+        const observerOptions = {
+            root: null,
+            rootMargin: '-120px 0px -50% 0px',
+            threshold: 0
+        };
 
-            // Initial check on page load
-            handleScroll();
-        </script>
-        <script src="mobile-menu.min.js"></script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.id;
+                    segments.forEach(s => s.classList.remove('active'));
+                    const activeSegment = document.querySelector(`.ios-segment[data-section="${sectionId}"]`);
+                    if (activeSegment) activeSegment.classList.add('active');
 
-        <!-- Flubber AI Integration -->
-        <!-- <script src="flubber-ai-browser.js"></script>
-        <script src="flubber.js"></script>
-        <script src="flubber-context.js"></script>
-        <script src="flubber-navigator.js"></script>
-        <script src="flubber-chat.js"></script> -->
+                    // Fade out all other sections
+                    sections.forEach(section => {
+                        if (section.id === sectionId) {
+                            section.classList.add('section-active');
+                            section.classList.remove('section-hidden');
+                        } else {
+                            section.classList.remove('section-active');
+                            section.classList.add('section-hidden');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+
+        // Set initial state - first section active
+        sections[0].classList.add('section-active');
+        sections.forEach((section, index) => {
+            if (index > 0) section.classList.add('section-hidden');
+        });
+    </script>
+    <script src="mobile-menu.min.js"></script>
 </body>
 
 </html>
