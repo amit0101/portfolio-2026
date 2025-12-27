@@ -163,8 +163,8 @@ function loadRequiredScripts() {
 
         // Load scripts in order
         const scripts = [
-            'video-modal.min.js',
-            'contact-modal.min.js'
+            'video-modal.js',
+            'contact-modal.js'
             // Flubber scripts commented out for production
             // 'flubber-context.js',
             // 'flubber-navigator.js',
