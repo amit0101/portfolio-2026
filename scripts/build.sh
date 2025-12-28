@@ -20,14 +20,15 @@ npx -y clean-css-cli -o project-page.min.css project-page.css
 npx -y clean-css-cli -o mobile-menu.min.css mobile-menu.css
 npx -y clean-css-cli -o project-theme-ios.min.css project-theme-ios.css
 npx -y clean-css-cli -o project-theme-zen.min.css project-theme-zen.css
+npx -y clean-css-cli -o project-theme-newspaper.min.css project-theme-newspaper.css
 
 # Switch sidebar-loader.js to minified references BEFORE minifying it
 sed -i '' "s/'video-modal\.js'/'video-modal.min.js'/g; s/'contact-modal\.js'/'contact-modal.min.js'/g" sidebar-loader.js
 npx -y terser sidebar-loader.js -o sidebar-loader.min.js -c -m
 
 # Switch HTML files to minified references
-sed -i '' 's/styles\.css/styles.min.css/g; s/project-page\.css/project-page.min.css/g; s/mobile-menu\.css/mobile-menu.min.css/g; s/project-theme-ios\.css/project-theme-ios.min.css/g; s/project-theme-zen\.css/project-theme-zen.min.css/g; s/sidebar-loader\.js/sidebar-loader.min.js/g; s/typing-effect\.js/typing-effect.min.js/g; s/mobile-menu\.js/mobile-menu.min.js/g' \
-    index.html project-operations.html project-marketing.html project-geo.html project-audio.html project-blood.html
+sed -i '' 's/styles\.css/styles.min.css/g; s/project-page\.css/project-page.min.css/g; s/mobile-menu\.css/mobile-menu.min.css/g; s/project-theme-ios\.css/project-theme-ios.min.css/g; s/project-theme-zen\.css/project-theme-zen.min.css/g; s/project-theme-newspaper\.css/project-theme-newspaper.min.css/g; s/sidebar-loader\.js/sidebar-loader.min.js/g; s/typing-effect\.js/typing-effect.min.js/g; s/mobile-menu\.js/mobile-menu.min.js/g' \
+    index.html project-operations.html project-marketing.html project-geo.html project-audio.html project-blood.html project-geo-newspaper.html
 
 # Restore sidebar-loader.js to full references (keep source readable)
 sed -i '' "s/'video-modal\.min\.js'/'video-modal.js'/g; s/'contact-modal\.min\.js'/'contact-modal.js'/g" sidebar-loader.js
