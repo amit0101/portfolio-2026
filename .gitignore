@@ -12,15 +12,22 @@ video-presentation-backup.html
 *.mp4
 *.mov
 
-!data/projects-content.json
 # Keep the project showcase video
 !projects-showcase.mov
 
 # Exclude original (non-minified) CSS and JS files - use minified versions
+sidebar-loader.js
 styles.css
+video-modal.js
+contact-modal.js
+typing-effect.js
+mobile-menu.js
+project-page.css
+mobile-menu.css
+project-theme-ios.css
 project-theme-zen.css
-projects-content.json
-# Flubber chat assistant files (not for production)
+project-theme-newspaper.css 
+
 flubber.css
 flubber.js
 flubber-chat.css
