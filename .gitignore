@@ -16,18 +16,18 @@ video-presentation-backup.html
 !projects-showcase.mov
 
 # Exclude original (non-minified) CSS and JS files - use minified versions
-# sidebar-loader.js
-# styles.css
-# video-modal.js
-# contact-modal.js
-# typing-effect.js
-# mobile-menu.js
-# project-page.css
-# mobile-menu.css
-# project-theme-ios.css
-# project-theme-zen.css
-# project-theme-newspaper.css
-# project-audio.html
+sidebar-loader.js
+styles.css
+video-modal.js
+contact-modal.js
+typing-effect.js
+mobile-menu.js
+project-page.css
+mobile-menu.css
+project-theme-ios.css
+project-theme-zen.css
+project-theme-newspaper.css
+project-theme-audio.css
 
 
 flubber.css
