@@ -190,15 +190,19 @@ body.audio-theme::after {
 */
 
 .audio-page-wrapper {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 100;
-    width: 100%;
-    min-height: 100%;
     background-color: var(--audio-bg-primary);
     overflow-y: auto;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Match the bezel corner rounding */
+    border-radius: 4px;
 }
 
 .audio-container {
