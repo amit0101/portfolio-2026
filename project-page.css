@@ -1,5 +1,17 @@
 /* Project Page Specific Styles - IDE Theme */
 
+/* Set dark background for project pages - contained inside frame */
+.main-wrapper {
+    background: #1e1e1e !important;
+    margin: 19px;
+    margin-left: 319px;
+    /* 300px sidebar + 19px margin */
+    width: calc(100vw - 319px - 19px);
+    min-height: calc(100vh - 38px);
+    overflow: hidden;
+    overscroll-behavior: none;
+}
+
 /* IDE File Explorer Panel (inside IDE window) */
 .ide-file-explorer {
     width: 200px;

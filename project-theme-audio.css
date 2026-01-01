@@ -1,0 +1,1124 @@
+/* ============================================================================
+   AUDIO PROJECT THEME - RunwayML Inspired
+   ============================================================================
+   Design Philosophy:
+   - Sharp, HD, high-contrast, clean, cinematic
+   - Bold typography with tight tracking
+   - Purely monochromatic palette (black/white/gray)
+   - Grid-based layouts with generous white space
+   - Minimal animations (fade-ins only)
+   
+   All styles are scoped to .project-audio-page to prevent global conflicts
+   ============================================================================ */
+
+/* ============================================================================
+   1. CSS CUSTOM PROPERTIES (Design Tokens)
+   ============================================================================ */
+
+.project-audio-page {
+    /* Color Palette - Monochromatic */
+    --audio-white: #ffffff;
+    --audio-off-white: #fafafa;
+    --audio-gray-50: #f5f5f5;
+    --audio-gray-100: #ebebeb;
+    --audio-gray-200: #e0e0e0;
+    --audio-gray-300: #d0d0d0;
+    --audio-gray-400: #a0a0a0;
+    --audio-gray-500: #808080;
+    --audio-gray-600: #666666;
+    --audio-gray-700: #4a4a4a;
+    --audio-gray-800: #333333;
+    --audio-gray-900: #1a1a1a;
+    --audio-black: #000000;
+    --audio-text-dark: #404040;
+    /* RunwayML soft black */
+
+    /* Semantic Colors */
+    --audio-bg-primary: var(--audio-white);
+    --audio-bg-secondary: var(--audio-off-white);
+    --audio-bg-tertiary: var(--audio-gray-50);
+    --audio-bg-dark: var(--audio-black);
+    --audio-bg-card: var(--audio-white);
+
+    --audio-text-primary: var(--audio-text-dark);
+    --audio-text-secondary: #6b6b6b;
+    --audio-text-tertiary: var(--audio-gray-500);
+    --audio-text-muted: var(--audio-gray-400);
+    --audio-text-inverse: var(--audio-white);
+
+    --audio-border-light: var(--audio-gray-200);
+    --audio-border-medium: var(--audio-gray-300);
+
+    /* Typography Scale - Compact HD scale for RunwayML style */
+    --audio-font-family: 'ABC Normal Book', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --audio-font-size-xs: 0.6875rem;
+    /* 11px */
+    --audio-font-size-sm: 0.75rem;
+    /* 12px */
+    --audio-font-size-base: 0.875rem;
+    /* 14px */
+    --audio-font-size-lg: 0.9375rem;
+    /* 15px */
+    --audio-font-size-xl: 1rem;
+    /* 16px */
+    --audio-font-size-2xl: 1.125rem;
+    /* 18px */
+    --audio-font-size-3xl: 1.375rem;
+    /* 22px */
+    --audio-font-size-4xl: 1.625rem;
+    /* 26px */
+    --audio-font-size-5xl: 2rem;
+    /* 32px */
+    --audio-font-size-6xl: 2.5rem;
+    /* 40px */
+    --audio-font-size-7xl: 3rem;
+    /* 48px */
+
+    --audio-font-weight-normal: 400;
+    --audio-font-weight-medium: 500;
+    --audio-font-weight-semibold: 600;
+    --audio-font-weight-bold: 700;
+
+    --audio-line-height-tight: 1.1;
+    --audio-line-height-snug: 1.25;
+    --audio-line-height-normal: 1.5;
+    --audio-line-height-relaxed: 1.625;
+
+    --audio-letter-spacing-tight: -0.025em;
+    --audio-letter-spacing-normal: 0;
+    --audio-letter-spacing-wide: 0.025em;
+    --audio-letter-spacing-wider: 0.05em;
+    --audio-letter-spacing-widest: 0.1em;
+
+    /* Spacing Scale (8px base unit) */
+    --audio-space-1: 0.25rem;
+    /* 4px */
+    --audio-space-2: 0.5rem;
+    /* 8px */
+    --audio-space-3: 0.75rem;
+    /* 12px */
+    --audio-space-4: 1rem;
+    /* 16px */
+    --audio-space-5: 1.25rem;
+    /* 20px */
+    --audio-space-6: 1.5rem;
+    /* 24px */
+    --audio-space-8: 2rem;
+    /* 32px */
+    --audio-space-10: 2.5rem;
+    /* 40px */
+    --audio-space-12: 3rem;
+    /* 48px */
+    --audio-space-16: 4rem;
+    /* 64px */
+    --audio-space-20: 5rem;
+    /* 80px */
+    --audio-space-24: 6rem;
+    /* 96px */
+    --audio-space-32: 8rem;
+    /* 128px */
+
+    /* Layout */
+    --audio-content-max-width: 1200px;
+    --audio-content-padding: var(--audio-space-10);
+    --audio-section-gap: var(--audio-space-24);
+    --audio-card-gap: var(--audio-space-6);
+    --audio-border-radius-sm: 4px;
+    --audio-border-radius-md: 8px;
+    --audio-border-radius-lg: 12px;
+    --audio-border-radius-xl: 16px;
+    --audio-border-radius-full: 9999px;
+
+    /* Shadows */
+    --audio-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --audio-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+    --audio-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --audio-shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+
+    /* Transitions */
+    --audio-transition-fast: 150ms ease;
+    --audio-transition-normal: 250ms ease;
+    --audio-transition-slow: 400ms ease;
+}
+
+/* ============================================================================
+   2. BASE RESET & PAGE WRAPPER
+   ============================================================================ */
+
+/* Hide the window titlebar for audio theme */
+body.audio-theme .window-titlebar {
+    display: none !important;
+}
+
+/* Hide the body::after dark background (shows as rounded when overscrolling) */
+body.audio-theme::after {
+    display: none !important;
+}
+
+.project-audio-page {
+    font-family: var(--audio-font-family);
+    font-size: var(--audio-font-size-base);
+    font-weight: var(--audio-font-weight-normal);
+    line-height: var(--audio-line-height-normal);
+    color: var(--audio-text-primary);
+
+    /* Crisp text rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1, "liga" 1;
+    font-kerning: normal;
+}
+
+.project-audio-page *,
+.project-audio-page *::before,
+.project-audio-page *::after {
+    box-sizing: border-box;
+}
+
+/* ============================================================================
+   3. LAYOUT CONTAINERS
+   ============================================================================ */
+
+/* 
+   Bezel container structure (from styles.css):
+   - main-wrapper::before: 4px grey border, border-radius 20px
+   - main-wrapper::after: 15px black border starting at 4px inset, border-radius 16px
+   - Content area starts at: 4px + 15px = 19px from main-wrapper edges
+   - Inner border-radius ≈ 16px - 15px = ~1px, but we use slightly more for visual smoothness
+*/
+
+.audio-page-wrapper {
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    min-height: 100%;
+    background-color: var(--audio-bg-primary);
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.audio-container {
+    width: 100%;
+    max-width: var(--audio-content-max-width);
+    margin: 0 auto;
+    padding: 0 var(--audio-content-padding);
+}
+
+.audio-container--full {
+    max-width: none;
+    padding: 0;
+}
+
+.audio-container--narrow {
+    max-width: 800px;
+}
+
+.audio-section {
+    padding: var(--audio-section-gap) 0;
+    scroll-margin-top: 70px;
+    /* Account for fixed nav height */
+}
+
+.audio-section--dark {
+    background-color: var(--audio-bg-dark);
+    color: var(--audio-text-inverse);
+}
+
+.audio-section--gray {
+    background-color: var(--audio-bg-secondary);
+}
+
+/* ============================================================================
+   4. TYPOGRAPHY
+   ============================================================================ */
+
+/* Display / Hero Headlines */
+.audio-display {
+    font-size: var(--audio-font-size-6xl);
+    font-weight: var(--audio-font-weight-semibold);
+    line-height: var(--audio-line-height-tight);
+    letter-spacing: var(--audio-letter-spacing-tight);
+    color: var(--audio-text-primary);
+}
+
+.audio-display--inverse {
+    color: var(--audio-text-inverse);
+}
+
+/* Section Headlines */
+.audio-headline {
+    font-size: var(--audio-font-size-4xl);
+    font-weight: var(--audio-font-weight-semibold);
+    line-height: var(--audio-line-height-snug);
+    letter-spacing: var(--audio-letter-spacing-tight);
+    color: var(--audio-text-primary);
+    text-wrap: balance;
+}
+
+.audio-headline--lg {
+    font-size: var(--audio-font-size-5xl);
+}
+
+.audio-headline--inverse {
+    color: var(--audio-text-inverse);
+}
+
+/* Subheadlines */
+.audio-subheadline {
+    font-size: var(--audio-font-size-2xl);
+    font-weight: var(--audio-font-weight-medium);
+    line-height: var(--audio-line-height-snug);
+    color: var(--audio-text-primary);
+}
+
+/* Card Titles */
+.audio-title {
+    font-size: var(--audio-font-size-xl);
+    font-weight: var(--audio-font-weight-semibold);
+    line-height: var(--audio-line-height-snug);
+    color: var(--audio-text-primary);
+}
+
+.audio-title--inverse {
+    color: var(--audio-text-inverse);
+}
+
+/* Body Text */
+.audio-body {
+    font-size: var(--audio-font-size-lg);
+    font-weight: var(--audio-font-weight-normal);
+    line-height: var(--audio-line-height-relaxed);
+    color: var(--audio-text-secondary);
+}
+
+.audio-body--sm {
+    font-size: var(--audio-font-size-base);
+}
+
+.audio-body--inverse {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Labels & Tags */
+.audio-label {
+    font-size: var(--audio-font-size-xs);
+    font-weight: var(--audio-font-weight-medium);
+    line-height: 1;
+    letter-spacing: var(--audio-letter-spacing-widest);
+    text-transform: uppercase;
+    color: var(--audio-text-tertiary);
+}
+
+.audio-label--inverse {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ============================================================================
+   5. HERO SECTION
+   ============================================================================ */
+
+.audio-hero {
+    position: relative;
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--audio-bg-dark);
+    overflow: hidden;
+}
+
+.audio-hero__visual {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.audio-hero__visual img,
+.audio-hero__visual video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.audio-hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.3) 0%,
+            rgba(0, 0, 0, 0.5) 50%,
+            rgba(0, 0, 0, 0.8) 100%);
+    z-index: 2;
+}
+
+.audio-hero__content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex: 1;
+    padding: var(--audio-space-16) var(--audio-content-padding);
+    padding-bottom: var(--audio-space-20);
+    max-width: var(--audio-content-max-width);
+    margin: 0 auto;
+    width: 100%;
+}
+
+.audio-hero__breadcrumb {
+    margin-bottom: var(--audio-space-6);
+}
+
+.audio-hero__breadcrumb a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: var(--audio-font-size-sm);
+    font-weight: var(--audio-font-weight-medium);
+    transition: color var(--audio-transition-fast);
+}
+
+.audio-hero__breadcrumb a:hover {
+    color: var(--audio-text-inverse);
+}
+
+.audio-hero__title {
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: var(--audio-font-weight-semibold);
+    line-height: var(--audio-line-height-tight);
+    letter-spacing: var(--audio-letter-spacing-tight);
+    color: var(--audio-text-inverse);
+    margin-bottom: var(--audio-space-6);
+    max-width: 800px;
+}
+
+.audio-hero__subtitle {
+    font-size: var(--audio-font-size-xl);
+    font-weight: var(--audio-font-weight-normal);
+    line-height: var(--audio-line-height-relaxed);
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin-bottom: var(--audio-space-8);
+}
+
+.audio-hero__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--audio-space-3);
+}
+
+.audio-hero__tag {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--audio-space-2) var(--audio-space-4);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--audio-border-radius-full);
+    font-size: var(--audio-font-size-sm);
+    font-weight: var(--audio-font-weight-medium);
+    color: var(--audio-text-inverse);
+}
+
+/* ============================================================================
+   6. SPLIT SECTIONS (Two-Column Layout)
+   ============================================================================ */
+
+.audio-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--audio-space-16);
+    align-items: start;
+}
+
+.audio-split--reverse {
+    direction: rtl;
+}
+
+.audio-split--reverse>* {
+    direction: ltr;
+}
+
+.audio-split__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--audio-space-6);
+}
+
+.audio-split__visual {
+    position: relative;
+    border-radius: var(--audio-border-radius-lg);
+    overflow: hidden;
+}
+
+.audio-split__visual img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ============================================================================
+   7. FEATURE CARDS GRID
+   ============================================================================ */
+
+.audio-features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--audio-card-gap);
+}
+
+.audio-feature-card {
+    background-color: var(--audio-bg-card);
+    border: 1px solid var(--audio-border-light);
+    border-radius: var(--audio-border-radius-lg);
+    padding: var(--audio-space-8);
+    transition: box-shadow var(--audio-transition-normal),
+        transform var(--audio-transition-normal);
+}
+
+.audio-feature-card:hover {
+    box-shadow: var(--audio-shadow-lg);
+    transform: translateY(-2px);
+}
+
+.audio-feature-card__icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: var(--audio-space-6);
+    color: var(--audio-text-primary);
+}
+
+.audio-feature-card__icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.audio-feature-card__title {
+    font-size: var(--audio-font-size-lg);
+    font-weight: var(--audio-font-weight-semibold);
+    color: var(--audio-text-primary);
+    margin-bottom: var(--audio-space-3);
+}
+
+.audio-feature-card__description {
+    font-size: var(--audio-font-size-base);
+    color: var(--audio-text-secondary);
+    line-height: var(--audio-line-height-relaxed);
+}
+
+/* ============================================================================
+   8. SHOWCASE CARDS (RunwayML Style with Image + Text)
+   ============================================================================ */
+
+.audio-showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--audio-card-gap);
+}
+
+.audio-showcase-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--audio-bg-card);
+    border-radius: var(--audio-border-radius-lg);
+    overflow: hidden;
+    transition: transform var(--audio-transition-normal);
+}
+
+.audio-showcase-card:hover {
+    transform: translateY(-4px);
+}
+
+.audio-showcase-card__image {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+}
+
+.audio-showcase-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--audio-transition-slow);
+}
+
+.audio-showcase-card:hover .audio-showcase-card__image img {
+    transform: scale(1.05);
+}
+
+.audio-showcase-card__content {
+    padding: var(--audio-space-6);
+}
+
+.audio-showcase-card__title {
+    font-size: var(--audio-font-size-lg);
+    font-weight: var(--audio-font-weight-semibold);
+    color: var(--audio-text-primary);
+    margin-bottom: var(--audio-space-2);
+    line-height: var(--audio-line-height-snug);
+}
+
+.audio-showcase-card__description {
+    font-size: var(--audio-font-size-sm);
+    color: var(--audio-text-secondary);
+    line-height: var(--audio-line-height-relaxed);
+    margin-bottom: var(--audio-space-4);
+}
+
+.audio-showcase-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--audio-space-2);
+    font-size: var(--audio-font-size-sm);
+    font-weight: var(--audio-font-weight-medium);
+    color: var(--audio-text-primary);
+    text-decoration: none;
+    transition: gap var(--audio-transition-fast);
+}
+
+.audio-showcase-card__link:hover {
+    gap: var(--audio-space-3);
+}
+
+.audio-showcase-card__link svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* ============================================================================
+   9. STATEMENT SECTION (Large Typography)
+   ============================================================================ */
+
+.audio-statement {
+    padding: var(--audio-space-32) 0;
+}
+
+.audio-statement__content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--audio-space-12);
+    align-items: start;
+}
+
+.audio-statement__text {
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-weight: var(--audio-font-weight-medium);
+    line-height: var(--audio-line-height-snug);
+    color: var(--audio-text-primary);
+    letter-spacing: var(--audio-letter-spacing-tight);
+}
+
+.audio-statement__text--inverse {
+    color: var(--audio-text-inverse);
+}
+
+.audio-statement__sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--audio-space-4);
+}
+
+.audio-statement__item {
+    padding-bottom: var(--audio-space-4);
+    border-bottom: 1px solid var(--audio-border-light);
+}
+
+.audio-statement__item:last-child {
+    border-bottom: none;
+}
+
+.audio-statement__item-title {
+    font-size: var(--audio-font-size-sm);
+    font-weight: var(--audio-font-weight-medium);
+    color: var(--audio-text-primary);
+    margin-bottom: var(--audio-space-1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.audio-statement__item-title--inverse {
+    color: var(--audio-text-inverse);
+}
+
+.audio-statement__item-description {
+    font-size: var(--audio-font-size-xs);
+    color: var(--audio-text-secondary);
+    line-height: var(--audio-line-height-normal);
+}
+
+.audio-statement__item-description--inverse {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.audio-statement__arrow {
+    width: 14px;
+    height: 14px;
+    color: var(--audio-text-tertiary);
+    flex-shrink: 0;
+}
+
+/* ============================================================================
+   10. TECH STACK SECTION
+   ============================================================================ */
+
+.audio-tech-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--audio-space-8);
+}
+
+.audio-tech-category {
+    display: flex;
+    flex-direction: column;
+    gap: var(--audio-space-4);
+}
+
+.audio-tech-category__title {
+    font-size: var(--audio-font-size-sm);
+    font-weight: var(--audio-font-weight-semibold);
+    color: var(--audio-text-primary);
+    text-transform: uppercase;
+    letter-spacing: var(--audio-letter-spacing-wider);
+    padding-bottom: var(--audio-space-3);
+    border-bottom: 2px solid var(--audio-black);
+}
+
+.audio-tech-category__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--audio-space-2);
+}
+
+.audio-tech-category__item {
+    font-size: var(--audio-font-size-sm);
+    color: var(--audio-text-secondary);
+    line-height: var(--audio-line-height-normal);
+}
+
+/* ============================================================================
+   11. ARCHITECTURE DIAGRAM
+   ============================================================================ */
+
+.audio-architecture {
+    background-color: var(--audio-bg-secondary);
+    border-radius: var(--audio-border-radius-xl);
+    padding: var(--audio-space-12);
+    text-align: center;
+}
+
+.audio-architecture__image {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.audio-architecture__image img {
+    width: 100%;
+    height: auto;
+}
+
+/* ============================================================================
+   12. BUTTONS & CTAS
+   ============================================================================ */
+
+.audio-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--audio-space-2);
+    padding: var(--audio-space-3) var(--audio-space-6);
+    font-family: var(--audio-font-family);
+    font-size: var(--audio-font-size-sm);
+    font-weight: var(--audio-font-weight-medium);
+    line-height: 1;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: var(--audio-border-radius-md);
+    cursor: pointer;
+    transition: all var(--audio-transition-fast);
+}
+
+.audio-btn--primary {
+    background-color: var(--audio-black);
+    color: var(--audio-text-inverse);
+    border-color: var(--audio-black);
+}
+
+.audio-btn--primary:hover {
+    background-color: var(--audio-gray-800);
+    border-color: var(--audio-gray-800);
+}
+
+.audio-btn--secondary {
+    background-color: transparent;
+    color: var(--audio-text-primary);
+    border-color: var(--audio-border-medium);
+}
+
+.audio-btn--secondary:hover {
+    background-color: var(--audio-gray-100);
+}
+
+.audio-btn--inverse {
+    background-color: var(--audio-white);
+    color: var(--audio-text-primary);
+    border-color: var(--audio-white);
+}
+
+.audio-btn--inverse:hover {
+    background-color: var(--audio-gray-100);
+}
+
+/* Link style CTA */
+.audio-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--audio-space-2);
+    font-size: var(--audio-font-size-sm);
+    font-weight: var(--audio-font-weight-medium);
+    color: var(--audio-text-primary);
+    text-decoration: none;
+    transition: gap var(--audio-transition-fast);
+}
+
+.audio-link:hover {
+    gap: var(--audio-space-3);
+}
+
+.audio-link--inverse {
+    color: var(--audio-text-inverse);
+}
+
+.audio-link__arrow {
+    width: 16px;
+    height: 16px;
+    transition: transform var(--audio-transition-fast);
+}
+
+.audio-link:hover .audio-link__arrow {
+    transform: translateX(4px);
+}
+
+/* ============================================================================
+   13. DIVIDERS & DECORATIVE
+   ============================================================================ */
+
+.audio-divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--audio-border-light);
+    margin: var(--audio-space-16) 0;
+}
+
+.audio-divider--dark {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================================================
+   14. FOOTER
+   ============================================================================ */
+
+.audio-footer {
+    padding: var(--audio-space-12) 0;
+    text-align: center;
+    border-top: 1px solid var(--audio-border-light);
+}
+
+.audio-footer__note {
+    font-size: var(--audio-font-size-sm);
+    color: var(--audio-text-tertiary);
+    margin-bottom: var(--audio-space-4);
+}
+
+.audio-footer__back {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--audio-space-2);
+    font-size: var(--audio-font-size-sm);
+    font-weight: var(--audio-font-weight-medium);
+    color: var(--audio-text-primary);
+    text-decoration: none;
+    transition: gap var(--audio-transition-fast);
+}
+
+.audio-footer__back:hover {
+    gap: var(--audio-space-3);
+}
+
+/* ============================================================================
+   15. FADE-IN ANIMATIONS
+   ============================================================================ */
+
+@keyframes audioFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.audio-fade-in {
+    animation: audioFadeIn 0.6s ease forwards;
+}
+
+.audio-fade-in--delay-1 {
+    animation-delay: 0.1s;
+    opacity: 0;
+}
+
+.audio-fade-in--delay-2 {
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+.audio-fade-in--delay-3 {
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+
+.audio-fade-in--delay-4 {
+    animation-delay: 0.4s;
+    opacity: 0;
+}
+
+/* ============================================================================
+   16. RESPONSIVE ADJUSTMENTS
+   ============================================================================ */
+
+@media (max-width: 1024px) {
+    .audio-features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .audio-showcase-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .audio-tech-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .audio-statement__content {
+        grid-template-columns: 1fr;
+        gap: var(--audio-space-12);
+    }
+}
+
+@media (max-width: 768px) {
+    .project-audio-page {
+        --audio-content-padding: var(--audio-space-6);
+        --audio-section-gap: var(--audio-space-16);
+    }
+
+    .audio-split {
+        grid-template-columns: 1fr;
+        gap: var(--audio-space-10);
+    }
+
+    .audio-split--reverse {
+        direction: ltr;
+    }
+
+    .audio-features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .audio-showcase-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .audio-tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .audio-hero__title {
+        font-size: 2rem;
+    }
+
+    .audio-display {
+        font-size: var(--audio-font-size-4xl);
+    }
+
+    .audio-headline {
+        font-size: var(--audio-font-size-3xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .audio-tech-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .audio-nav__links {
+        display: none;
+    }
+}
+
+/* ============================================================================
+   17. TOP NAVIGATION (RunwayML Style)
+   ============================================================================ */
+
+.audio-nav {
+    position: fixed;
+    top: 19px;
+    /* Match bezel container inset */
+    left: 319px;
+    /* 300px sidebar + 19px bezel */
+    right: 19px;
+    /* Match bezel container inset */
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--audio-space-4) var(--audio-space-8);
+    background-color: var(--audio-white);
+    border-bottom: 1px solid var(--audio-border-light);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Dark state when scrolled */
+.audio-nav.audio-nav--dark {
+    background-color: var(--audio-black);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.audio-nav__logo {
+    font-size: var(--audio-font-size-xl);
+    font-weight: var(--audio-font-weight-semibold);
+    letter-spacing: -0.02em;
+}
+
+.audio-nav__logo a {
+    color: var(--audio-text-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.audio-nav--dark .audio-nav__logo a {
+    color: var(--audio-text-inverse);
+}
+
+.audio-nav__links {
+    display: flex;
+    align-items: center;
+    gap: var(--audio-space-8);
+}
+
+.audio-nav__link {
+    font-size: var(--audio-font-size-xs);
+    font-weight: 450;
+    color: var(--audio-text-primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: var(--audio-letter-spacing-wider);
+    transition: color 0.3s ease;
+}
+
+.audio-nav__link:hover {
+    color: var(--audio-text-secondary);
+}
+
+.audio-nav--dark .audio-nav__link {
+    color: var(--audio-text-inverse);
+}
+
+.audio-nav--dark .audio-nav__link:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.audio-nav__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--audio-space-4);
+}
+
+/* Login text link */
+.audio-nav__login {
+    font-size: var(--audio-font-size-sm);
+    font-weight: var(--audio-font-weight-medium);
+    color: var(--audio-text-primary);
+    text-decoration: none;
+    padding: var(--audio-space-2) var(--audio-space-3);
+    border: 1px solid transparent;
+    border-radius: var(--audio-border-radius-full);
+    transition: all 0.3s ease;
+}
+
+.audio-nav__login:hover {
+    background-color: var(--audio-gray-100);
+}
+
+.audio-nav--dark .audio-nav__login {
+    color: var(--audio-text-inverse);
+}
+
+.audio-nav--dark .audio-nav__login:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* CTA Button */
+.audio-nav__cta {
+    font-size: var(--audio-font-size-sm);
+    font-weight: var(--audio-font-weight-medium);
+    color: var(--audio-text-inverse);
+    background-color: var(--audio-black);
+    text-decoration: none;
+    padding: var(--audio-space-2) var(--audio-space-5);
+    border: 1px solid var(--audio-black);
+    border-radius: var(--audio-border-radius-full);
+    transition: all 0.3s ease;
+}
+
+.audio-nav__cta:hover {
+    background-color: var(--audio-gray-800);
+    border-color: var(--audio-gray-800);
+}
+
+.audio-nav--dark .audio-nav__cta {
+    color: var(--audio-text-primary);
+    background-color: var(--audio-white);
+    border-color: var(--audio-white);
+}
+
+.audio-nav--dark .audio-nav__cta:hover {
+    background-color: var(--audio-gray-100);
+    border-color: var(--audio-gray-100);
+}
+
+/* ============================================================================
+   18. OVERSCROLL & SCROLL BEHAVIOR FIX
+   ============================================================================ */
+
+/* Prevent overscroll/bounce on the page wrapper */
+.audio-page-wrapper {
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent body overscroll for audio theme */
+body.audio-theme {
+    overscroll-behavior: none;
+}
+
+/* Ensure the main wrapper fits inside the frame */
+body.audio-theme .main-wrapper {
+    overscroll-behavior: none;
+    margin: 19px;
+    margin-left: 319px;
+    width: calc(100vw - 319px - 19px);
+    min-height: calc(100vh - 38px);
+    overflow: hidden;
+}

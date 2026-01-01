@@ -28,15 +28,8 @@
 
     <!-- Main Content Wrapper -->
     <div class="main-wrapper">
-        <!-- Window Title Bar -->
-        <div class="window-titlebar">
-            <div class="window-buttons">
-                <span class="window-button window-close"></span>
-                <span class="window-button window-minimize"></span>
-                <span class="window-button window-maximize"></span>
-            </div>
-            <div class="window-title">portfolio.jsx</div>
-        </div>
+        <!-- Animated blob background -->
+        <div class="blob-background"></div>
 
         <!-- Top Navigation (Mobile) -->
         <nav class="nav mobile-nav">
@@ -50,206 +43,207 @@
             </div>
         </nav>
 
-        <!-- Hero Section -->
-        <section class="hero" id="home">
-            <div class="container">
-                <div class="hero-card">
-                    <h1 class="hero-title">Amit Kumar</h1>
-                    <p class="hero-role">Full-Stack AI Engineer</p>
-                    <p class="hero-description">
-                        Building production AI-powered SaaS applications, intelligent automation systems,
-                        and ML-driven solutions for clients worldwide.
-                    </p>
+        <!-- Bento Grid Layout -->
+        <section class="bento-layout" id="home">
+            <!-- Left Column: Hero -->
+            <div class="bento-hero">
+                <p class="hero-eyebrow"><span class="status-dot"></span>Full-Stack AI Engineer</p>
+                <h1 class="hero-title">Amit Kumar</h1>
 
-                    <div class="hero-badges">
-                        <span class="badge-key">AI/ML</span>
-                        <span class="badge-key">LLM Systems</span>
-                        <span class="badge-key">Production Scale</span>
-                        <span class="badge-key">12+ years</span>
-                    </div>
+                <!-- Divider line -->
+                <div class="hero-divider"></div>
 
-                    <div class="hero-links">
-                        <a href="https://linkedin.com/in/amitkrpy" target="_blank" rel="noopener noreferrer"
-                            class="key-button">
-                            LinkedIn
-                        </a>
-                        <a href="https://github.com/amit0101" target="_blank" rel="noopener noreferrer"
-                            class="key-button">
-                            GitHub
-                        </a>
-                    </div>
+                <!-- Badges moved above description -->
+                <div class="hero-badges">
+                    <span class="badge-key"><i data-lucide="brain" class="badge-icon"></i>AI/ML</span>
+                    <span class="badge-key"><i data-lucide="message-square" class="badge-icon"></i>LLM Systems</span>
+                    <span class="badge-key"><i data-lucide="trending-up" class="badge-icon"></i>Production Scale</span>
+                    <span class="badge-key"><i data-lucide="calendar" class="badge-icon"></i>12+ years</span>
+                </div>
+
+                <p class="hero-description">
+                    Building production AI-powered SaaS applications,
+                    intelligent automation systems,
+                    and ML-driven solutions for clients worldwide.
+                </p>
+
+                <div class="hero-links">
+                    <a href="https://linkedin.com/in/amitkrpy" target="_blank" rel="noopener noreferrer"
+                        class="btn-primary">LinkedIn</a>
+                    <a href="https://github.com/amit0101" target="_blank" rel="noopener noreferrer"
+                        class="btn-secondary">GitHub</a>
+                </div>
+            </div>
+
+            <!-- Right Column: Table with Cards -->
+            <div class="table-area">
+                <!-- SVG Oval Table with 3D thickness and leg -->
+                <svg class="table-svg" viewBox="0 0 100 80" preserveAspectRatio="none">
+                    <defs>
+                        <!-- Wood texture pattern - grayscale with contrast boost -->
+                        <filter id="grayscaleContrast">
+                            <feColorMatrix type="saturate" values="0" />
+                            <feComponentTransfer>
+                                <feFuncR type="linear" slope="1.4" intercept="-0.55" />
+                                <feFuncG type="linear" slope="1.4" intercept="-0.55" />
+                                <feFuncB type="linear" slope="1.4" intercept="-0.55" />
+                            </feComponentTransfer>
+                        </filter>
+                        <pattern id="woodPattern" patternUnits="userSpaceOnUse" width="100" height="80"
+                            patternTransform="rotate(-70, 50, 40)">
+                            <image href="table-top.jpg" x="-20" y="-20" width="140" height="120"
+                                preserveAspectRatio="xMidYMid slice" filter="url(#grayscaleContrast)" />
+                        </pattern>
+                        <!-- Table top gradient overlay for depth (reduced opacity) -->
+                        <radialGradient id="tableGradient" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="rgba(80, 80, 85, 0.15)" />
+                            <stop offset="70%" stop-color="rgba(50, 50, 55, 0.3)" />
+                            <stop offset="100%" stop-color="rgba(30, 30, 35, 0.5)" />
+                        </radialGradient>
+                        <!-- Dark disc gradient (thickness) -->
+                        <radialGradient id="discGradient" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#1a1a1e" />
+                            <stop offset="100%" stop-color="#0a0a0e" />
+                        </radialGradient>
+                        <!-- Leg gradient -->
+                        <linearGradient id="legGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#0a0a0e" />
+                            <stop offset="50%" stop-color="#1a1a1e" />
+                            <stop offset="100%" stop-color="#2a2a30" />
+                        </linearGradient>
+                        <filter id="tableShadow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.5" />
+                        </filter>
+                    </defs>
+                    <!-- Table leg - tapered: thick at top, slightly wider at bottom -->
+                    <polygon points="12,60 19,60 15,78 11,78" fill="#0a0a0e" transform="rotate(15, 15.5, 60)" />
+                    <!-- Dark disc underneath - rotated clockwise, hinged at left edge -->
+                    <ellipse cx="50" cy="40" rx="48" ry="35" fill="url(#discGradient)" transform="rotate(2, 2, 40)" />
+                    <!-- Table top - wood texture base -->
+                    <ellipse cx="50" cy="40" rx="48" ry="35" fill="url(#woodPattern)" filter="url(#tableShadow)" />
+                    <!-- Table top - gradient overlay for depth with border -->
+                    <ellipse cx="50" cy="40" rx="48" ry="35" fill="url(#tableGradient)" stroke="#1a1a1e"
+                        stroke-width="0.08" />
+                </svg>
+
+                <!-- Polaroid Grid on Table -->
+                <div class="polaroid-grid" id="projects">
+                    <!-- Project 1: Operations -->
+                    <a href="project-operations.html" class="polaroid-card">
+                        <div class="polaroid-image">
+                            <img src="assets/preview/preview-operations.png" alt="Operations">
+                        </div>
+                        <div class="polaroid-caption">
+                            <div class="polaroid-header">
+                                <span class="polaroid-title">Operations SaaS</span>
+                                <span class="polaroid-tag">Logistics</span>
+                            </div>
+                            <p class="polaroid-description">Full-stack mobile and web application for transportation
+                                logistics management with GPS tracking and real-time CRM synchronization.</p>
+                            <div class="polaroid-tech">
+                                <span>React Native</span>
+                                <span>FastAPI</span>
+                                <span>PostgreSQL</span>
+                                <span>Redis</span>
+                                <span>GPS</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Project 2: Marketing -->
+                    <a href="project-marketing.html" class="polaroid-card">
+                        <div class="polaroid-image">
+                            <img src="assets/preview/preview-marketing.png" alt="Marketing">
+                        </div>
+                        <div class="polaroid-caption">
+                            <div class="polaroid-header">
+                                <span class="polaroid-title">AI Marketing Platform</span>
+                                <span class="polaroid-tag tag-ai">AI/ML</span>
+                            </div>
+                            <p class="polaroid-description">Intelligent system decoding subconscious buying behavior
+                                with multi-platform integration, ML models, and AI-powered recommendations.</p>
+                            <div class="polaroid-tech">
+                                <span>Python</span>
+                                <span>React</span>
+                                <span>OpenAI</span>
+                                <span>LangChain</span>
+                                <span>PostgreSQL</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Project 3: GEO -->
+                    <a href="project-geo.html" class="polaroid-card">
+                        <div class="polaroid-image">
+                            <img src="assets/preview/preview-geo.png" alt="GEO">
+                        </div>
+                        <div class="polaroid-caption">
+                            <div class="polaroid-header">
+                                <span class="polaroid-title">GEO Platform</span>
+                                <span class="polaroid-tag tag-ai">AI/ML</span>
+                            </div>
+                            <p class="polaroid-description">Comprehensive website auditing tool optimizing visibility
+                                for AI search engines with automated strategy generation and performance tracking.</p>
+                            <div class="polaroid-tech">
+                                <span>Python</span>
+                                <span>React</span>
+                                <span>Web Crawler</span>
+                                <span>LLM Agents</span>
+                                <span>SEO</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Project 4: Audio -->
+                    <a href="project-audio.html" class="polaroid-card">
+                        <div class="polaroid-image">
+                            <img src="assets/preview/preview-audio.png" alt="Audio">
+                        </div>
+                        <div class="polaroid-caption">
+                            <div class="polaroid-header">
+                                <span class="polaroid-title">Audio Generation</span>
+                                <span class="polaroid-tag tag-ai">AI/ML</span>
+                            </div>
+                            <p class="polaroid-description">Immersive audio generation platform creating personalized
+                                affirmative content with voice cloning and intelligent audio processing.</p>
+                            <div class="polaroid-tech">
+                                <span>Python</span>
+                                <span>OpenAI</span>
+                                <span>ElevenLabs</span>
+                                <span>Pydub</span>
+                                <span>FastAPI</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Project 5: Blood -->
+                    <a href="project-blood.html" class="polaroid-card">
+                        <div class="polaroid-image">
+                            <img src="assets/preview/preview-blood.png" alt="Blood">
+                        </div>
+                        <div class="polaroid-caption">
+                            <div class="polaroid-header">
+                                <span class="polaroid-title">Medical Reports</span>
+                                <span class="polaroid-tag">Healthcare</span>
+                            </div>
+                            <p class="polaroid-description">Intelligent document processing API extracting blood test
+                                markers with multi-layer validation achieving 100% accuracy across hundreds of report
+                                formats.</p>
+                            <div class="polaroid-tech">
+                                <span>Python</span>
+                                <span>FastAPI</span>
+                                <span>OCR</span>
+                                <span>NLP</span>
+                                <span>React</span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="projects">
-            <div class="container">
-                <h2 class="section-title">
-                    <span class="title-bracket">&lt;</span>
-                    Selected Projects
-                    <span class="title-bracket">/&gt;</span>
-                </h2>
-
-                <div class="project-grid">
-                    <!-- Project 1: Operations SaaS -->
-                    <a href="project-operations.html" class="project-card-link">
-                        <div class="tablet-card">
-                            <div class="tablet-bezel">
-                                <div class="tablet-screen">
-                                    <div class="tablet-camera"></div>
-                                    <div class="project-content">
-                                        <div class="project-header">
-                                            <h3>Operations Management SaaS</h3>
-                                            <span class="tag-key">Logistics</span>
-                                        </div>
-                                        <p class="project-description">
-                                            Full-stack mobile and web application for transportation logistics
-                                            management
-                                            with
-                                            GPS tracking and real-time CRM synchronization.
-                                        </p>
-                                        <div class="project-tech">
-                                            <span class="tech-key">React Native</span>
-                                            <span class="tech-key">FastAPI</span>
-                                            <span class="tech-key">PostgreSQL</span>
-                                            <span class="tech-key">Redis</span>
-                                            <span class="tech-key">GPS</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Project 2: Marketing SaaS -->
-                    <a href="project-marketing.html" class="project-card-link">
-                        <div class="tablet-card">
-                            <div class="tablet-bezel">
-                                <div class="tablet-screen">
-                                    <div class="tablet-camera"></div>
-                                    <div class="project-content">
-                                        <div class="project-header">
-                                            <h3>AI Marketing Intelligence Platform</h3>
-                                            <span class="tag-key tag-ai">AI/ML</span>
-                                        </div>
-                                        <p class="project-description">
-                                            Intelligent system decoding subconscious buying behavior with multi-platform
-                                            integration, ML models, and AI-powered recommendations.
-                                        </p>
-                                        <div class="project-tech">
-                                            <span class="tech-key">Python</span>
-                                            <span class="tech-key">React</span>
-                                            <span class="tech-key">OpenAI</span>
-                                            <span class="tech-key">LangChain</span>
-                                            <span class="tech-key">PostgreSQL</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Project 3: GEO Web App -->
-                    <a href="project-geo.html" class="project-card-link">
-                        <div class="tablet-card">
-                            <div class="tablet-bezel">
-                                <div class="tablet-screen">
-                                    <div class="tablet-camera"></div>
-                                    <div class="project-content">
-                                        <div class="project-header">
-                                            <h3>Generative Engine Optimization Platform</h3>
-                                            <span class="tag-key tag-ai">AI/ML</span>
-                                        </div>
-                                        <p class="project-description">
-                                            Comprehensive website auditing tool optimizing visibility for AI search
-                                            engines
-                                            with
-                                            automated strategy generation and performance tracking.
-                                        </p>
-                                        <div class="project-tech">
-                                            <span class="tech-key">Python</span>
-                                            <span class="tech-key">React</span>
-                                            <span class="tech-key">Web Crawler</span>
-                                            <span class="tech-key">LLM Agents</span>
-                                            <span class="tech-key">SEO</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Project 4: Audio Generation -->
-                    <a href="project-audio.html" class="project-card-link">
-                        <div class="tablet-card">
-                            <div class="tablet-bezel">
-                                <div class="tablet-screen">
-                                    <div class="tablet-camera"></div>
-                                    <div class="project-content">
-                                        <div class="project-header">
-                                            <h3>Personalized Audio Generation App</h3>
-                                            <span class="tag-key tag-ai">AI/ML</span>
-                                        </div>
-                                        <p class="project-description">
-                                            Immersive audio generation platform creating personalized affirmative
-                                            content
-                                            with
-                                            voice cloning and intelligent audio processing.
-                                        </p>
-                                        <div class="project-tech">
-                                            <span class="tech-key">Python</span>
-                                            <span class="tech-key">OpenAI</span>
-                                            <span class="tech-key">ElevenLabs</span>
-                                            <span class="tech-key">Pydub</span>
-                                            <span class="tech-key">FastAPI</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Project 5: Blood Test -->
-                    <a href="project-blood.html" class="project-card-link">
-                        <div class="tablet-card">
-                            <div class="tablet-bezel">
-                                <div class="tablet-screen">
-                                    <div class="tablet-camera"></div>
-                                    <div class="project-content">
-                                        <div class="project-header">
-                                            <h3>Medical Report Extraction System</h3>
-                                            <span class="tag-key">Healthcare</span>
-                                        </div>
-                                        <p class="project-description">
-                                            Intelligent document processing API extracting blood test markers with
-                                            multi-layer
-                                            validation achieving 100% accuracy across hundreds of report formats.
-                                        </p>
-                                        <div class="project-tech">
-                                            <span class="tech-key">Python</span>
-                                            <span class="tech-key">FastAPI</span>
-                                            <span class="tech-key">OCR</span>
-                                            <span class="tech-key">NLP</span>
-                                            <span class="tech-key">React</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <p class=\"footer-note\">Private production applications - demos available upon request</p>
-                </div>
-            </div>
-        </footer>
+        <!-- Footer Text -->
+        <p class="footer-text">Private production applications - demos available upon request</p>
     </div> <!-- End main-wrapper -->
 
     <script>
